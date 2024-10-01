@@ -1,10 +1,6 @@
 package main
 
 import (
-	"internal/gui"
-	"internal/notify"
-	"internal/preferences"
-	"internal/state"
 
 	//	"internal/notify"
 	//	"internal/preferences"
