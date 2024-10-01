@@ -1,8 +1,8 @@
 package preferences
 
 import (
-	"internal/color_sets"
-	"internal/state"
+	"github.com/artistic/internal/color_sets"
+	"github.com/artistic/internal/state"
 
 	"os"
 	"sort"

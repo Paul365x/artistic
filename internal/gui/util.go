@@ -14,8 +14,8 @@ import (
 	"github.com/prplecake/go-thumbnail"
 
 	// internal
-	"internal/notify"
-	"internal/state"
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/state"
 )
 
 // get_thumb, because some of these files are huge we use thumbnails. This function checks for a

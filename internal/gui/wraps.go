@@ -12,10 +12,10 @@ import (
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
-	"internal/gizmo"
-	"internal/notify"
-	"internal/preferences"
-	"internal/state"
+	"github.com/artistic/internal/gizmo"
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/preferences"
+	"github.com/artistic/internal/state"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"

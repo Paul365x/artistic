@@ -5,8 +5,8 @@ import (
 	"maps"
 	"math"
 
-	"internal/notify"
-	"internal/state"
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/state"
 )
 
 // Exhaustive list of colors

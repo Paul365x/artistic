@@ -1,10 +1,10 @@
 package main
 
 import (
-
-	//	"internal/notify"
-	//	"internal/preferences"
-	//	"internal/state"
+	"github.com/artistic/internal/gui"
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/preferences"
+	"github.com/artistic/internal/state"
 
 	"fmt"
 	"os"

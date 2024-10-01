@@ -1,7 +1,7 @@
 package gui
 
 import (
-	"internal/state"
+	"github.com/artistic/internal/state"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/driver/desktop"

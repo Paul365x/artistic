@@ -1,9 +1,9 @@
 package gui
 
 import (
-	"internal/color_sets"
-	"internal/preferences"
-	"internal/state"
+	"github.com/artistic/internal/color_sets"
+	"github.com/artistic/internal/preferences"
+	"github.com/artistic/internal/state"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"

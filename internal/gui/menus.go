@@ -1,12 +1,13 @@
 package gui
 
 import (
-	"internal/color_sets"
-	"internal/notify"
-	"internal/preferences"
-	"internal/state"
 	"log"
 	"path/filepath"
+
+	"github.com/artistic/internal/color_sets"
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/preferences"
+	"github.com/artistic/internal/state"
 
 	"cmp"
 	"net/url"
