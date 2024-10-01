@@ -1,7 +1,11 @@
 package main
 
 import (
-	"github.com/podMgr/artistic/internal/gui"
+	"internal/gui"
+	"internal/notify"
+	"internal/preferences"
+	"internal/state"
+
 	//	"internal/notify"
 	//	"internal/preferences"
 	//	"internal/state"
