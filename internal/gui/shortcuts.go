@@ -1,3 +1,5 @@
+// package gui contains all ui elements
+// keyboard shortcuts for menu items
 package gui
 
 import (
@@ -7,6 +9,7 @@ import (
 	"fyne.io/fyne/v2/driver/desktop"
 )
 
+// list of shortcuts
 var (
 	short_about = &desktop.CustomShortcut{
 		KeyName:  fyne.KeyH,

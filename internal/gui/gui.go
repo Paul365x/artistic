@@ -1,3 +1,8 @@
+//
+// package gui has all the ui elements
+// this file has the top level ui funcs ~ one per personality
+//
+
 package gui
 
 import (
@@ -13,6 +18,7 @@ import (
 	"sync"
 )
 
+// used to lock the top level function when drawing/redrawing
 var Mu sync.Mutex
 
 // Pod displays the Pod struct giving an interface to load, edit and save data
@@ -64,7 +70,6 @@ func Pod(pod state.Pod_type) {
 	)
 
 	content := container.NewBorder(state.Error, nil, nil, nil,
-
 		container.NewHSplit(left_pane, right_pane),
 	)
 

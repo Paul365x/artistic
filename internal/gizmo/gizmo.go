@@ -1,3 +1,8 @@
+//
+// the name widget was taken and means something specific in fyne
+// these are little reusable artifacts for the gui
+//
+
 package gizmo
 
 import (
@@ -83,6 +88,7 @@ func Pick_box(s []string, placeholder string) *fyne.Container {
 	)
 }
 
+// SliceIndex finds something in a slice
 func SliceIndex(limit int, predicate func(i int) bool) int {
 	for i := 0; i < limit; i++ {
 		if predicate(i) {

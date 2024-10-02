@@ -1,3 +1,5 @@
+// package gui contains all ui elements
+// this file a selection of helper functions
 package gui
 
 import (
@@ -6,11 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	// temp imports
-	//"fmt"
-
 	// third party imports
-
 	"github.com/prplecake/go-thumbnail"
 
 	// internal

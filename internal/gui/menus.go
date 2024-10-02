@@ -1,3 +1,5 @@
+// package gui contains all ui elements
+// this file all the menu code
 package gui
 
 import (
@@ -87,7 +89,7 @@ func menu_file() *fyne.Menu {
 } // menu_file()
 
 /*
-** callbacks
+** callbacks for menu items
  */
 
 func file_new() {

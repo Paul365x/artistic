@@ -1,4 +1,5 @@
 /*
+** package gui contains all ui elements
 ** Wraps are segments of ui that can be (hopefully) reused across the different personalities.
  */
 package gui
@@ -130,6 +131,7 @@ func wrap_image(rect *canvas.Rectangle, instance *state.Instance_type) (
 	return img_border, img_main
 } // wrap_image()
 
+// wrap_colours creates a container holding the colour palette
 func wrap_colors(
 	rect *canvas.Rectangle,
 	selected string,
@@ -187,6 +189,7 @@ func wrap_colors(
 	return container.NewBorder(title, nil, nil, nil, grid)
 }
 
+// art object instance store
 type Disp_type struct {
 	Instance state.Instance_type
 	Index    int
@@ -196,6 +199,7 @@ var Img *fyne.Container
 var Instances map[string]Disp_type
 var Instance_idx int
 
+// file_radio_callback is the callback for the file radio button selector
 func file_radio_callback(value string) {
 	file_path := Instances[value].Instance.Image
 	if file_path != "" {
@@ -209,6 +213,7 @@ func file_radio_callback(value string) {
 	}
 }
 
+// wrap_files contains the file selector and other files
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
 	// set up the parent file name
@@ -275,10 +280,12 @@ type FileDirFilter struct {
 	Exts []string
 }
 
+// NewFileDirFilter constructs the file extension struct
 func NewFileDirFilter(ext []string) storage.FileFilter {
 	return &FileDirFilter{Exts: ext}
 }
 
+// Matches indicates whether a path matches the filter
 func (fd *FileDirFilter) Matches(uri fyne.URI) bool {
 	path := uri.Path()
 
@@ -299,6 +306,7 @@ func (fd *FileDirFilter) Matches(uri fyne.URI) bool {
 
 }
 
+// open_down_to opens all branches in a tree to the given node
 func open_down_to(u string, t *x_widget.FileTree) {
 	path := strings.Replace(u, "file:///", "", 1)
 	parts := strings.Split(path, "/")
@@ -309,6 +317,7 @@ func open_down_to(u string, t *x_widget.FileTree) {
 	}
 }
 
+// wrap_file_tree contains the file tree
 func wrap_file_tree() *x_widget.FileTree {
 	// create the file tree
 	rootUri := storage.NewFileURI(state.Prefs["root"].(*preferences.Pref_single).Value)
@@ -346,4 +355,4 @@ func wrap_file_tree() *x_widget.FileTree {
 	tree.Show()
 	//open_down_to(state.CurrentTreeid, tree)
 	return tree
-}
+} // wrap_file_tree()

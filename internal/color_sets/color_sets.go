@@ -1,3 +1,7 @@
+//
+// sets of colors used as pallets encapsulated in funcs
+//
+
 package color_sets
 
 import (

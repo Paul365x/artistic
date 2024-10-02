@@ -1,3 +1,5 @@
+// package notify contains elements that tell the user what is happening
+// this is a progress wheel whose concept is based on old style radar screen
 package notify
 
 import (

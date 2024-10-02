@@ -1,3 +1,4 @@
+// user configuration of look and feel
 package preferences
 
 import (

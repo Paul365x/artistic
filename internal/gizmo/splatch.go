@@ -1,3 +1,4 @@
+// fyne widget - clickable coloured circle
 package gizmo
 
 /*
@@ -20,6 +21,7 @@ var _ fyne.Widget = (*Splatch)(nil)
 // id of the splatch
 type SplatchItemID = int
 
+// splatch state
 type Splatch struct {
 	widget.DisableableWidget
 	widget.BaseWidget
@@ -73,15 +75,6 @@ func (item *Splatch) CreateRenderer() fyne.WidgetRenderer {
 	lbl := widget.NewLabel(item.Title)
 	lbl.Wrapping = fyne.TextWrapWord
 	lbl.Alignment = fyne.TextAlignCenter
-
-	/*
-		c := container.New(
-			layout.NewGridLayout(1),
-			circle,
-			lbl,
-		)
-	*/
-	//c := container.NewBorder(nil, lbl_cont, nil, nil, circle)
 	c := container.New(
 		layout.NewGridLayout(1), layout.NewSpacer(), circle, lbl,
 	)
@@ -91,11 +84,11 @@ func (item *Splatch) CreateRenderer() fyne.WidgetRenderer {
 	return item.Renderer
 }
 
+// update called when the splatch changes
 func (b *Splatch) Update(name string, color color.Color) {
 	b.Title = name
-	// \u2003
-
 	nbsp := string('\u2060')
+
 	// setup label - we want to cause two lines
 	length := b.Span * 2
 	b.Title += nbsp
