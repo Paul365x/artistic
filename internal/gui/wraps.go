@@ -336,15 +336,9 @@ func wrap_file_tree() *x_widget.FileTree {
 		state.CurrentTreeid = "file://" + state.CWD
 		Pod(*state.Data.(*state.Pod_type))
 		notify.Notify(string("Loaded: ")+file_name, "aok", state.Error)
-		//	pt := tree.Root + "/bronze/"
-		//		fmt.Println(pt, u)
 		state.Window.Content().Refresh()
-		//	i := strings.LastIndex(u, "/")
-		//		tree.OpenBranch(pt)
-		//open_down_to(u[:i], tree)
-
 	}
 	tree.Show()
-	tree.OpenBranch(state.CurrentTreeid)
+	open_down_to(state.CurrentTreeid, tree)
 	return tree
 }

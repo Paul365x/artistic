@@ -9,6 +9,8 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/widget"
+
+	x_widget "fyne.io/x/fyne/widget"
 )
 
 // the following globals are used internally and not exposed to the user
@@ -25,6 +27,7 @@ var Default_personality string = "POD" // default personality
 var Default_size string = "100"        // default screen size
 var Prefs_form *widget.Form            // form for preferences menu item
 var Dirty bool = false                 // flag as to whether we have changes
+var Tree *x_widget.FileTree
 
 // Prefs map is exposed to the user via the preferences menu item
 var Prefs map[string]interface{}
