@@ -53,7 +53,9 @@ func main() {
 		pod := state.Empty_pod()
 		state.Data = &pod
 		state.Error = notify.NewNotify("Started with Empty Artwork", "aok")
+		gui.Mu.Lock()
 		gui.Pod(pod)
+		gui.Mu.Unlock()
 		state.Window.ShowAndRun()
 	default:
 		fmt.Println("Unknown personality: What do I do now?")

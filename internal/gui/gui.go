@@ -9,7 +9,11 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
+
+	"sync"
 )
+
+var Mu sync.Mutex
 
 // Pod displays the Pod struct giving an interface to load, edit and save data
 func Pod(pod state.Pod_type) {
@@ -73,4 +77,5 @@ func Pod(pod state.Pod_type) {
 	w.SetMainMenu(&menu)
 	w.SetMaster()
 	w.SetContent(w_layout)
+
 }

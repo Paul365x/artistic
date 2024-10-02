@@ -326,19 +326,24 @@ func wrap_file_tree() *x_widget.FileTree {
 		if info.IsDir() {
 			return
 		}
-		p := state.Empty_pod()
 
-		p.Unserialise(path)
-		state.Data = &p
-		state.CurrentFile = storage.NewFileURI(path)
-		var file_name string
-		state.CWD, file_name = filepath.Split(path)
-		state.CurrentTreeid = "file://" + state.CWD
-		Pod(*state.Data.(*state.Pod_type))
-		notify.Notify(string("Loaded: ")+file_name, "aok", state.Error)
-		state.Window.Content().Refresh()
+		go func() {
+			p := state.Empty_pod()
+			p.Unserialise(path)
+			state.Data = &p
+			state.CurrentFile = storage.NewFileURI(path)
+			var file_name string
+			state.CWD, file_name = filepath.Split(path)
+			state.CurrentTreeid = "file://" + state.CWD
+			Mu.Lock()
+			Pod(*state.Data.(*state.Pod_type))
+			Mu.Unlock()
+			notify.Notify(string("Loaded: ")+file_name, "aok", state.Error)
+			state.Window.Content().Refresh()
+
+		}()
 	}
 	tree.Show()
-	open_down_to(state.CurrentTreeid, tree)
+	//open_down_to(state.CurrentTreeid, tree)
 	return tree
 }
