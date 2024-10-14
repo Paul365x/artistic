@@ -92,6 +92,7 @@ func menu_file() *fyne.Menu {
 ** callbacks for menu items
  */
 
+// file_new is the callback for the file new menu item
 func file_new() {
 	// so we populate the front end with an empty whatsit
 	// we save nil to current file
@@ -102,14 +103,20 @@ func file_new() {
 	state.CurrentTreeid = "file://" + state.CWD
 	Pod(*state.Data.(*state.Pod_type))
 	state.Window.Content().Refresh()
-}
+} // file_new()
 
+// file_open is the callback for the file open menu item
 func file_open() {
 	d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
 		if uc != nil {
 			file := uc.URI()
 			p := state.Empty_pod()
-			p.Unserialise(file.Path())
+			err := p.Unserialise(file.Path())
+			if err != nil {
+				str := file.Name()
+				notify.Notify(err.Error()+str, "error", state.Error)
+				return
+			}
 			state.Data = &p
 			state.CurrentFile = file
 			state.CWD, _ = filepath.Split(uc.URI().Path())
@@ -138,8 +145,9 @@ func file_open() {
 	d.SetLocation(LocationURI)
 	d.SetFilter(storage.NewExtensionFileFilter(state.FileMatch))
 	d.Show()
-}
+} // file_open()
 
+// file_save is the callback for the file save menu item. Also used by the save-as menu item
 func file_save() {
 	// check we have data to save
 	if state.Data == nil {
@@ -152,9 +160,15 @@ func file_save() {
 		return
 	}
 	// unserialise
-	state.Data.(*state.Pod_type).Serialise(state.CWD + state.CurrentFile.Name())
-}
+	err := state.Data.(*state.Pod_type).Serialise(state.CWD + state.CurrentFile.Name())
+	if err != nil {
+		notify.Notify(err.Error()+state.CurrentFile.Name(), "error", state.Error)
+		return
+	}
+	notify.Notify(string("Saved ")+state.CurrentFile.Name(), "aok", state.Error)
+} // file_save()
 
+// file_save_as is the callback for the file save as menu item
 func file_save_as() {
 	f := dialog.NewFileSave(func(uc fyne.URIWriteCloser, err error) {
 		if uc != nil {
@@ -178,16 +192,19 @@ func file_save_as() {
 	f.SetLocation(loc)
 	f.SetFilter(storage.NewExtensionFileFilter(state.FileMatch))
 	f.Show()
-}
+	notify.Notify(string("Saved ")+state.CurrentFile.Name(), "aok", state.Error)
+} // save_as()
 
+// about_prefs is the callback for the preferences menu item.
 func about_prefs() {
 	a := fyne.CurrentApp()
 	w := a.NewWindow("Preferences")
 	preferences.Window = w
 	w.SetContent(state.Prefs_form)
 	w.Show()
-}
+} // about_prefs()
 
+// about_about is the callback for the about menu item
 func about_about() {
 	docURL, _ := url.Parse("https://docs.fyne.io")
 	links := []*widget.Hyperlink{
@@ -197,4 +214,4 @@ func about_about() {
 	//	log.Println(err)
 	fyne.CurrentApp().SetIcon(res)
 	x_dialog.ShowAboutWindow("Some **cool** stuff", links, fyne.CurrentApp())
-}
+} // about_about()
