@@ -15,6 +15,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
 
+	"strconv"
 	"sync"
 )
 
@@ -74,7 +75,10 @@ func Pod(pod state.Pod_type) {
 	)
 
 	w_layout := container.NewHSplit(tree, content)
-	w_layout.SetOffset(0.12)
+	sz := state.Prefs["tree_size"].(*preferences.Pref_single).Value
+	f, _ := strconv.ParseFloat(sz, 64)
+	f = f / 100.0
+	w_layout.SetOffset(f)
 	w_layout.Refresh()
 
 	// put everything in place and kick it off

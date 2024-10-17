@@ -69,6 +69,11 @@ func Init_prefs() {
 	s.Init()
 	state.Prefs["scr_size"] = s
 
+	s = &Pref_single{}
+	s.Populate = Populate_tree
+	s.Init()
+	state.Prefs["tree_size"] = s
+
 	var items []*widget.FormItem
 
 	keys := make([]string, len(state.Prefs))
@@ -259,7 +264,19 @@ func Populate_scr() []string {
 		sz,
 	}
 	return c
-} // Populate_scr)()
+} // Populate_scr()
+
+// Populate_tree returns data to create a tree pane size FormItem
+// returns a splice of strings: Label, hint, key to prefs, default value
+func Populate_tree() []string {
+	sz := my_string_with_fallback("tree_size", state.Default_tree)
+	c := []string{"File Pane Size (%)",
+		"This is the size of the File Pane on startup in percent of the screen",
+		"tree_size",
+		sz,
+	}
+	return c
+} // Populate_tree()
 
 /*
 ** Utility Functions

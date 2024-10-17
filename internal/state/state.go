@@ -23,6 +23,7 @@ var Data Data_type = nil               // our json data
 var Default_color string = "TEEPUBLIC" // default colorset
 var Default_personality string = "POD" // default personality
 var Default_size string = "100"        // default screen size
+var Default_tree string = "12"         // default tree pane size
 var Prefs_form *widget.Form            // form for preferences menu item
 var Dirty bool = false                 // flag as to whether we have changes
 
