@@ -1,0 +1,287 @@
+package main
+
+import (
+	"color_sets"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/data/binding"
+	"fyne.io/fyne/v2/widget"
+
+	"fmt"
+)
+
+// the following globals are used internally and not exposed to the user
+var Application fyne.App                                  // running application
+var Window fyne.Window                                    // main window of running application
+var FileMatch []string = []string{".*", ".json", ".JSON"} // file extensions we show in the file dialog
+var CurrentFile fyne.URI = nil                            // file we are currently editing
+var CWD string                                            // current working directory
+var Content fyne.CanvasObject                             // main content
+var Error *fyne.Container                                 // notification container
+const AppId = "au.com.chubbpaul.artistic"                 // our app id
+// var Data Data_type = nil                                  // our json data
+var Default_color string = "TEEPUBLIC" // default colorset
+
+
+
+var Prefs_form *widget.Form
+
+// Prefs map is exposed to the user via the preferences menu item
+var Prefs map[string]interface{ Pref_unit_type }
+
+/*
+** Form items production functions
+ */
+
+type Pref_unit_type interface {
+	Init()
+	Flavor() string
+}
+
+type Pref_element struct {
+	Populate func() []string
+	Label    string
+	Hint     string
+	Item     *widget.FormItem
+}
+
+type Pref_multi struct {
+	Selected string
+	Value    []string
+	Pref_element
+}
+
+type Pref_single struct {
+	Value string
+	Pref_element
+}
+
+// This Init creates a single entry element FormItem
+func (p *Pref_single) Init() {
+
+	var key string
+	var val string
+	s := p.Populate()
+	if len(s) < 4 {
+		panic("Preferences: Populate function returns too few")
+	}
+	p.Label = s[0]
+	p.Hint = s[1]
+	key = s[2]
+	val = s[3]
+	p.Value = my_string_with_fallback(key, val)
+
+	input := widget.NewEntry()
+	input.OnChanged = func(v string) {
+		p.Value = v
+	}
+	input.SetText(p.Value)
+
+	p.Item = &widget.FormItem{
+		Text:     p.Label,
+		HintText: p.Hint,
+		Widget:   input,
+	}
+} // Pref_single()
+
+// This Init creates a select/combo box FormItem
+func (p *Pref_multi) Init() {
+
+	var key string
+	var val string
+	s := p.Populate()
+	if len(s) < 5 {
+		panic("Preferences: Populate function returns too few")
+	}
+	p.Label = s[0]
+	p.Hint = s[1]
+	key = s[2]
+	val = s[3]
+	p.Value = s[4:]
+	p.Selected = my_string_with_fallback(key, val)
+
+	combo := widget.NewSelect(p.Value, func(value string) {
+		p.Selected = value
+	})
+	combo.SetSelected(p.Selected)
+	p.Item = &widget.FormItem{
+		Text:     p.Label,
+		HintText: p.Hint,
+		Widget:   combo,
+	}
+} // Pref_multi()
+
+func (p Pref_multi) Flavor() string {
+	return "multi"
+}
+
+func (p Pref_single) Flavor() string {
+	return "single"
+}
+
+/*
+** Populate or data supply functions
+ */
+
+// Populate_personality returns data to create a personality FormItem
+// returns a splice of strings: Label, hint, key to prefs, default value
+func Populate_personality() []string {
+	c := []string{"Personality",
+		"This indicates what use the app is configured for",
+		"personality",
+		"POD",
+		"POD",
+	}
+	return c
+} // Populate_personality()
+
+// Populate_root returns data to create a root path FormItem
+// returns a splice of strings: Label, hint, key to prefs, default value
+func Populate_root() []string {
+	c := []string{"Artwork Root",
+		"This is the top of the folder tree that contains your artwork",
+		"root",
+		"/home/paulc/testdata/",
+	}
+	return c
+} // Populate_root()
+
+// Populate_color returns data to create a multi line FormItem for color sets
+// returns a splice of strings: Label, hint, key to prefs, list of color_sets
+func Populate_color() []string {
+	var c []string
+	var result []string
+	for v := range color_sets.Color_sets {
+		c = append(c, v)
+	}
+	result = append(result, string("Color Sets: "),
+		string("This is the default color set in use"),
+		string("color_set"),
+		string("TEEPUBLIC"))
+	result = append(result, c...)
+	return result
+} // Populate_color()
+
+// Populate_scr returns data to create a screen size FormItem
+// returns a splice of strings: Label, hint, key to prefs, default value
+func Populate_scr() []string {
+	c := []string{"Window Size (%)",
+		"This is the size of the window on startup in percent of the screen",
+		"scr_size",
+		"100",
+	}
+	return c
+} // Populate_scr)()
+
+/*
+** Utility Functions
+ */
+
+// my_string_with_fallback is a nasty hack that overcomes the ios limitation on remove value
+func my_string_with_fallback(key string, value string) string {
+	stored := Application.Preferences().StringWithFallback(key, value)
+	if stored == "" {
+		stored = value
+	}
+	return stored
+} // my_string_with_fallback()
+
+/*
+// my_remove_value is a nasty hack that overcomes the ios limitation on remove value
+
+	func my_remove_value(key string) {
+		Application.Preferences().RemoveValue(key)
+		test := Application.Preferences().String(key)
+		if test != "" {
+			Application.Preferences().SetString(key, "")
+		}
+	}
+
+// RemoveAll_prefs() remove our standard preferences
+
+	func RemoveAll_prefs() {
+		for key := range Prefs {
+			my_remove_value(key)
+		}
+	}
+
+// SaveAll_prefs() save our standard preferences
+
+	func SaveAll() {
+		for key, value := range Prefs {
+			Application.Preferences().SetString(key, value["value"])
+		}
+	}
+*/
+
+func Labeled_input(shadow_var *string, plc_holder string, display string) (binding.ExternalString, *fyne.Container) {
+	shadow := binding.BindString(shadow_var)
+	input := widget.NewEntryWithData(shadow)
+	input.SetPlaceHolder(plc_holder)
+	return shadow, container.NewBorder(
+		nil,
+		nil,
+		widget.NewLabel(display),
+		nil,
+		input,
+	)
+} // Labeled_input
+
+func Init_prefs() {
+	Prefs = make(map[string]interface{ Pref_unit_type })
+
+	m := &Pref_multi{}
+	m.Populate = Populate_personality
+	m.Init()
+	Prefs["personality"] = m
+
+	m = &Pref_multi{}
+	m.Populate = Populate_color
+	m.Init()
+	Prefs["color_set"] = m
+
+	s := &Pref_single{}
+	s.Populate = Populate_root
+	s.Init()
+	Prefs["root"] = s
+
+	s = &Pref_single{}
+	s.Populate = Populate_scr
+	s.Init()
+	Prefs["scr_size"] = s
+
+	var items []*widget.FormItem
+
+	for pref := range Prefs {
+		switch Prefs[pref].Flavor() {
+		case "multi":
+			items = append(items, Prefs[pref].(*Pref_multi).Item)
+		case "single":
+			items = append(items, Prefs[pref].(*Pref_single).Item)
+		}
+	}
+
+	save := widget.NewButton("Save", func() { fmt.Println("save") })
+	cancel := widget.NewButton("Cancel", func() { fmt.Println("cancel") })
+	reset := widget.NewButton("Reset", func() { fmt.Println("reset") })
+	factory := widget.NewButton("Factory", func() { fmt.Println("factory") })
+	buttons := widget.FormItem{Widget: container.NewHBox(save, cancel, reset, factory)}
+
+	items = append(items, &buttons)
+
+	Prefs_form = &widget.Form{
+		Items: items,
+	}
+
+}
+
+func main() {
+	Application = app.NewWithID("au.com.chubbpaul.artistic")
+	w := Application.NewWindow("tester")
+	color_sets.Build_sets()
+	Init_prefs()
+	w.SetContent(Prefs_form)
+	w.ShowAndRun()
+}
