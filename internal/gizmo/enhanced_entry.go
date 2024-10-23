@@ -1,12 +1,11 @@
 // fyne widget - label, entry and button
-package main
+package gizmo
 
 /*
 **
  */
 import (
 	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/theme"
 
 	//"fyne.io/fyne/v2/canvas"
@@ -16,8 +15,6 @@ import (
 	//"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 	//"image/color"
-
-	"fmt"
 
 	"golang.design/x/clipboard"
 )
@@ -45,6 +42,7 @@ func NewEnhancedEntry(label string, plc string, multi bool, on_chg func(string))
 	} else {
 		entry.Input = widget.NewEntry()
 	}
+
 	entry.Input.OnChanged = on_chg
 	entry.Input.SetPlaceHolder(plc)
 	entry.ExtendBaseWidget(entry)
@@ -74,6 +72,7 @@ func (e *EnhancedEntry) CreateRenderer() fyne.WidgetRenderer {
 	return widget.NewSimpleRenderer(c)
 }
 
+/*
 func main() {
 	// Init returns an error if the package is not ready for use.
 	err := clipboard.Init()
@@ -92,3 +91,4 @@ func main() {
 	w.Resize(fyne.NewSize(1000, 1000))
 	w.ShowAndRun()
 }
+*/

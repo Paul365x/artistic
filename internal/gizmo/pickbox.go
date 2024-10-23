@@ -1,12 +1,11 @@
 // fyne widget - label, entry and button
-package main
+package gizmo
 
 /*
 **
  */
 import (
 	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/theme"
 
 	//"fyne.io/fyne/v2/canvas"
@@ -17,7 +16,6 @@ import (
 	"fyne.io/fyne/v2/widget"
 	//"image/color"
 
-	"fmt"
 	"slices"
 	"strings"
 
@@ -34,12 +32,12 @@ type PickBox struct {
 	clip   *widget.Button
 	add    *widget.Button
 	del    *widget.Button
-	list   *widget.List
+	List   *widget.List
 	data   []string
 	sel_id int
 }
 
-func NewPickBox(label string, plc string, on_chg func(string)) *PickBox {
+func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 
 	clippy := widget.NewButtonWithIcon("", theme.ContentCopyIcon(), nil)
 	add_b := widget.NewButtonWithIcon("", theme.ContentAddIcon(), nil)
@@ -51,12 +49,12 @@ func NewPickBox(label string, plc string, on_chg func(string)) *PickBox {
 		clip:   clippy,
 		add:    add_b,
 		del:    del_b,
-		list:   nil,
+		List:   nil,
 		data:   []string{},
 		sel_id: -1,
 	}
 
-	entry.list = widget.NewList(
+	entry.List = widget.NewList(
 		func() int {
 			return len(entry.data)
 		},
@@ -68,7 +66,7 @@ func NewPickBox(label string, plc string, on_chg func(string)) *PickBox {
 		},
 	)
 
-	entry.list.OnSelected = func(id int) {
+	entry.List.OnSelected = func(id int) {
 		entry.sel_id = id
 		entry.Input.Text = entry.data[id]
 		entry.Input.Refresh()
@@ -85,8 +83,8 @@ func NewPickBox(label string, plc string, on_chg func(string)) *PickBox {
 	// maybe add focus to add_b on change of input to handle typing then enter
 	add_b.OnTapped = func() {
 		entry.data = append(entry.data, entry.Input.Text)
-		entry.list.Refresh()
-		// need to add copy back into state the new list
+		entry.List.Refresh()
+		on_chg(entry.data)
 	}
 
 	del_b.OnTapped = func() {
@@ -95,9 +93,9 @@ func NewPickBox(label string, plc string, on_chg func(string)) *PickBox {
 			entry.sel_id = -1
 			entry.Input.SetText("")
 			entry.Input.Refresh()
-			entry.list.UnselectAll()
-			entry.list.Refresh()
-			// need to add copy back into state the new list
+			entry.List.UnselectAll()
+			entry.List.Refresh()
+			on_chg(entry.data)
 		}
 	}
 	return entry
@@ -127,11 +125,12 @@ func (e *PickBox) CreateRenderer() fyne.WidgetRenderer {
 	c := container.NewBorder(
 		selector,
 		nil, nil, nil,
-		e.list,
+		e.List,
 	)
 	return widget.NewSimpleRenderer(c)
 }
 
+/*
 func main() {
 	// Init returns an error if the package is not ready for use.
 	err := clipboard.Init()
@@ -150,3 +149,4 @@ func main() {
 	w.Resize(fyne.NewSize(1000, 1000))
 	w.ShowAndRun()
 }
+*/
