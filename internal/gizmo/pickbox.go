@@ -5,6 +5,8 @@ package gizmo
 **
  */
 import (
+	"unicode"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/theme"
 
@@ -82,7 +84,16 @@ func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 	}
 	// maybe add focus to add_b on change of input to handle typing then enter
 	add_b.OnTapped = func() {
-		entry.data = append(entry.data, entry.Input.Text)
+		str := strings.FieldsFunc(entry.Input.Text, func(r rune) bool {
+			if unicode.IsSpace(r) {
+				return true
+			}
+			if unicode.IsPunct(r) {
+				return true
+			}
+			return false
+		})
+		entry.data = append(entry.data, str...)
 		entry.List.Refresh()
 		on_chg(entry.data)
 	}
