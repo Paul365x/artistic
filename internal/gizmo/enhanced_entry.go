@@ -16,6 +16,9 @@ import (
 	"fyne.io/fyne/v2/widget"
 	//"image/color"
 
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/state"
+
 	"golang.design/x/clipboard"
 )
 
@@ -50,6 +53,7 @@ func NewEnhancedEntry(label string, plc string, multi bool, on_chg func(string))
 	clippy.OnTapped = func() {
 		// need to add in notify
 		clipboard.Write(clipboard.FmtText, []byte(entry.Input.Text))
+		notify.Notify(string("Copied..."), "aok", state.Error)
 	}
 	return entry
 }

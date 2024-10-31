@@ -14,6 +14,12 @@ import (
 	"fyne.io/fyne/v2/widget"
 
 	"slices"
+	"strings"
+
+	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/state"
+
+	"golang.design/x/clipboard"
 )
 
 // gizmo_title returns a container surrounding text that has been styled as a heading/title
@@ -127,10 +133,17 @@ func Pick_Radio(s []string, placeholder string, f func(value string)) *fyne.Cont
 		radio_group.Refresh()
 	})
 
+	copy_button := widget.NewButtonWithIcon("", theme.ContentCopyIcon(), func() {
+		str := strings.Join(s, ",")
+		clipboard.Write(clipboard.FmtText, []byte(str))
+		notify.Notify(string("Copied files"), "aok", state.Error)
+	})
+
 	// setup the layouts
 	buttons := container.NewHBox(
 		add_button,
 		del_button,
+		copy_button,
 	)
 	select_bar := container.NewBorder(
 		nil, nil,
