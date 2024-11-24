@@ -30,7 +30,9 @@ type SearchState struct {
 	List          *widget.List
 	Results       []string
 	idx           bleve.Index
-	our_container *fyne.Container
+	Our_container *fyne.Container
+	minSize       int
+	//Our_container *container.AppTabs
 }
 
 func NewSearchBox(root string) *SearchState {
@@ -43,12 +45,14 @@ func NewSearchBox(root string) *SearchState {
 	}
 
 	data := &SearchState{
-		Label:   widget.NewLabel("Search:"),
-		Input:   widget.NewEntry(),
-		Search:  search,
-		Results: []string{},
-		List:    nil,
-		idx:     idx_db,
+		Label:         widget.NewLabel("Search:"),
+		Input:         widget.NewEntry(),
+		Search:        search,
+		Results:       []string{},
+		List:          nil,
+		idx:           idx_db,
+		Our_container: nil,
+		minSize:       0,
 	}
 
 	data.Input.SetPlaceHolder("Enter search term...")
@@ -59,19 +63,14 @@ func NewSearchBox(root string) *SearchState {
 		searchResult, _ := data.idx.Search(searchRequest)
 		data.Results = []string{}
 		for _, result := range searchResult.Hits {
+			if len(result.ID) > data.minSize {
+				data.minSize = len(result.ID)
+			}
 			data.Results = append(data.Results, result.ID)
 		}
-		data.List = widget.NewList(
-			func() int {
-				return len(data.Results)
-			},
-			func() fyne.CanvasObject {
-				return widget.NewLabel("template")
-			},
-			func(i widget.ListItemID, o fyne.CanvasObject) {
-				o.(*widget.Label).SetText(data.Results[i])
-			})
-		data.our_container.Refresh()
+
+		data.List.Refresh()
+		data.Our_container.Refresh()
 	}
 
 	data.List = widget.NewList(
@@ -108,8 +107,13 @@ func (s *SearchState) CreateRenderer() fyne.WidgetRenderer {
 		nil,
 		s.List,
 	)
-	s.our_container = c
+	s.Our_container = c
 	return widget.NewSimpleRenderer(c)
+}
+
+func (s *SearchState) MinSize() fyne.Size {
+	s.ExtendBaseWidget(s)
+	return s.BaseWidget.MinSize()
 }
 
 /*

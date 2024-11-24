@@ -77,9 +77,10 @@ func Pod(pod state.Pod_type) {
 	)
 
 	root := state.Prefs["root"].(*preferences.Pref_single).Value
+	search := gizmo.NewSearchBox(root)
 	nav := container.NewAppTabs(
 		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
-		container.NewTabItemWithIcon("", theme.SearchIcon(), gizmo.NewSearchBox(root)),
+		container.NewTabItemWithIcon("", theme.SearchIcon(), search),
 	)
 
 	w_layout := container.NewHSplit(nav, content)
