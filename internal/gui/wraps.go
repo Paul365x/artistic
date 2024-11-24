@@ -21,7 +21,6 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/data/binding"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/storage"
 	"fyne.io/fyne/v2/widget"
@@ -214,20 +213,34 @@ func file_radio_callback(value string) {
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
 	// set up the parent file name
-	parent_shadow := binding.BindString(&artwork.Parent)
-	parent_input := widget.NewEntryWithData(parent_shadow)
-	parent_input.SetPlaceHolder("Enter Parent File...")
-	parent_input.OnChanged = func(v string) {
+	parent_chg := func(value string) {
+		artwork.Parent = value
 		state.Dirty = true
+		notify.Notify(string("Copied parent file"), "aok", state.Error)
 	}
 
+	// want the strings the same length so that they line up - 13 char
+	parent := gizmo.NewEnhancedEntry("Parent File: ",
+		"Enter Parent File...",
+		false,
+		parent_chg)
+	parent.Input.Text = artwork.Parent
+	/*
+
+		parent_shadow := binding.BindString(&artwork.Parent)
+		parent_input := widget.NewEntryWithData(parent_shadow)
+		parent_input.SetPlaceHolder("Enter Parent File...")
+		parent_input.OnChanged = func(v string) {
+			state.Dirty = true
+		}
+	*/
 	title := gizmo.Title("Files:")
 	row := container.NewBorder(
 		title,
 		nil,
-		widget.NewLabel("Parent File: "),
 		nil,
-		parent_input,
+		nil,
+		parent,
 	)
 
 	// setup globals and locals required for Pick_Radio
