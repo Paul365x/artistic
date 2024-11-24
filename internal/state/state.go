@@ -5,6 +5,7 @@ import (
 	"image/color"
 	"os"
 	"strconv"
+	"strings"
 	"unicode"
 
 	"fyne.io/fyne/v2"
@@ -183,3 +184,29 @@ type Data_type interface {
 func (p Pod_type) What_am_i() string {
 	return p.Personality
 }
+
+func Pod_search(path string) string {
+	// load the file
+	pod := Empty_pod()
+	pod.Unserialise(path)
+
+	// grab the searchable stuff and return it
+	raw := []string{pod.Metadata.About.Title,
+		pod.Metadata.About.Description,
+		pod.Metadata.Search_data.Maintag}
+	raw = append(raw, pod.Metadata.Search_data.Tags...)
+	data := strings.Join(raw, " ")
+	return data
+}
+
+// state
+func Get_search_strings(personality string) StringsFunc {
+	var str StringsFunc
+	switch personality {
+	case "POD":
+		str = Pod_search
+	}
+	return str
+}
+
+type StringsFunc func(string) string

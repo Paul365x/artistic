@@ -9,6 +9,7 @@ import (
 	"github.com/artistic/internal/color_sets"
 	"github.com/artistic/internal/notify"
 	"github.com/artistic/internal/preferences"
+	"github.com/artistic/internal/search"
 	"github.com/artistic/internal/state"
 
 	"cmp"
@@ -24,21 +25,6 @@ import (
 
 	x_dialog "fyne.io/x/fyne/dialog"
 )
-
-// menu_pref returns a menu allowing changing of preferences
-func menu_about() *fyne.Menu {
-
-	var about_menu fyne.Menu
-	about_menu.Label = "About"
-
-	menu_item := fyne.NewMenuItem("Preferences", about_prefs)
-	about_menu.Items = append(about_menu.Items, menu_item)
-
-	menu_item = fyne.NewMenuItem("About", about_about)
-	about_menu.Items = append(about_menu.Items, menu_item)
-
-	return &about_menu
-} // menu_about
 
 // menu_palette creates a menu allowing selection of a color_set for a wrap_colors wrap
 func menu_palette(
@@ -195,6 +181,24 @@ func file_save_as() {
 	notify.Notify(string("Saved ")+state.CurrentFile.Name(), "aok", state.Error)
 } // save_as()
 
+// menu_pref returns a menu allowing changing of preferences
+func menu_about() *fyne.Menu {
+
+	var about_menu fyne.Menu
+	about_menu.Label = "About"
+
+	menu_item := fyne.NewMenuItem("Preferences", about_prefs)
+	about_menu.Items = append(about_menu.Items, menu_item)
+
+	menu_item = fyne.NewMenuItem("Reindex", about_index)
+	about_menu.Items = append(about_menu.Items, menu_item)
+
+	menu_item = fyne.NewMenuItem("About", about_about)
+	about_menu.Items = append(about_menu.Items, menu_item)
+
+	return &about_menu
+} // menu_about
+
 // about_prefs is the callback for the preferences menu item.
 func about_prefs() {
 	a := fyne.CurrentApp()
@@ -203,6 +207,16 @@ func about_prefs() {
 	w.SetContent(state.Prefs_form)
 	w.Show()
 } // about_prefs()
+
+func about_index() {
+	personality := state.Prefs["personality"].(*preferences.Pref_multi).Value
+	path := state.Prefs["root"].(*preferences.Pref_single).Value
+	notify.Notify(string("Search Reindex: Please wait... "), "aok", state.Error)
+	notify.Progress.Start(state.Window)
+	search.Build_dex(path, personality)
+	notify.Progress.Stop()
+	notify.Notify(string("Ready"), "aok", state.Error)
+}
 
 // about_about is the callback for the about menu item
 func about_about() {
