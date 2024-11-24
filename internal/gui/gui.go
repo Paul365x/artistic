@@ -7,6 +7,7 @@ package gui
 
 import (
 	"github.com/artistic/internal/color_sets"
+	"github.com/artistic/internal/gizmo"
 	"github.com/artistic/internal/preferences"
 	"github.com/artistic/internal/state"
 
@@ -14,6 +15,7 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
 
 	"strconv"
 	"sync"
@@ -74,8 +76,17 @@ func Pod(pod state.Pod_type) {
 		container.NewHSplit(left_pane, right_pane),
 	)
 
-	w_layout := container.NewHSplit(tree, content)
-	sz := state.Prefs["tree_size"].(*preferences.Pref_single).Value
+	root := state.Prefs["root"].(*preferences.Pref_single).Value
+	nav := container.NewAppTabs(
+		//container.NewTabItemWithIcon("", theme.DocumentIcon(), tree),
+		//container.NewTabItemWithIcon("", theme.FileIcon(), tree),
+		//container.NewTabItemWithIcon("", theme.StorageIcon(), tree),
+		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
+		container.NewTabItemWithIcon("", theme.SearchIcon(), gizmo.NewSearchBox(root)),
+	)
+
+	w_layout := container.NewHSplit(nav, content)
+	sz := state.Prefs["nav_size"].(*preferences.Pref_single).Value
 	f, _ := strconv.ParseFloat(sz, 64)
 	f = f / 100.0
 	w_layout.SetOffset(f)
