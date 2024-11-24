@@ -78,9 +78,6 @@ func Pod(pod state.Pod_type) {
 
 	root := state.Prefs["root"].(*preferences.Pref_single).Value
 	nav := container.NewAppTabs(
-		//container.NewTabItemWithIcon("", theme.DocumentIcon(), tree),
-		//container.NewTabItemWithIcon("", theme.FileIcon(), tree),
-		//container.NewTabItemWithIcon("", theme.StorageIcon(), tree),
 		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
 		container.NewTabItemWithIcon("", theme.SearchIcon(), gizmo.NewSearchBox(root)),
 	)
