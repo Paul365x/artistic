@@ -191,9 +191,9 @@ func Pod_search(path string) string {
 	pod.Unserialise(path)
 
 	// grab the searchable stuff and return it
-	raw := []string{pod.Metadata.About.Title,
-		pod.Metadata.About.Description,
-		pod.Metadata.Search_data.Maintag}
+	raw := []string{pod.Metadata.About.Title, "|",
+		pod.Metadata.About.Description, "|",
+		pod.Metadata.Search_data.Maintag, "|"}
 	raw = append(raw, pod.Metadata.Search_data.Tags...)
 	data := strings.Join(raw, " ")
 	return data

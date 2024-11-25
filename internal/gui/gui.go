@@ -7,7 +7,7 @@ package gui
 
 import (
 	"github.com/artistic/internal/color_sets"
-	"github.com/artistic/internal/gizmo"
+	//"github.com/artistic/internal/gizmo"
 	"github.com/artistic/internal/preferences"
 	"github.com/artistic/internal/state"
 
@@ -15,21 +15,24 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
-	"fyne.io/fyne/v2/theme"
 
-	"strconv"
+	//	"fyne.io/fyne/v2/theme"
+
+	//"strconv"
 	"sync"
 )
 
 // used to lock the top level function when drawing/redrawing
 var Mu sync.Mutex
 
+type PodRet struct {
+	Content *fyne.Container
+	View    *fyne.Container
+	Rect    *canvas.Rectangle
+}
+
 // Pod displays the Pod struct giving an interface to load, edit and save data
-func Pod(pod state.Pod_type) {
-
-	w := state.Window
-
-	tree := wrap_file_tree()
+func Pod(pod state.Pod_type) *PodRet {
 
 	// create the lefthand interior
 	left_pane := container.NewVSplit(
@@ -64,36 +67,14 @@ func Pod(pod state.Pod_type) {
 		nil, nil, nil, nil, view,
 	)
 
-	// setup our menus
-	var menu fyne.MainMenu
-	menu.Items = append(menu.Items,
-		menu_file(),
-		menu_palette(rect, view, &menu, pod.Artwork.Instances),
-		menu_about(),
-	)
-
 	content := container.NewBorder(state.Error, nil, nil, nil,
 		container.NewHSplit(left_pane, right_pane),
 	)
 
-	root := state.Prefs["root"].(*preferences.Pref_single).Value
-	search := gizmo.NewSearchBox(root)
-	nav := container.NewAppTabs(
-		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
-		container.NewTabItemWithIcon("", theme.SearchIcon(), search),
-	)
-
-	w_layout := container.NewHSplit(nav, content)
-	sz := state.Prefs["nav_size"].(*preferences.Pref_single).Value
-	f, _ := strconv.ParseFloat(sz, 64)
-	f = f / 100.0
-	w_layout.SetOffset(f)
-	w_layout.Refresh()
-
-	// put everything in place and kick it off
-	Pod_shorts()
-	w.SetMainMenu(&menu)
-	w.SetMaster()
-	w.SetContent(w_layout)
+	return &PodRet{
+		Content: content,
+		View:    view,
+		Rect:    rect,
+	}
 
 }

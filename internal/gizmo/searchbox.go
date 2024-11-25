@@ -56,22 +56,7 @@ func NewSearchBox(root string) *SearchState {
 	}
 
 	data.Input.SetPlaceHolder("Enter search term...")
-	search.OnTapped = func() {
-		item := data.Input.Text
-		query := bleve.NewMatchQuery(item)
-		searchRequest := bleve.NewSearchRequest(query)
-		searchResult, _ := data.idx.Search(searchRequest)
-		data.Results = []string{}
-		for _, result := range searchResult.Hits {
-			if len(result.ID) > data.minSize {
-				data.minSize = len(result.ID)
-			}
-			data.Results = append(data.Results, result.ID)
-		}
-
-		data.List.Refresh()
-		data.Our_container.Refresh()
-	}
+	search.OnTapped = data.SearchTap
 
 	data.List = widget.NewList(
 		func() int {
@@ -114,6 +99,23 @@ func (s *SearchState) CreateRenderer() fyne.WidgetRenderer {
 func (s *SearchState) MinSize() fyne.Size {
 	s.ExtendBaseWidget(s)
 	return s.BaseWidget.MinSize()
+}
+
+func (s *SearchState) SearchTap() {
+	item := s.Input.Text
+	query := bleve.NewMatchQuery(item)
+	searchRequest := bleve.NewSearchRequest(query)
+	searchResult, _ := s.idx.Search(searchRequest)
+	s.Results = []string{}
+	for _, result := range searchResult.Hits {
+		if len(result.ID) > s.minSize {
+			s.minSize = len(result.ID)
+		}
+		s.Results = append(s.Results, result.ID)
+	}
+
+	s.List.Refresh()
+	s.Our_container.Refresh()
 }
 
 /*

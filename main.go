@@ -13,6 +13,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
 
 	"github.com/kbinani/screenshot"
 )
@@ -53,9 +54,34 @@ func main() {
 		pod := state.Empty_pod()
 		state.Data = &pod
 		state.Error = notify.NewNotify("Started with Empty Artwork", "aok")
-		gui.Mu.Lock()
-		gui.Pod(pod)
-		gui.Mu.Unlock()
+		//gui.Mu.Lock()
+		tmp := gui.Pod(pod)
+		content := tmp.Content
+		rect := tmp.Rect
+		view := tmp.View
+		nav := gui.Wrap_nav()
+
+		// setup our menus
+		var menu fyne.MainMenu
+		menu.Items = append(menu.Items,
+			gui.Menu_file(),
+			gui.Menu_palette(rect, view, &menu, pod.Artwork.Instances),
+			gui.Menu_about(),
+		)
+
+		w_layout := container.NewHSplit(nav, content)
+
+		sz := state.Prefs["nav_size"].(*preferences.Pref_single).Value
+		f, _ := strconv.ParseFloat(sz, 64)
+		f = f / 100.0 // convert % to decimal fraction
+		w_layout.SetOffset(f)
+		w_layout.Refresh()
+
+		// put everything in place and kick it off
+		gui.Pod_shorts()
+		state.Window.SetMainMenu(&menu)
+		state.Window.SetMaster()
+		state.Window.SetContent(w_layout)
 		state.Window.ShowAndRun()
 	default:
 		fmt.Println("Unknown personality: What do I do now?")
