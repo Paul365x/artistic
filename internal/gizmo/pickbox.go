@@ -35,7 +35,7 @@ type PickBox struct {
 	add    *widget.Button
 	del    *widget.Button
 	List   *widget.List
-	data   []string
+	Data   []string
 	sel_id int
 }
 
@@ -52,25 +52,25 @@ func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 		add:    add_b,
 		del:    del_b,
 		List:   nil,
-		data:   []string{},
+		Data:   []string{},
 		sel_id: -1,
 	}
 
 	entry.List = widget.NewList(
 		func() int {
-			return len(entry.data)
+			return len(entry.Data)
 		},
 		func() fyne.CanvasObject {
 			return widget.NewLabel("template")
 		},
 		func(i widget.ListItemID, o fyne.CanvasObject) {
-			o.(*widget.Label).SetText(entry.data[i])
+			o.(*widget.Label).SetText(entry.Data[i])
 		},
 	)
 
 	entry.List.OnSelected = func(id int) {
 		entry.sel_id = id
-		entry.Input.Text = entry.data[id]
+		entry.Input.Text = entry.Data[id]
 		entry.Input.Refresh()
 	}
 
@@ -79,7 +79,7 @@ func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 
 	clippy.OnTapped = func() {
 		// need to add in notify
-		str := strings.Join(entry.data, ",")
+		str := strings.Join(entry.Data, ",")
 		clipboard.Write(clipboard.FmtText, []byte(str))
 	}
 	// maybe add focus to add_b on change of input to handle typing then enter
@@ -93,20 +93,20 @@ func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 			}
 			return false
 		})
-		entry.data = append(entry.data, str...)
+		entry.Data = append(entry.Data, str...)
 		entry.List.Refresh()
-		on_chg(entry.data)
+		on_chg(entry.Data)
 	}
 
 	del_b.OnTapped = func() {
 		if entry.sel_id >= 0 {
-			entry.data = slices.Delete(entry.data, entry.sel_id, entry.sel_id+1)
+			entry.Data = slices.Delete(entry.Data, entry.sel_id, entry.sel_id+1)
 			entry.sel_id = -1
 			entry.Input.SetText("")
 			entry.Input.Refresh()
 			entry.List.UnselectAll()
 			entry.List.Refresh()
-			on_chg(entry.data)
+			on_chg(entry.Data)
 		}
 	}
 	return entry

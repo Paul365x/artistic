@@ -76,7 +76,7 @@ func wrap_about(about *state.About_type) *fyne.Container {
 // wrap_search displays a search type struct and keeps the backing store in sync
 func wrap_search(search *state.Search_type) *fyne.Container {
 
-	// setup maintag box
+	// setup main
 	main_chg := func(value string) {
 		search.Maintag = value
 		state.Dirty = true
@@ -85,6 +85,9 @@ func wrap_search(search *state.Search_type) *fyne.Container {
 		"Enter tag here...",
 		false,
 		main_chg)
+	main.Input.SetText(search.Maintag)
+
+	// setup tags
 	tags_chg := func(values []string) {
 		search.Tags = values
 		state.Dirty = true
@@ -92,6 +95,8 @@ func wrap_search(search *state.Search_type) *fyne.Container {
 	tags := gizmo.NewPickBox("Tags:\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
 		"Enter tag here...",
 		tags_chg)
+	tags.Data = append(tags.Data, search.Tags...)
+	// lay it out
 	top_bar := container.NewVBox(
 		container.NewVBox(
 			gizmo.Title("Search"),
