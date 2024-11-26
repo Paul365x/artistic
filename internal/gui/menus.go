@@ -163,8 +163,9 @@ func file_save() {
 		notify.Notify(string("No file to save into - use Save As"), "notify", state.Error)
 		return
 	}
-	// unserialise
-	err := state.Data.(*state.Pod_type).Serialise(state.CWD + state.CurrentFile.Name())
+	// serialise
+	err := state.Data.(*state.Pod_type).Serialise(state.CWD+state.CurrentFile.Name(),
+		state.Prefs["root"].(*preferences.Pref_single).Value)
 	if err != nil {
 		notify.Notify(err.Error()+state.CurrentFile.Name(), "error", state.Error)
 		return

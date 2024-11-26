@@ -8,20 +8,19 @@ import (
 	"fmt"
 
 	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
+
 	"github.com/blevesearch/bleve/v2"
 
-	//"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/container"
-
-	//"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
-	//"image/color"
+	"github.com/artistic/internal/state"
 )
 
 // Declare conformity with interfaces.
 var _ fyne.Widget = (*SearchState)(nil)
 
+// our widget state
 type SearchState struct {
 	widget.BaseWidget
 	Label         *widget.Label
@@ -34,6 +33,9 @@ type SearchState struct {
 	idx_path      string
 }
 
+// NewSearchBox creates a search box
+// root is the media tree root used to find the index
+// filesY switches between IDs ie the filename and Values ie the metadata
 func NewSearchBox(root string, filesY bool) *SearchState {
 
 	search := widget.NewButtonWithIcon("", theme.SearchIcon(), nil)
@@ -46,7 +48,7 @@ func NewSearchBox(root string, filesY bool) *SearchState {
 		List:          nil,
 		Our_container: nil,
 		boxtype:       filesY,
-		idx_path:      root + "/index.bleve",
+		idx_path:      root + state.IndexName,
 	}
 
 	data.Input.SetPlaceHolder("Enter search term...")
@@ -69,8 +71,9 @@ func NewSearchBox(root string, filesY bool) *SearchState {
 	}
 
 	return data
-}
+} // NewSearchBox
 
+// CreateRenderer returns the widget renderer
 func (s *SearchState) CreateRenderer() fyne.WidgetRenderer {
 	selector := container.NewVBox(
 		container.NewBorder(
@@ -92,11 +95,13 @@ func (s *SearchState) CreateRenderer() fyne.WidgetRenderer {
 	return widget.NewSimpleRenderer(c)
 }
 
+// MinSize hooks in the minsize processing otherwise the parent container does strange things
 func (s *SearchState) MinSize() fyne.Size {
 	s.ExtendBaseWidget(s)
 	return s.BaseWidget.MinSize()
 }
 
+// SearchTap is the callback for the search button: lookup and populates the results
 func (s *SearchState) SearchTap() {
 
 	idx, err := bleve.Open(s.idx_path)
@@ -138,25 +143,4 @@ func (s *SearchState) SearchTap() {
 
 	s.List.Refresh()
 	s.Our_container.Refresh()
-}
-
-/*
-func main() {
-	// Init returns an error if the package is not ready for use.
-	err := clipboard.Init()
-	if err != nil {
-		panic(err)
-	}
-	myApp := app.New()
-	w := myApp.NewWindow("Lines")
-
-	upd := func(value string) {
-		fmt.Println("dirty input: ", value)
-	}
-	content := NewEnhancedEntry("Label", "plc holder", true, upd)
-	w.SetContent(content)
-
-	w.Resize(fyne.NewSize(1000, 1000))
-	w.ShowAndRun()
-}
-*/
+} // SearchTap

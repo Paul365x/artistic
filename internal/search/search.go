@@ -1,26 +1,21 @@
-// fyne widget - label, entry and button
+// bleve search routines apart from those embedded in gizmo::searchbox.go
 package search
 
-/*
-**
- */
 import (
 	"os"
 	"path/filepath"
 
 	"github.com/artistic/internal/state"
+
 	"github.com/blevesearch/bleve/v2"
 	"github.com/blevesearch/bleve/v2/mapping"
 )
 
+// buildMappings builds a mapping path for the index to find the text needed for search
 func buildMappings() mapping.IndexMapping {
 
 	mapping := bleve.NewIndexMapping()
 	mapping.TypeField = "Personality"
-
-	// mappings for POD personality
-	//	podMapping := bleve.NewDocumentMapping()
-	//	mapping.AddDocumentMapping("POD", podMapping)
 
 	// link in the subsection mappings for pod
 	metaMapping := bleve.NewDocumentMapping()
@@ -51,7 +46,9 @@ func buildMappings() mapping.IndexMapping {
 	searchMapping.AddFieldMappingsAt("Tags", tagFieldMapping)
 
 	return mapping
-}
+} // buildMapping
+
+// Build_dex deletes the old index, if any, and indexes all files
 func Build_dex(path string, p string) bleve.Index {
 
 	//	var str state.StringsFunc
@@ -60,7 +57,7 @@ func Build_dex(path string, p string) bleve.Index {
 
 	mapping := buildMappings()
 
-	idx_path := path + "/index.bleve"
+	idx_path := path + state.IndexName
 	err = os.RemoveAll(idx_path)
 	if err != nil {
 		panic(err)
@@ -71,7 +68,6 @@ func Build_dex(path string, p string) bleve.Index {
 		panic(err)
 	}
 
-	//	str = state.Get_search_strings(personality)
 	err = filepath.Walk(path,
 		func(path string, info os.FileInfo, ret error) error {
 			if ret != nil {
@@ -90,44 +86,4 @@ func Build_dex(path string, p string) bleve.Index {
 		panic(err)
 	}
 	return bleveIdx
-}
-
-/*
-// search
-func Build_dex(path string, personality string) bleve.Index {
-	var str state.StringsFunc
-	var bleveIdx bleve.Index
-	var err error
-
-	idx_path := path + "/index.bleve"
-	err = os.RemoveAll(idx_path)
-	if err != nil {
-		panic(err)
-	}
-
-	mapping := bleve.NewIndexMapping()
-	bleveIdx, err = bleve.New(idx_path, mapping)
-	if err != nil {
-		panic(err)
-	}
-
-	str = state.Get_search_strings(personality)
-	err = filepath.Walk(path,
-		func(path string, info os.FileInfo, ret error) error {
-			if ret != nil {
-				return ret
-			}
-			ext := filepath.Ext(path)
-			if ext == ".json" {
-				data := str(path)
-				bleveIdx.Index(path, data)
-			}
-			return nil
-		},
-	)
-	if err != nil {
-		panic(err)
-	}
-	return bleveIdx
-}
-*/
+} // Build_dex

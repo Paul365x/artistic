@@ -341,6 +341,7 @@ func wrap_file_tree() *x_widget.FileTree {
 	return tree
 } // wrap_file_tree()
 
+// Wrap_nav creates the lefthand tabbed navigation pane
 func Wrap_nav() *container.AppTabs {
 	tree := wrap_file_tree()
 	root := state.Prefs["root"].(*preferences.Pref_single).Value
@@ -355,8 +356,9 @@ func Wrap_nav() *container.AppTabs {
 		container.NewTabItemWithIcon("", theme.SearchIcon(), search),
 		container.NewTabItemWithIcon("", theme.HistoryIcon(), meta),
 	)
-}
+} // wrap_nav
 
+// load_file loads the selected file in the callbacks for nav
 func load_file(u string) {
 
 	path := strings.Replace(u, "file://", "", 1)
@@ -381,4 +383,4 @@ func load_file(u string) {
 	content.Trailing = tmp.Content
 	notify.Notify(string("Loaded: ")+file_name, "aok", state.Error)
 	content.Refresh()
-}
+} // load_file
