@@ -5,6 +5,7 @@
 package gui
 
 import (
+	"fmt"
 	"image/color"
 	"os"
 	"path/filepath"
@@ -343,13 +344,16 @@ func wrap_file_tree() *x_widget.FileTree {
 func Wrap_nav() *container.AppTabs {
 	tree := wrap_file_tree()
 	root := state.Prefs["root"].(*preferences.Pref_single).Value
-	search := gizmo.NewSearchBox(root)
+	search := gizmo.NewSearchBox(root, true)
 	search.List.OnSelected = func(id int) {
 		load_file(search.Results[id])
 	}
+	meta := gizmo.NewSearchBox(root, false)
+	fmt.Println(meta)
 	return container.NewAppTabs(
 		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
 		container.NewTabItemWithIcon("", theme.SearchIcon(), search),
+		container.NewTabItemWithIcon("", theme.HistoryIcon(), meta),
 	)
 }
 

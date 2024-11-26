@@ -29,20 +29,14 @@ type SearchState struct {
 	Search        *widget.Button
 	List          *widget.List
 	Results       []string
-	idx           bleve.Index
 	Our_container *fyne.Container
-	minSize       int
-	//Our_container *container.AppTabs
+	boxtype       bool
+	idx_path      string
 }
 
-func NewSearchBox(root string) *SearchState {
-	search := widget.NewButtonWithIcon("", theme.SearchIcon(), nil)
+func NewSearchBox(root string, filesY bool) *SearchState {
 
-	idx_path := root + "/index.bleve"
-	idx_db, err := bleve.Open(idx_path)
-	if err != nil {
-		panic(err)
-	}
+	search := widget.NewButtonWithIcon("", theme.SearchIcon(), nil)
 
 	data := &SearchState{
 		Label:         widget.NewLabel("Search:"),
@@ -50,12 +44,13 @@ func NewSearchBox(root string) *SearchState {
 		Search:        search,
 		Results:       []string{},
 		List:          nil,
-		idx:           idx_db,
 		Our_container: nil,
-		minSize:       0,
+		boxtype:       filesY,
+		idx_path:      root + "/index.bleve",
 	}
 
 	data.Input.SetPlaceHolder("Enter search term...")
+
 	search.OnTapped = data.SearchTap
 
 	data.List = widget.NewList(
@@ -68,6 +63,7 @@ func NewSearchBox(root string) *SearchState {
 		func(i widget.ListItemID, o fyne.CanvasObject) {
 			o.(*widget.Label).SetText(data.Results[i])
 		})
+
 	data.List.OnSelected = func(id widget.ListItemID) {
 		fmt.Println(id, data.Results[id])
 	}
@@ -102,16 +98,42 @@ func (s *SearchState) MinSize() fyne.Size {
 }
 
 func (s *SearchState) SearchTap() {
+
+	idx, err := bleve.Open(s.idx_path)
+	if err != nil {
+		panic(err)
+	}
+
 	item := s.Input.Text
 	query := bleve.NewMatchQuery(item)
 	searchRequest := bleve.NewSearchRequest(query)
-	searchResult, _ := s.idx.Search(searchRequest)
+	searchRequest.Fields = []string{"*"}
+	searchResult, _ := idx.Search(searchRequest)
 	s.Results = []string{}
+	idx.Close()
+
 	for _, result := range searchResult.Hits {
-		if len(result.ID) > s.minSize {
-			s.minSize = len(result.ID)
+		if s.boxtype { // return the file paths ie id
+			s.Results = append(s.Results, result.ID)
+
+		} else {
+
+			//for _, value := range result.Fields {
+			title := "N: " + result.Fields["Metadata.About.Title"].(string)
+			description := "D: " + result.Fields["Metadata.About.Title"].(string)
+			maintag := "M: " + result.Fields["Metadata.Search_data.Maintag"].(string)
+			tags := result.Fields["Metadata.Search_data.Tags"].(interface{})
+			s.Results = append(s.Results, []string{
+				title,
+				description,
+				maintag,
+			}...)
+			//s.Results = append(s.Results, tags.([]string)...)
+			for _, tag := range tags.([]interface{}) {
+				value := "T: " + tag.(string)
+				s.Results = append(s.Results, value)
+			}
 		}
-		s.Results = append(s.Results, result.ID)
 	}
 
 	s.List.Refresh()
