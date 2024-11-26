@@ -5,12 +5,13 @@
 package gui
 
 import (
-	"fmt"
+	//"fmt"
 	"image/color"
 	"os"
 	"path/filepath"
 	"strings"
 
+	"golang.design/x/clipboard"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
@@ -350,7 +351,10 @@ func Wrap_nav() *container.AppTabs {
 		load_file(search.Results[id])
 	}
 	meta := gizmo.NewSearchBox(root, false)
-	fmt.Println(meta)
+	meta.List.OnSelected = func(id int) {
+		clipboard.Write(clipboard.FmtText, []byte(meta.Results[id][3:]))
+		notify.Notify(string("Copied..."), "aok", state.Error)
+	}
 	return container.NewAppTabs(
 		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
 		container.NewTabItemWithIcon("", theme.SearchIcon(), search),

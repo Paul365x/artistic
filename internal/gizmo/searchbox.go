@@ -5,7 +5,7 @@ package gizmo
 **
  */
 import (
-	"fmt"
+	//"fmt"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
@@ -65,10 +65,6 @@ func NewSearchBox(root string, filesY bool) *SearchState {
 		func(i widget.ListItemID, o fyne.CanvasObject) {
 			o.(*widget.Label).SetText(data.Results[i])
 		})
-
-	data.List.OnSelected = func(id widget.ListItemID) {
-		fmt.Println(id, data.Results[id])
-	}
 
 	return data
 } // NewSearchBox
@@ -133,11 +129,12 @@ func (s *SearchState) SearchTap() {
 				description,
 				maintag,
 			}...)
-			//s.Results = append(s.Results, tags.([]string)...)
+			value := "T: "
 			for _, tag := range tags.([]interface{}) {
-				value := "T: " + tag.(string)
-				s.Results = append(s.Results, value)
+				value = value + " " + tag.(string)
+
 			}
+			s.Results = append(s.Results, value)
 		}
 	}
 
