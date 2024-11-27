@@ -25,12 +25,14 @@ type SearchState struct {
 	widget.BaseWidget
 	Label         *widget.Label
 	Input         *widget.Entry
+	Select        *widget.RadioGroup
 	Search        *widget.Button
 	List          *widget.List
 	Results       []string
 	Our_container *fyne.Container
 	boxtype       bool
 	idx_path      string
+	queryType     string
 }
 
 // NewSearchBox creates a search box
@@ -44,12 +46,20 @@ func NewSearchBox(root string, filesY bool) *SearchState {
 		Label:         widget.NewLabel("Search:"),
 		Input:         widget.NewEntry(),
 		Search:        search,
+		Select:        widget.NewRadioGroup([]string{"Exact", "Fuzzy"}, nil),
 		Results:       []string{},
 		List:          nil,
 		Our_container: nil,
 		boxtype:       filesY,
 		idx_path:      root + state.IndexName,
+		queryType:     "Exact",
 	}
+
+	data.Select.OnChanged = func(s string) {
+		data.queryType = s
+	}
+	data.Select.Horizontal = true
+	data.Select.SetSelected(data.queryType)
 
 	data.Input.SetPlaceHolder("Enter search term...")
 
@@ -71,7 +81,9 @@ func NewSearchBox(root string, filesY bool) *SearchState {
 
 // CreateRenderer returns the widget renderer
 func (s *SearchState) CreateRenderer() fyne.WidgetRenderer {
+	r := container.NewHBox(s.Select)
 	selector := container.NewVBox(
+		r,
 		container.NewBorder(
 			nil,      //top
 			nil,      //bottom
@@ -80,6 +92,7 @@ func (s *SearchState) CreateRenderer() fyne.WidgetRenderer {
 			s.Input,  //body
 		),
 	)
+
 	c := container.NewBorder(
 		selector,
 		nil,
@@ -107,6 +120,12 @@ func (s *SearchState) SearchTap() {
 
 	item := s.Input.Text
 	query := bleve.NewMatchQuery(item)
+	if s.queryType == "Exact" {
+		query.Fuzziness = 0
+	} else {
+		query.Fuzziness = 1
+	}
+
 	searchRequest := bleve.NewSearchRequest(query)
 	searchRequest.Fields = []string{"*"}
 	searchResult, _ := idx.Search(searchRequest)
