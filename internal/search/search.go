@@ -49,7 +49,7 @@ func buildMappings() mapping.IndexMapping {
 } // buildMapping
 
 // Build_dex deletes the old index, if any, and indexes all files
-func Build_dex(path string, p string) bleve.Index {
+func Build_dex(path string, p string) {
 
 	//	var str state.StringsFunc
 	var bleveIdx bleve.Index
@@ -85,5 +85,5 @@ func Build_dex(path string, p string) bleve.Index {
 	if err != nil {
 		panic(err)
 	}
-	return bleveIdx
+	bleveIdx.Close()
 } // Build_dex

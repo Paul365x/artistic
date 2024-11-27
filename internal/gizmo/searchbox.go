@@ -128,6 +128,7 @@ func (s *SearchState) SearchTap() {
 
 	searchRequest := bleve.NewSearchRequest(query)
 	searchRequest.Fields = []string{"*"}
+	searchRequest.Size = 100
 	searchResult, _ := idx.Search(searchRequest)
 	s.Results = []string{}
 	idx.Close()
@@ -140,7 +141,7 @@ func (s *SearchState) SearchTap() {
 
 			//for _, value := range result.Fields {
 			title := "N: " + result.Fields["Metadata.About.Title"].(string)
-			description := "D: " + result.Fields["Metadata.About.Title"].(string)
+			description := "D: " + result.Fields["Metadata.About.Description"].(string)
 			maintag := "M: " + result.Fields["Metadata.Search_data.Maintag"].(string)
 			tags := result.Fields["Metadata.Search_data.Tags"].(interface{})
 			s.Results = append(s.Results, []string{
