@@ -4,11 +4,16 @@ import (
 	"encoding/json"
 	"image/color"
 	"os"
+	"path/filepath"
 	"strconv"
 	"unicode"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/widget"
+
+	"github.com/blevesearch/bleve/v2"
+
+	"github.com/artistic/internal/notify"
 )
 
 // the following globals are used internally and not exposed to the user
@@ -26,6 +31,7 @@ var Default_size string = "100"        // default screen size
 var Default_tree string = "12"         // default tree pane size
 var Prefs_form *widget.Form            // form for preferences menu item
 var Dirty bool = false                 // flag as to whether we have changes
+var IndexName string = "/index.bleve"  // search index file name
 
 // Prefs map is exposed to the user via the preferences menu item
 var Prefs map[string]interface{}
@@ -119,9 +125,24 @@ func Empty_pod() Pod_type {
 }
 
 // Serialise  parses and writes a meta file to disk
-func (p *Pod_type) Serialise(file_name string) error {
+func (p *Pod_type) Serialise(file_name string, root string) error {
 	str, _ := json.MarshalIndent(p, "", "    ")
 	err := os.WriteFile(file_name, str, 0644)
+	if err != nil {
+		notify.Notify(err.Error()+file_name,
+			"error", Error)
+	} else {
+		// add to index
+		idx_path := filepath.Join(root, IndexName)
+		idx, err := bleve.Open(idx_path)
+		if err != nil {
+			notify.Notify(err.Error()+idx_path+": Try reindexing...",
+				"error", Error)
+		}
+		idx.Index(file_name, p)
+		idx.Close()
+	}
+
 	return err
 }
 
@@ -172,7 +193,7 @@ func (c *Color_type) UnmarshalJSON(b []byte) error {
 	}
 	c.BG = color.RGBA{uint8(red), uint8(green), uint8(blue), uint8(alpha)}
 	return nil
-}
+} // UnmarshalJson
 
 // interface to allow personality identification
 type Data_type interface {

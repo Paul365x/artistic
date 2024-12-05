@@ -5,11 +5,13 @@
 package gui
 
 import (
+	//"fmt"
 	"image/color"
 	"os"
 	"path/filepath"
 	"strings"
 
+	"golang.design/x/clipboard"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 
@@ -23,6 +25,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/storage"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 
 	x_widget "fyne.io/x/fyne/widget"
@@ -75,7 +78,7 @@ func wrap_about(about *state.About_type) *fyne.Container {
 // wrap_search displays a search type struct and keeps the backing store in sync
 func wrap_search(search *state.Search_type) *fyne.Container {
 
-	// setup maintag box
+	// setup main
 	main_chg := func(value string) {
 		search.Maintag = value
 		state.Dirty = true
@@ -84,6 +87,9 @@ func wrap_search(search *state.Search_type) *fyne.Container {
 		"Enter tag here...",
 		false,
 		main_chg)
+	main.Input.SetText(search.Maintag)
+
+	// setup tags
 	tags_chg := func(values []string) {
 		search.Tags = values
 		state.Dirty = true
@@ -91,6 +97,8 @@ func wrap_search(search *state.Search_type) *fyne.Container {
 	tags := gizmo.NewPickBox("Tags:\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
 		"Enter tag here...",
 		tags_chg)
+	tags.Data = append(tags.Data, search.Tags...)
+	// lay it out
 	top_bar := container.NewVBox(
 		container.NewVBox(
 			gizmo.Title("Search"),
@@ -225,15 +233,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 		false,
 		parent_chg)
 	parent.Input.Text = artwork.Parent
-	/*
 
-		parent_shadow := binding.BindString(&artwork.Parent)
-		parent_input := widget.NewEntryWithData(parent_shadow)
-		parent_input.SetPlaceHolder("Enter Parent File...")
-		parent_input.OnChanged = func(v string) {
-			state.Dirty = true
-		}
-	*/
 	title := gizmo.Title("Files:")
 	row := container.NewBorder(
 		title,
@@ -336,33 +336,55 @@ func wrap_file_tree() *x_widget.FileTree {
 	tree.Sorter = func(u1, u2 fyne.URI) bool {
 		return u1.String() < u2.String() // Sort alphabetically
 	}
-	tree.OnSelected = func(u string) {
-		path := strings.Replace(u, "file://", "", 1)
-		info, err := os.Stat(path)
-		if err != nil {
-			return
-		}
-		if info.IsDir() {
-			return
-		}
-
-		go func() {
-			p := state.Empty_pod()
-			p.Unserialise(path)
-			state.Data = &p
-			state.CurrentFile = storage.NewFileURI(path)
-			var file_name string
-			state.CWD, file_name = filepath.Split(path)
-			state.CurrentTreeid = "file://" + state.CWD
-			Mu.Lock()
-			Pod(*state.Data.(*state.Pod_type))
-			Mu.Unlock()
-			notify.Notify(string("Loaded: ")+file_name, "aok", state.Error)
-			state.Window.Content().Refresh()
-
-		}()
-	}
+	tree.OnSelected = load_file
 	tree.Show()
 	//open_down_to(state.CurrentTreeid, tree)
 	return tree
 } // wrap_file_tree()
+
+// Wrap_nav creates the lefthand tabbed navigation pane
+func Wrap_nav() *container.AppTabs {
+	tree := wrap_file_tree()
+	root := state.Prefs["root"].(*preferences.Pref_single).Value
+	search := gizmo.NewSearchBox(root, true)
+	search.List.OnSelected = func(id int) {
+		load_file(search.Results[id])
+	}
+	meta := gizmo.NewSearchBox(root, false)
+	meta.List.OnSelected = func(id int) {
+		clipboard.Write(clipboard.FmtText, []byte(meta.Results[id][3:]))
+		notify.Notify(string("Copied..."), "aok", state.Error)
+	}
+	return container.NewAppTabs(
+		container.NewTabItemWithIcon("", theme.FolderIcon(), tree),
+		container.NewTabItemWithIcon("", theme.SearchIcon(), search),
+		container.NewTabItemWithIcon("", theme.HistoryIcon(), meta),
+	)
+} // wrap_nav
+
+// load_file loads the selected file in the callbacks for nav
+func load_file(u string) {
+
+	path := strings.Replace(u, "file://", "", 1)
+	info, err := os.Stat(path)
+	if err != nil {
+		return
+	}
+	if info.IsDir() {
+		return
+	}
+
+	p := state.Empty_pod()
+	p.Unserialise(path)
+	state.Data = &p
+	state.CurrentFile = storage.NewFileURI(path)
+	var file_name string
+	state.CWD, file_name = filepath.Split(path)
+	state.CurrentTreeid = "file://" + state.CWD
+	tmp := Pod(*state.Data.(*state.Pod_type))
+	var content *container.Split
+	content = state.Window.Content().(*container.Split)
+	content.Trailing = tmp.Content
+	notify.Notify(string("Loaded: ")+file_name, "aok", state.Error)
+	content.Refresh()
+} // load_file

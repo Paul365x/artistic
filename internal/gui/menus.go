@@ -9,6 +9,7 @@ import (
 	"github.com/artistic/internal/color_sets"
 	"github.com/artistic/internal/notify"
 	"github.com/artistic/internal/preferences"
+	"github.com/artistic/internal/search"
 	"github.com/artistic/internal/state"
 
 	"cmp"
@@ -25,23 +26,8 @@ import (
 	x_dialog "fyne.io/x/fyne/dialog"
 )
 
-// menu_pref returns a menu allowing changing of preferences
-func menu_about() *fyne.Menu {
-
-	var about_menu fyne.Menu
-	about_menu.Label = "About"
-
-	menu_item := fyne.NewMenuItem("Preferences", about_prefs)
-	about_menu.Items = append(about_menu.Items, menu_item)
-
-	menu_item = fyne.NewMenuItem("About", about_about)
-	about_menu.Items = append(about_menu.Items, menu_item)
-
-	return &about_menu
-} // menu_about
-
 // menu_palette creates a menu allowing selection of a color_set for a wrap_colors wrap
-func menu_palette(
+func Menu_palette(
 	rect *canvas.Rectangle,
 	view *fyne.Container,
 	main *fyne.MainMenu,
@@ -78,7 +64,7 @@ func menu_palette(
 } // menu_palette()
 
 // menu_file creates a menu with the usual type of stuff for file menus ala microsoft
-func menu_file() *fyne.Menu {
+func Menu_file() *fyne.Menu {
 	file := fyne.NewMenu("File",
 		fyne.NewMenuItem("New", file_new),
 		fyne.NewMenuItem("Open", file_open),
@@ -87,6 +73,24 @@ func menu_file() *fyne.Menu {
 	)
 	return file
 } // menu_file()
+
+// menu_pref returns a menu allowing changing of preferences
+func Menu_about() *fyne.Menu {
+
+	var about_menu fyne.Menu
+	about_menu.Label = "About"
+
+	menu_item := fyne.NewMenuItem("Preferences", about_prefs)
+	about_menu.Items = append(about_menu.Items, menu_item)
+
+	menu_item = fyne.NewMenuItem("Reindex", about_index)
+	about_menu.Items = append(about_menu.Items, menu_item)
+
+	menu_item = fyne.NewMenuItem("About", about_about)
+	about_menu.Items = append(about_menu.Items, menu_item)
+
+	return &about_menu
+} // menu_about
 
 /*
 ** callbacks for menu items
@@ -159,8 +163,9 @@ func file_save() {
 		notify.Notify(string("No file to save into - use Save As"), "notify", state.Error)
 		return
 	}
-	// unserialise
-	err := state.Data.(*state.Pod_type).Serialise(state.CWD + state.CurrentFile.Name())
+	// serialise
+	err := state.Data.(*state.Pod_type).Serialise(state.CWD+state.CurrentFile.Name(),
+		state.Prefs["root"].(*preferences.Pref_single).Value)
 	if err != nil {
 		notify.Notify(err.Error()+state.CurrentFile.Name(), "error", state.Error)
 		return
@@ -203,6 +208,16 @@ func about_prefs() {
 	w.SetContent(state.Prefs_form)
 	w.Show()
 } // about_prefs()
+
+func about_index() {
+	personality := state.Prefs["personality"].(*preferences.Pref_multi).Value
+	path := state.Prefs["root"].(*preferences.Pref_single).Value
+	notify.Notify(string("Search Reindex: Please wait... "), "aok", state.Error)
+	notify.Progress.Start(state.Window)
+	search.Build_dex(path, personality)
+	notify.Progress.Stop()
+	notify.Notify(string("Search Index Ready"), "aok", state.Error)
+}
 
 // about_about is the callback for the about menu item
 func about_about() {

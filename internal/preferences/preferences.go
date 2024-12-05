@@ -72,7 +72,7 @@ func Init_prefs() {
 	s = &Pref_single{}
 	s.Populate = Populate_tree
 	s.Init()
-	state.Prefs["tree_size"] = s
+	state.Prefs["nav_size"] = s
 
 	var items []*widget.FormItem
 
