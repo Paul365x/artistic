@@ -21,7 +21,6 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/data/binding"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/storage"
 	"fyne.io/fyne/v2/widget"
@@ -33,34 +32,36 @@ import (
 // returns some nested containers
 func wrap_about(about *state.About_type) *fyne.Container {
 
-	title_input := widget.NewEntry()
-	title_input.Text = about.Title
-	title_input.OnChanged = func(value string) {
+	title_chg := func(value string) {
 		p := state.Data.(*state.Pod_type)
 		p.Metadata.About.Title = value
 		state.Dirty = true
 	}
-	title_input.SetPlaceHolder("Enter Title...")
-	title_label := widget.NewLabel("Title:")
 
-	desc_input := widget.NewMultiLineEntry()
-	desc_input.Text = about.Description
-	desc_input.Wrapping = fyne.TextWrapWord
-	desc_input.OnChanged = func(value string) {
+	// want the strings the same length so that they line up - 13 char
+	title := gizmo.NewEnhancedEntry("Title:\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
+		"Enter Title...",
+		false,
+		title_chg)
+	title.Input.Text = about.Title
+
+	desc_chg := func(value string) {
 		p := state.Data.(*state.Pod_type)
 		p.Metadata.About.Description = value
 		state.Dirty = true
 	}
-	desc_input.SetPlaceHolder("Enter Description...")
-	desc_label := widget.NewLabel("Description: ")
+	desc := gizmo.NewEnhancedEntry("Description:\u2007",
+		"Enter Description...",
+		true,
+		desc_chg)
+	desc.Input.Text = about.Description
+	desc.Input.Wrapping = fyne.TextWrapWord
 
-	form := container.New(
-		layout.NewFormLayout(),
-		title_label,
-		title_input,
-		desc_label,
-		desc_input,
+	form := container.NewVBox(
+		title,
+		desc,
 	)
+
 	// pass back the module
 	return container.New(
 		layout.NewVBoxLayout(),
@@ -74,32 +75,27 @@ func wrap_about(about *state.About_type) *fyne.Container {
 // wrap_search displays a search type struct and keeps the backing store in sync
 func wrap_search(search *state.Search_type) *fyne.Container {
 
-	// setup maintag box with binding
-	main_shadow := binding.BindString(&search.Maintag)
-	main_input := widget.NewEntryWithData(main_shadow)
-	main_input.SetPlaceHolder("Enter Main Tag...")
-	main_input.OnChanged = func(v string) {
+	// setup maintag box
+	main_chg := func(value string) {
+		search.Maintag = value
 		state.Dirty = true
 	}
-
-	//main tag
-	main_box := container.New(
-		layout.NewVBoxLayout(),
-		container.NewBorder(
-			nil, nil,
-			widget.NewLabel("Main Tag:  "),
-			nil,
-			main_input,
-		),
-		layout.NewSpacer(),
-	)
-
-	tags := gizmo.Pick_box(search.Tags, "Enter tag here...")
+	main := gizmo.NewEnhancedEntry("Main\u2007Tag:\u2007\u2007\u2007",
+		"Enter tag here...",
+		false,
+		main_chg)
+	tags_chg := func(values []string) {
+		search.Tags = values
+		state.Dirty = true
+	}
+	tags := gizmo.NewPickBox("Tags:\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
+		"Enter tag here...",
+		tags_chg)
 	top_bar := container.NewVBox(
 		container.NewVBox(
 			gizmo.Title("Search"),
 			layout.NewSpacer(),
-			main_box,
+			main,
 		),
 		tags,
 	)
@@ -217,20 +213,34 @@ func file_radio_callback(value string) {
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
 	// set up the parent file name
-	parent_shadow := binding.BindString(&artwork.Parent)
-	parent_input := widget.NewEntryWithData(parent_shadow)
-	parent_input.SetPlaceHolder("Enter Parent File...")
-	parent_input.OnChanged = func(v string) {
+	parent_chg := func(value string) {
+		artwork.Parent = value
 		state.Dirty = true
+		notify.Notify(string("Copied parent file"), "aok", state.Error)
 	}
 
+	// want the strings the same length so that they line up - 13 char
+	parent := gizmo.NewEnhancedEntry("Parent File: ",
+		"Enter Parent File...",
+		false,
+		parent_chg)
+	parent.Input.Text = artwork.Parent
+	/*
+
+		parent_shadow := binding.BindString(&artwork.Parent)
+		parent_input := widget.NewEntryWithData(parent_shadow)
+		parent_input.SetPlaceHolder("Enter Parent File...")
+		parent_input.OnChanged = func(v string) {
+			state.Dirty = true
+		}
+	*/
 	title := gizmo.Title("Files:")
 	row := container.NewBorder(
 		title,
 		nil,
-		widget.NewLabel("Parent File: "),
 		nil,
-		parent_input,
+		nil,
+		parent,
 	)
 
 	// setup globals and locals required for Pick_Radio
