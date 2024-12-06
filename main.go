@@ -82,6 +82,9 @@ func main() {
 		state.Window.SetMaster()
 		state.Window.SetContent(w_layout)
 		state.Window.ShowAndRun()
+	case "EMB":
+		emb := state.Empty_emb()
+		fmt.Println("EMB personality")
 	default:
 		fmt.Println("Unknown personality: What do I do now?")
 	}

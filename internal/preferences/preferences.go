@@ -157,7 +157,6 @@ func (p *Pref_multi) Init() {
 	val = s[3]
 	p.Values = s[4:]
 	p.Value = my_string_with_fallback(key, val)
-
 	combo := widget.NewSelect(p.Values, func(value string) {
 		p.Value = value
 	})
@@ -209,15 +208,24 @@ func save_button() {
  */
 
 // Populate_personality returns data to create a personality FormItem
-// returns a splice of strings: Label, hint, key to prefs, default value
+// returns a splice of strings: Label, hint, key to prefs, default value, all other personalities
 func Populate_personality() []string {
 	p := my_string_with_fallback("personality", state.Default_personality)
+
+	// at this point p has either the default or the set personality
+	var selects []string
+	selects = append(selects, p)
+	for _, s := range state.Personality_types {
+		if s != p {
+			selects = append(selects, s)
+		}
+	}
 	c := []string{"Personality",
 		"This indicates what use the app is configured for",
 		"personality",
-		"POD",
-		p,
+		state.Default_personality,
 	}
+	c = append(c, selects...)
 	return c
 } // Populate_personality()
 

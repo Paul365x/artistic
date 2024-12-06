@@ -42,7 +42,7 @@ func Pod(pod state.Pod_type) *PodRet {
 	left_pane.SetOffset(0.2)
 
 	// create image and background
-	rect := canvas.NewRectangle(pod.Artwork.Instances[0].BG.BG)
+	rect := canvas.NewRectangle(pod.Artwork.Instances[0].BG.Color)
 	image, img_wrap := wrap_image(rect, &pod.Artwork.Instances[0])
 
 	// setup the color picker

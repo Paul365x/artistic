@@ -182,7 +182,7 @@ func wrap_colors(
 				rect.Refresh()
 				color_state.Selected = color_state.Names[id]
 				state.Dirty = true
-				instances[Instance_idx].BG.BG = color_state.Colors[color_state.Names[id]]
+				instances[Instance_idx].BG.Color = color_state.Colors[color_state.Names[id]]
 				instances[Instance_idx].BG.Name = color_state.Names[id]
 			}
 		},
