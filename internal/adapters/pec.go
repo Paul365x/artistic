@@ -13,8 +13,6 @@ import (
 	"fyne.io/fyne/v2/container"
 )
 
-var fh *os.File = os.Stdout
-
 /*
 **
 ** Pes Header parsing code. While we draw using the pec format, the pes headers have some useful information
@@ -641,22 +639,6 @@ func parse_desc(bin []byte) (uint32, *map[string]string) {
 	return count, &meta
 }
 
-// ColorSub stores the color structure
-type ColorSub struct {
-	CodeLen  uint8
-	Code     []byte
-	Color    color.Color
-	u1       uint8
-	ColType  uint32
-	DescLen  uint8
-	Desc     string
-	BrandLen uint8
-	Brand    string
-	ChartLen uint8
-	Chart    string
-	count    uint32
-}
-
 // Dump writes out this Struct
 func (p ColorSub) Dump() {
 	fmt.Fprintf(fh, "\t\tColorSub:\n")
@@ -817,13 +799,6 @@ func (h *H2) Dump() {
 ** Stitch handling - ie pec body
 **
  */
-const (
-	Stitch = iota + 1
-	Jump
-	Trim
-	ColorChg
-	End
-)
 
 const (
 	is_cmd_mask    = 128
@@ -844,7 +819,7 @@ type PCommand struct {
 	Color    int
 }
 
-func decode_cmd(c int) string {
+func pec_decode_cmd(c int) string {
 	switch c {
 	case Stitch:
 		return "Stitch"

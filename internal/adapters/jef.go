@@ -13,8 +13,6 @@ import (
 	"fyne.io/fyne/v2/container"
 )
 
-var fh *os.File = os.Stdout
-
 /*
 **
 ** Jef header parsing code
@@ -171,25 +169,9 @@ func read_cmds(bin []byte) []PCommand {
 			break
 		}
 		cmds = append(cmds, cmd)
-		fmt.Printf("%d\t%d\t%s\t%f %f\n", len(cmds), loc, decode_cmd(cmd.Command1), cmd.Dx, cmd.Dy)
+		fmt.Printf("%d\t%d\t%s\t%f %f\n", len(cmds), loc, jef_decode_cmd(cmd.Command1), cmd.Dx, cmd.Dy)
 	}
 	return cmds
-}
-
-// ColorSub stores the color structure
-type ColorSub struct {
-	CodeLen  uint8
-	Code     []byte
-	Color    color.Color
-	u1       uint8
-	ColType  uint32
-	DescLen  uint8
-	Desc     string
-	BrandLen uint8
-	Brand    string
-	ChartLen uint8
-	Chart    string
-	count    uint32
 }
 
 type Payload struct {
@@ -337,14 +319,6 @@ func main() {
 **
  */
 
-const (
-	Stitch = iota + 1
-	Jump
-	Trim
-	ColorChg
-	End
-)
-
 type PCommand struct {
 	Command1 int
 	Command2 int
@@ -353,7 +327,7 @@ type PCommand struct {
 	Color    int
 }
 
-func decode_cmd(c int) string {
+func jef_decode_cmd(c int) string {
 	switch c {
 	case Trim:
 		return "Trim"
