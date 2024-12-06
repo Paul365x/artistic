@@ -83,8 +83,11 @@ func main() {
 		state.Window.SetContent(w_layout)
 		state.Window.ShowAndRun()
 	case "EMB":
-		emb := state.Empty_emb()
-		fmt.Println("EMB personality")
+		//emb := state.Empty_emb()
+		str := adapters.get_strings("/home/paulc/embroidery/pdf/F3222.pdf")
+		toks := adapters.tokenise_EmbLib(str)
+		fmt.Println(toks)
+
 	default:
 		fmt.Println("Unknown personality: What do I do now?")
 	}
