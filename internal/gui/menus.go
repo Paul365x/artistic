@@ -222,11 +222,13 @@ func about_index() {
 // about_about is the callback for the about menu item
 func about_about() {
 	docURL, _ := url.Parse("https://docs.fyne.io")
+	iconURL, _ := url.Parse("https://www.flaticon.com/free-icons/artist")
 	links := []*widget.Hyperlink{
 		widget.NewHyperlink("Docs", docURL),
+		widget.NewHyperlink("Icon created by Freepik - Flaticon", iconURL),
 	}
-	res, _ := fyne.LoadResourceFromPath("/home/paulc/go/src/github.com/podMgr/artistic/Icon.png")
+	res, _ := fyne.LoadResourceFromPath("./artistic-icon.png")
 	//	log.Println(err)
 	fyne.CurrentApp().SetIcon(res)
-	x_dialog.ShowAboutWindow("Some **cool** stuff", links, fyne.CurrentApp())
+	x_dialog.ShowAboutWindow("Managing artistic works and their metadata.", links, fyne.CurrentApp())
 } // about_about()

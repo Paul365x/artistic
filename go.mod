@@ -5,6 +5,7 @@ go 1.22.4
 require (
 	fyne.io/fyne/v2 v2.5.1
 	fyne.io/x/fyne v0.0.0-20240803204126-8b5b5bfe65ef
+	github.com/blevesearch/bleve/v2 v2.4.3
 	github.com/crazy3lf/colorconv v1.2.0
 	github.com/kbinani/screenshot v0.0.0-20240820160931-a8a2c5d0e191
 	github.com/prplecake/go-thumbnail v0.1.6
@@ -17,7 +18,6 @@ require (
 	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/RoaringBitmap/roaring v1.9.3 // indirect
 	github.com/bits-and-blooms/bitset v1.12.0 // indirect
-	github.com/blevesearch/bleve/v2 v2.4.3 // indirect
 	github.com/blevesearch/bleve_index_api v1.1.12 // indirect
 	github.com/blevesearch/geo v0.1.20 // indirect
 	github.com/blevesearch/go-faiss v1.0.23 // indirect

@@ -25,7 +25,7 @@ func main() {
 	// this just shouldn't be necessary
 	exe, _ := os.Executable()
 	fp := filepath.Dir(exe)
-	file := filepath.Join(fp, "Icon.png")
+	file := filepath.Join(fp, "artistic-icon.png")
 	res, _ := fyne.LoadResourceFromPath(file)
 	app.SetMetadata(fyne.AppMetadata{
 		Icon:    res,
