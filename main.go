@@ -20,7 +20,7 @@ import (
 
 func main() {
 
-	a := app.New()
+	a := app.NewWithID("au.com.chubbpaul.artistic")
 
 	// this just shouldn't be necessary
 	exe, _ := os.Executable()
@@ -30,7 +30,6 @@ func main() {
 		app.SetMetadata(fyne.AppMetadata{
 			Icon:    res,
 			Name:    "Artistic",
-			ID:      "au.com.chubbpaul.artistic",
 			Version: "0.1.0",
 			Build:   5,
 		})
