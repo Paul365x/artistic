@@ -27,16 +27,17 @@ func main() {
 	fp := filepath.Dir(exe)
 	file := filepath.Join(fp, "artistic-icon.png")
 	res, _ := fyne.LoadResourceFromPath(file)
-	app.SetMetadata(fyne.AppMetadata{
-		Icon:    res,
-		Name:    "Artistic",
-		ID:      "au.com.chubbpaul.artistic",
-		Version: "0.1.0",
-		Build:   5,
-	})
+		app.SetMetadata(fyne.AppMetadata{
+			Icon:    res,
+			Name:    "Artistic",
+			ID:      "au.com.chubbpaul.artistic",
+			Version: "0.1.0",
+			Build:   5,
+		})
+	
 
 	state.Window = a.NewWindow("Artistic")
-
+	
 	preferences.Init_prefs()
 
 	// I know - heresy according to fyne devs but this is a graphics program and by default we want

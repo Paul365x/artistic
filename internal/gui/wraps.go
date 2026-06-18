@@ -376,10 +376,17 @@ func load_file(u string) {
 
 	p := state.Empty_pod()
 	p.Unserialise(path)
-	state.Data = &p
-	state.CurrentFile = storage.NewFileURI(path)
 	var file_name string
 	state.CWD, file_name = filepath.Split(path)
+	if err != nil {
+				str := file_name
+				notify.Notify(err.Error()+str, "error", state.Error)
+				return
+			}
+	state.Data = &p
+	state.CurrentFile = storage.NewFileURI(path)
+	
+	
 	state.CurrentTreeid = "file://" + state.CWD
 	tmp := Pod(*state.Data.(*state.Pod_type))
 	var content *container.Split

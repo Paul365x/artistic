@@ -1,0 +1,1359 @@
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libGL.so.1", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libX11.so.6", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libGLdispatch.so.0", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libGLX.so.0", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb.so.1", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXau.so.6", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXdmcp.so.6", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbsd.so.0", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libmd.so.0", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/proc/self/maps", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/sys/kernel/mm/transparent_hugepage/hpage_pmd_size", O_RDONLY) = 3
+123475 openat(AT_FDCWD, "/proc/self/cgroup", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/proc/self/mountinfo", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-7a05418e-d337-4a40-a265-cfccc6e9b13a.scope/cpu.max", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/etc/localtime", O_RDONLY) = 3
+123475 openat(AT_FDCWD, "/home/paulc/.local/bin/artistic", O_RDONLY|O_CLOEXEC) = 3
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/home/paulc/.local/bin/FyneApp.toml", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.local/bin/FyneApp.toml", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.config/fyne/settings.json", O_RDONLY|O_CLOEXEC) = 3
+123475 openat(AT_FDCWD, "/home/paulc/.config/fyne/theme.json", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.local/bin/artistic-icon.png", O_RDONLY|O_CLOEXEC) = 6
+123482 write(7, "AUTH\r\n", 6)          = 6
+123475 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 6
+123482 write(7, "AUTH EXTERNAL\r\n", 15) = 15
+123482 write(7, "DATA\r\n", 6)          = 6
+123482 write(7, "NEGOTIATE_UNIX_FD\r\n", 19) = 19
+123483 write(7, "BEGIN\r\n", 7)         = 7
+123483 write(7, "l\1\0\1\0\0\0\0\1\0\0\0m\0\0\0\1\1o\0\25\0\0\0/org/fre"..., 128) = 128
+123475 openat(AT_FDCWD, "/run/user/1000/.mutter-Xwaylandauth.YADLQ3", O_RDONLY) = 8
+123483 write(7, "l\1\0\0011\0\0\0\2\0\0\0\217\0\0\0\3\1s\0\7\0\0\0ReadOne\0"..., 209) = 209
+123482 openat(AT_FDCWD, "/home/paulc/.config/fyne/theme.json", O_RDONLY|O_CLOEXEC <unfinished ...>
+123475 openat(AT_FDCWD, "/usr/share/X11/locale/locale.alias", O_RDONLY) = 8
+123482 <... openat resumed>)            = -1 ENOENT (No such file or directory)
+123482 write(7, "l\1\0\1}\0\0\0\3\0\0\0\177\0\0\0\1\1o\0\25\0\0\0/org/fre"..., 269) = 269
+123475 openat(AT_FDCWD, "/usr/share/X11/locale/locale.alias", O_RDONLY) = 8
+123475 openat(AT_FDCWD, "/usr/share/X11/locale/locale.dir", O_RDONLY) = 8
+123475 openat(AT_FDCWD, "/usr/share/X11/locale/en_US.UTF-8/XLC_LOCALE", O_RDONLY) = 8
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXxf86vm.so.1", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXext.so.6", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXi.so.6", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXrandr.so.2", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXrender.so.1", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXcursor.so.1", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXfixes.so.3", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libXinerama.so.1", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libX11-xcb.so.1", O_RDONLY|O_CLOEXEC) = 10
+123475 openat(AT_FDCWD, "/home/paulc/.Xdefaults-Nimrod", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/dev/input", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/dev/input/event10", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event19", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event18", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event17", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event16", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event15", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event14", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event13", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event9", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event8", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event7", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event6", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event5", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event4", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event3", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event2", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event1", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/dev/input/event0", O_RDONLY|O_NONBLOCK) = -1 EACCES (Permission denied)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/cursors/left_ptr", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/index.theme", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/icons/Yaru/cursors/left_ptr", O_RDONLY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/cursors/xterm", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/index.theme", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/icons/Yaru/cursors/xterm", O_RDONLY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/cursors/crosshair", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/index.theme", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/icons/Yaru/cursors/crosshair", O_RDONLY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/cursors/hand2", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/index.theme", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/icons/Yaru/cursors/hand2", O_RDONLY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/cursors/sb_h_double_arrow", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/index.theme", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/icons/Yaru/cursors/sb_h_double_arrow", O_RDONLY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/cursors/sb_v_double_arrow", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.icons/Yaru/index.theme", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/icons/Yaru/cursors/sb_v_double_arrow", O_RDONLY) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/etc/fonts/fonts.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/10-hinting-slight.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/10-sub-pixel-rgb.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/10-yes-antialias.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/11-lcdfilter-default.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/20-unhint-small-vera.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/30-cjk-aliases.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/30-metric-aliases.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/30-opensymbol.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/40-nonlatin.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/45-generic.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/45-latin.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/48-spacing.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/49-sansserif.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/50-user.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/51-local.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/56-language-selector-prefer.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/57-dejavu-sans.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/57-dejavu-serif.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/60-generic.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/60-latin.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-bookman.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-c059.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-d050000l.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-fallback-backwards.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-fallback-generics.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-gothic.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-nimbus-mono-ps.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-nimbus-roman.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-nimbus-sans.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-p052.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-standard-symbols-ps.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/61-urw-z003.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/64-language-selector-cjk-prefer.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/65-droid-sans-fallback.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/65-fonts-persian.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/65-nonlatin.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-language-selector-ja.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-language-selector-zh-cn.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-language-selector-zh-hk.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-language-selector-zh-mo.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-language-selector-zh-sg.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-language-selector-zh-tw.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/69-unifont.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/70-fonts-noto-cjk.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/70-no-bitmaps-except-emoji.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/71-ubuntulegacy.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/80-delicious.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/90-fonts-linux-libertine.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/90-synthetic.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/fonts/conf.d/99-language-selector-zh.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.cache/font_index_v3.cache", O_RDONLY|O_CLOEXEC) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/home/paulc/.local/share/fonts", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/local/share/fonts", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/X11", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/X11/Type1", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/X11/encodings", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/X11/encodings/large", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/X11/misc", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/usr/share/fonts/X11/util", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/cMap", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/cmap", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/opentype", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/opentype/linux-libertine", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/opentype/noto", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/opentype/urw-base35", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/crosextra", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/dejavu", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/droid", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/gentium", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/gentium-basic", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/liberation", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/libreoffice", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/lyx", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/noto", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/tuffy", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/ubuntu", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/type1", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/usr/share/fonts/type1/urw-base35", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.local/share/fonts/Agatho_ Bold.otf", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.cache/font_index_v3.cache", O_RDWR|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 12
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 write(12, "\37\213\10\0\0\0\0\0\0\377", 10) = 10
+123475 write(12, "\354\275\r\234\24W\231\357\377Tu3\323\301\t\323\304\10D\223LC\22H\242\300@\336 \16t\7"..., 240) = 240
+123475 write(12, "\261-M4 \177\311\364\317 j0\350Z\365\241\366\275c3\355\237\311\260\264hV\231\357\224\211r"..., 240) = 240
+123475 write(12, "\241\362\374\250\303\372\266\303\37\320\345\25V\304\272\366m\273;\363=ZL=8\235\36\244\270\307\313\234"..., 240) = 240
+123475 write(12, "\267H\327\235\264\255\247}\247t\337\216\256\355\256\vO\273t\246\345\302\263h\346\242\27\6\256\33\231\345"..., 240) = 240
+123475 write(12, "\243\267\2733\177\33\235m\227\246m\375\201\356+J\314.\214\204\374#\233\25d\36\264>}@\f\350"..., 240) = 240
+123475 write(12, "\304\354\353\310\314\214P\261H\315\326\361#\35\206<\325P\233+\2373S\213\17b\200\212ZRVE"..., 240) = 240
+123475 write(12, "\310\253\236d\221hR2\270.}\276\241Rj<\346v\315V<\372\223\212/!\26\30\217H\305\244"..., 240) = 240
+123475 write(12, "\217\244\366\213\37\276\270\217T\277{<,\33z,\333R\335p\177\335\262\370S\5u\254\314Ai4"..., 240) = 240
+123475 write(12, "\207\313\307\200\263]\371\234\222\303\343\304\200\nZ\370\3B\210}d\265\360\49-<\327/\204\271\370"..., 240) = 240
+123475 write(12, "\3\237e\224\330\204\231e4\216f\214\321\356\327'\317\255r\222pK-3\214[N\350H\244$\312"..., 240) = 240
+123475 write(12, "S\240\272\341)P<\5\352\246\31b\247\340S\240\311\177\251r\314\263\256\226\31\332\272\310\31\32\36\262"..., 240) = 240
+123475 write(12, "#\274\215\220\371\367\216U\260\21r\350i\34\33\214\350\321\252\335*Yf&i\5\206L*\223\243\24"..., 240) = 240
+123475 write(12, "\277\200\346\314\337\335\333\303*\346\346\5\v\346\357\356\353\350\234\277+\337=w\325\372\353\27-\272l\361"..., 240) = 240
+123475 write(12, "\253_X\271~g\241\247=\257\245\237 z\263O_\350n\357\352\273\255\273}\276\\\325\230\353.k"..., 240) = 240
+123475 write(12, "\3SX\33(\320\33\354B\362\r\7\265\245\274\272-\37:\347\250\340\251{\362\6v\326_\325>o"..., 240) = 240
+123475 write(12, "\267-\276f\366\3365\217\322\327\274\307\355[\236_z\276\214L\277\256\212\26\352\213\35SV\325%2"..., 240) = 240
+123475 write(12, "\f\356\203\202\226\23X\236Y\351\203\202\365\353\21\230WF6\201\300w\254-\325\267/\36x\307\310,"..., 240) = 240
+123475 write(12, "\270%<t\200\24\217\f\35 \3055\33;R\334\233\252\200\24\217\373\206\231\313\342O/n\251\3234"..., 240) = 240
+123475 write(12, "3i\345\373/JeV>E\262Cl\26V\376\344U\276nF7e\22\0034\353\327\363\36x1"..., 240) = 240
+123475 write(12, "\244by\244bE\244\342\352H\3055\221\212k#\25+#\25\253\"\25\327E*\336\22\251X\35\251"..., 240) = 240
+123475 write(12, "\342\201H\305\203\221\212\377\24\251\370H\244\342?G*>\32\251\370X\244\342\241H\305\307#\25\237\210"..., 240) = 240
+123475 write(12, "\365o\263\377\256\211pVVu\263\6\276g\17\17\17\23\365\367\33\177\20\242E\373\256\305\316\217w\7"..., 240) = 240
+123475 write(12, "\277b\302\222\344\356\243T\322l\"\272\220\232\254BO\321\224\251E\312\244s\03122D\231\333,m"..., 240) = 240
+123475 write(12, "\237%\272\257ec\221L\351\245Sh\216\221K\322\314T\221\316\35 Z4H\324\230x\\y\256y"..., 240) = 240
+123475 write(12, "S\371\260/\354B\365W\221\310\274\310\276\370\234r\302T\221REvS\335\274\270\344\362e.\244D"..., 240) = 240
+123475 write(12, "z\304\311\313\315\326\5\312\360?H\311\242IEs\21\251\233\311An\256jnq\3307\216\343\231W"..., 240) = 240
+123475 write(12, "\323\36\0102\3110W\332U\346\225i\316\253\304\373\232M2W\231\3\351\304\200,\21j\276\257\233\232"..., 240) = 240
+123475 write(12, "\207\334\263\337\274Y\26M\322\356\n\316$\355p{\324\367v\327{rv\3vJ0-\343<\231\267"..., 240) = 240
+123475 write(12, "96\17\312\30j\356e\265\271\35\362$\351\215d48\371L\223>\3652w\322\205Ik\10\237\232"..., 240) = 240
+123475 write(12, "(S\266\361\311nsNo\324rn\336aPjE\243w\36y\222\\\312.\275t\221\314\275\316\224"..., 240) = 240
+123475 write(12, "\267\":\3217\33\310\260:\347\364\236\205v\34jx\220f\0273\17\27\315\17\265\222\231\232l\244V"..., 240) = 240
+123475 write(12, "\321#E4\303\32c\232\17\333\31u\16\261.T\2567\346\212\366\330\356\221d\332W\30\3678\365\260"..., 240) = 240
+123475 write(12, "\"2\277\25|\225\322\324\f\347\333\372\237im2\346\246\361\235\360\230o+\276\353OW\253mk\324"..., 240) = 240
+123475 write(12, "%\351*\343\276L\262!MiZ\221\316\315HY\275\375\371\263\314W\222t_\312\246\262\36\221\227\323"..., 240) = 240
+123475 write(12, ")\16\260L\4\226\t,\223\233e\260L`\231\234\23\201e\2\313D`\231\3002\21X\246\0\3\313"..., 240) = 240
+123475 write(12, "\231\270\2,\23W\200e\342\n\260L\\\1\226\211+\3002q\5X&\256\0\313\304\25`\231\270\2"..., 240) = 240
+123475 write(12, "\344\24\7X&\2\313\4\226\311\3152X&\260L\316\211\3002\201e\"\260L`\231\10,S\200\201"..., 240) = 240
+123475 write(12, "x&\256\0\317\304\25\340\231\270\2<\23W\200g\342\n\360L\\\1\236\211+\3003q\5x&\256"..., 240) = 240
+123475 write(12, "\201g\2\317\4\236\3116\360L\340\231\234\342\0\317D\340\231\3003\271Y\6\317\4\236\3119\21x&"..., 240) = 240
+123475 write(12, "W\200g\342\n\360L\\\1\236\211+\3003q\5x&\256\0\317\304\25\340\231\270\2<\23W\200g"..., 240) = 240
+123475 write(12, "\2H\24W\0\211\342\n Q\\\1$\212+\200D\t Q@\242\200D\1\211\2\22\5$\nH"..., 240) = 240
+123475 write(12, "g\2\316D\300\231\2\f8\23p&\340L\300\231\2003\235z8\223Y\2023\365n\6\316\244\f8"..., 240) = 240
+123475 write(12, "\270\28\23W\0g\342\n\340L\\\1\234\211+\2003q\5p&\256\0\316$\2003\1g\2\316"..., 240) = 240
+123475 write(12, "\2003\1g\"\340L\1\6\234\t8\23p&\340L\300\231N=\234\311r\217\251\16\316\264\253\320U"..., 240) = 240
+123475 write(12, "&\256\0\322\304\25@\232\270\2H\23W\0i\342\n M\\\1\244\211+\2004q\5\220&\256\0"..., 240) = 240
+123475 write(12, "\31H\23\220&\347D@\232\2004\21\220& M\4\244)\300\2004\1i\2\322\4\244\tH\323\251"..., 240) = 240
+123475 write(12, "\0i\342\n M\\\1\244\211+\2004q\5\220&\256\0\322\304\25@\232\270\2H\23W\0i\342"..., 240) = 240
+123475 write(12, "\1\36\212+\300Cq\5x(\256\0\17\305\25\340\241\270\2157\36\312\364\361P&\347\241hLx("..., 240) = 240
+123475 write(12, "\360Pa\307\326\306C\361\264N4\17E\340\241\2\257e\342\320N\23\212eZ1\337f\231\342\221H"..., 240) = 240
+123475 write(12, "@\"q\5H$\256\0\211\304\25 \221\270\2$\22W\200D\342\n\220H\\\1\22\211+@\"q"..., 240) = 240
+123475 write(12, "*H$\247 \224\10$\22H\244\222z\5\211\4\22\211@\"\201D\2\211\344\277p\220H \221@"..., 240) = 240
+123475 write(12, "^\223\246\330\t\310\2740\242iG7\210&e \232t\3\321T&\r\20M\\\1\242\211+@4"..., 240) = 240
+123475 write(12, "\300H\\\1\30\211+\0#q\5`$\256\0\214\304\25\200\221\270\0020\222\0\214\4\30\t0\22`"..., 240) = 240
+123475 write(12, "\0100\22`$\300H\376\v\7\214\4\30\t0\222\223\17\300H\4\30\311o\200\221\0#\215'\30)"..., 240) = 240
+123475 write(12, "#q\5`$\256\0\214\304\25\200\221\270\0020\22W\0F\342\n\300H\\\1\30\211+\0#q\5"..., 240) = 240
+123475 write(12, "\376oR\362m\247\323\265V\365\336\375\7\347\253\7?\341\266\302\231o][\314\320\340\257\256v&^"..., 240) = 240
+123475 write(12, "\2636\20\353h\231\v\264\2\2251\264\202P\33\335~ \356Xh]aW\276+\356X\310=X\346"..., 240) = 240
+123475 write(12, "%^K\213\253pl\271\302\340\237|\304OB\346\3475\252]\364X\337\240Y\240Y\204\333\230M="..., 240) = 240
+123475 write(12, "g\307{v\267\263\306R\237\344d>\321f\320f\270\235\350\271\210j3\27\322U\361\234<\250\275\324"..., 240) = 240
+123475 write(12, "n\335\244\276@(A(\t\267Q\236bM\253\372A\263\22\217\216\375\240Yh:2gh\37h\37"..., 240) = 240
+123475 write(12, "*\267\5<\340\322\327\263\273]z\363\346\236Bo\373\236\276\236\374\374\345\371\316\374\226\366\274z\350\261"..., 240) = 240
+123475 write(12, "\227L\275\217.\257\306\211\2\2340\346\3612'p\300S\323\1\275\205\f\263?`\35\242\214\390"..., 240) = 240
+123475 write(12, "WI\351\25[\206\211.0\246\246'\371\17l2\211\344k\306\325\344\315\360\336\316\32\360\366\3429\372"..., 240) = 240
+123475 write(12, "\333z\332e\34\271}\332\r\373\336\360j\331\361H\271\343eN\246*\305\256|\337\366\276\366=\333n"..., 240) = 240
+123475 write(12, "f\27\223yF\177\321.w\231\366\306\226A\266\254\377\306$\265\16\311\270\26f\363J3\340\263\326\210"..., 240) = 240
+123475 write(12, "\374\376\313\227\210\354\6\371A:\354x!(\333b\375{\346!12\"\207RG\216\270y\360\336\216"..., 240) = 240
+123475 write(12, "U\213}\244\337\330\320n\244\3247,\233k\347G\326\5Q1\353S\314\273S\376\310\265\205\234\203h"..., 240) = 240
+123475 write(12, "wl\316w\365\272\203\374\366B\217\325Goo\337\324\323\321\227\357\354\314\27\nV\177\335\331\321\273\273"..., 240) = 240
+123475 write(12, "B\247~*\357{\23N\314\316Z}\357\1\353\223\7\304\2208\230\35\24\331/\34\22\215\375_\331C"..., 240) = 240
+123475 write(12, "\nfmj\3051\340\6\211c#\241=\210w\5e\354\21k\240\343\314AJ\243\235\23\345\254\271\6"..., 240) = 240
+123475 write(12, "\0\23\350\367\321\357\243\337/\265\211\323\357\243W\227\206\347q\306\344y\34y9\215\37\242\25\261\273\343"..., 240) = 240
+123475 write(12, "\361\311\207e{\237\324\226P{\332\214\204r1n\217\237\25\342G\351\2540L\372?9\272+mu"..., 240) = 240
+123475 write(12, "\257\6\375\336\20\335K\312\376\313\301h\244%\366\311\341\49]Me\344\214\354\372\305\260j\215\3\331"..., 240) = 240
+123475 write(12, "\214\334\2638\353\325\332\272k\370\32)\331\317\6\217\335|Y\213\257\373\351\262JCd{O\307V\377"..., 240) = 240
+123475 write(12, "\321\37z\226\3600~\206\26\306\303\217\247\3327\373Y\352n@^\356\255\27<\214\273\t\333]\262|"..., 240) = 240
+123475 write(12, "\322\267\1\346n(\35M\375\214\315r\212\26\332\3777-\255&@\227\331D\252\306td\3160^\367"..., 240) = 240
+123475 write(12, "\10Z\361\352_%\212i\351\357\271iF\253\25\243\376\356\276\267\336kN_\363\244\355b\24\336\n\250"..., 240) = 240
+123475 write(12, "c\244\"\37\251\330\24\251\330\34\251\330\22\251h\217Tl\215Tl\213Tl\217TtD*vD*"..., 240) = 240
+123475 write(12, "\314\300\355\2408\"\370BY\277\221T\327b\310mw\203\354\264M\205\356\302\226\336\236\276\355\371\256m"..., 240) = 240
+123475 write(12, "\317=v\354\345\257Ny\376\366\206\21zT|\377K\357\246\312q\212\352\\w\235\355\272\207\277\364\367"..., 240) = 240
+123475 write(12, "\241!\313\313\7\354\223*\257b\36\226\221\17{\30\362f\265\346\256\332\257\216\377\254\10\255\336Y\373\32"..., 240) = 240
+123475 write(12, "v\302\333\t\336>\352#\364\337\323\345U\273\2533x\371\370\273\247\177\207\342\36/s\2\177\207\277\273"..., 240) = 240
+123475 write(12, "\360+\255-\273\240E\f5\246\323\351\264:s\213\334=\342\354\344\331\211\204\370\214u\236\234\204\37\235"..., 240) = 240
+123475 write(12, "AZ\365g\334Vq\362\266\352\7'\306l\333m\217u\230m\7\244%s\210\26^bh\341\232\241"..., 240) = 240
+123475 write(12, "I\266\205%\277\tKX\315Q\345\326\310\2113iem\376\313\306\262\252E\324-E\231[\264\vB"..., 240) = 240
+123475 write(12, "\240\256\367\21\223\351r\273\233vvl\352i/l\335\332\261\271}~\241\273\275\253w\303\206\rVC"..., 240) = 240
+123475 write(12, "]\2761\250p[\3^\250\311mP\0101\242\277b\323\tWY\347\263_9\237d\22B\4\262\346"..., 240) = 240
+123475 write(12, "\250J\17\220\347\232$\377\f)&\22\375\23\244\230*p\250\336\333\252u(\347\10y\266\6\365wi"..., 240) = 240
+123475 write(12, "\321iW\245\226\321s\31\250\30\333\222\322\326\314\214\311tq\371\353\356\355\333\225\357)\355\307\2538F"..., 240) = 240
+123475 write(12, "\273H\376[\356\306\336\33g8\333\337\315\fQ\310\2433\345^\332\270\260\364\3\263dA\322(\263\274"..., 240) = 240
+123475 write(12, "\274\374\226&\223\35;|\315\332\373\273\341\351\354\321\346Fg#\316C\245uvHx\333Q*\317\10"..., 240) = 240
+123475 write(12, "\374\300\213&\246\27ys\374\25teu.\260\276}W\207o\200]C\0322G\360\243\t\351G+"..., 240) = 240
+123475 write(12, "\252\373\337\313m\223Z\266\226J\343v\215\351\310\234\241\262G)\200\253\312>\\\216\213/WI\301\267"..., 240) = 240
+123475 write(12, "\224\271\205\3\214R\377\256\34@\320\252Z\253\313\277 S\277$e~\341\2\243\264\22W\217>\277\326"..., 240) = 240
+123475 write(12, ">J\367\313T\265W\373x\23\257\251\332\36o\nLK\346\20\225>Jw\313T\245W\273j\306*"..., 240) = 240
+123475 write(12, "\210\271\203{P\0022/S\274\252\263B\214\263/\327\207\350\310\v\27jYf5\27\270]TZ/"..., 240) = 240
+123475 write(12, "\353W\356\356d\346\333\350\252\230\336\20p{\267\366\244d\376\340Y\23\327\263\334m\320\314[\252x\312"..., 240) = 240
+123475 write(12, ".\251\311\\\302\277&\254\177y\233\364\231\253\251-\206G\370\7a5\245\"s\5\177\232\260\376\344\355"..., 240) = 240
+123475 write(12, "\253\345\265\211eR\223\271\204\177M\\\377rw\235\255\376\251\254\250mg\353\223\234\314'<l\342z"..., 240) = 240
+123475 write(12, "\2048F\327\364\253:H\226\236\305\316\216w\326I\324\34\22\365\35;\327:\323\0\377,\353\34\237\260"..., 240) = 240
+123475 write(12, "\244\273+zJqm\276w\347\366\253z\362\233:6\307{Y@P\0022/r\257\371.\353\333\274"..., 240) = 240
+123475 write(12, "\231Z\342\212\273;\340\214\247\2203zc\306\7*\"?\271'\5u\3255\245\"s\5\227<\225]"..., 240) = 240
+123475 write(12, "\332.8\303^\234e\31w\177\233\344+\364\21'\330\223\240\226\306\n\2}\302:]\340=\234P\277"..., 240) = 240
+123475 write(12, "h\353\2257\234\35P\31<\275s\312\345\301\312.\235\33\231\323\226\254\375\234\323\27E6\353>\362t"..., 240) = 240
+123475 write(12, "\231@T`6\6#\7w\3116ynE4\231\333\266\3\6\0161\217\2279A\204\320\253\5\21\""..., 240) = 240
+123475 write(12, "\206\32uIM\346\22\321C\2572D\217\20\23\210\36\314\306`\274\261\262\2469J\10\307UkB2"..., 240) = 240
+123475 write(12, "\21f\2\361\202\331\30<\3215\315\215\27\213*zAwpC\17\30i\324#1\231G\304\16\275\302"..., 240) = 240
+123475 write(12, "\17fc\264\303\247\212\37U\354\302U\322\340c\357\302\25\234\216\314\31\"\206f\210\30a&\0201\230"..., 240) = 240
+123475 write(12, "\343Sb5\277\307\240lr2\237\210\37z\245!~\204\230@\374`6F{\207\3268S\t\330@"..., 240) = 240
+123475 write(12, "\210\26z\25!Z\204\230@\264`6FO\230\253h1\215\26V\332\316\3bD\214ce\16\20\31"..., 240) = 240
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 write(12, "z\20)BL R0\33#rCE\212\363iq5\255<\370\245\253\361\223\220\371\371\377\331\373\27"..., 240) = 240
+123475 write(12, "\307\353\311-~\365\275:\320\31\6\3~a\274\340\f\343\205\316(\306\v\301Ft\332*\213\27\16\347"..., 240) = 240
+123475 write(12, "\30\305\350!\330\210\362\351\204\365Q\24\311uB\201\3007\214\31\234a\314\320\31\305\230!\330\2102\355"..., 240) = 240
+123475 write(12, "\227\256\223\346D\374>\16~\234\233\307\2074\273F6\23\10\22\247\10\245'\10In\32z\273\225l"..., 240) = 240
+123475 write(12, ">t\365\266A\272\277w\340:9}\261/\0\370r^\301\16\\%\3472>\266\320Cm\336e\241"..., 240) = 240
+123475 write(12, "\365\16\335\252\334\324\271U\243\240\201\227\250\340\322P\301\242\261\f\237L\301G\2557|)5'\247\272"..., 240) = 240
+123475 write(12, "\242\261\2660\323\362\177%\357\f\26\236<g\21\21\23<F5\227\206j\26\215\315\273Ei\37\7\317"..., 240) = 240
+123475 write(12, "\335\212\226\224g\211\273\217k\tr\223\227\222EA\3/Q\301\245\241\202Ec+\311\230\202\235\367\373"..., 240) = 240
+123475 write(12, "\230\327\250X\356O\250X\321\370\23\230\376\302a\341\327R\267\337K\373\212S|\374!\230\307\245Z\331"..., 240) = 240
+123475 write(12, "C\326\243\263^\234f\220|\323a\331E\225(\345\374w\348V\204\310|\3647\374\366(\355yi"..., 240) = 240
+123475 write(12, "y\257\230\225i\366\207`E\205\f7\322\232c\f?\353\220_pH\217\242\375\26\200\301\n\v9n"..., 240) = 240
+123475 write(12, "(\344\267\21~\3318\336\232\375\254\311\243\335\225U\315\240|\0\6x4]p\314n SdH\361"..., 240) = 240
+123475 write(12, "\217\300O\25\341Cke\36Gi\fp/\234\177m}\3006+K\305\333\306\27\0\351\30>\31\367"..., 240) = 240
+123475 write(12, "\227\0\275\273\371\253\302W_\311Ft\fV/\200\217\33?\337\262\221\310\246\254\354\346\272\217\246U\231"..., 240) = 240
+123475 write(12, "1U\321\332Ev{\360\254\356\20\5#\201w(\33\343\347\307\35c\330\266'\367\261\\i\345\253/"..., 240) = 240
+123475 write(12, "TE\0o\312\25L\331e\253\25L\27\301\317\254\331?\255\241pD+\230\326\26\346\232Z\301\364^"..., 240) = 240
+123475 write(12, "@\nu\250\306\f\342\300\201\237\250\266\3226\262\332\312\261\217E\353\\\203\ny(W\216D\302\3O"..., 240) = 240
+123475 write(12, "\3748\207c\256\310\335\361\303\344\205\17\212\356v\370\231\364$\264\314\311SPS\326)}\201\316\250\231"..., 240) = 240
+123475 write(12, "r\310NwPa\307<\16[c|?\322>\227}Y\264\376Q\254\202\0\336 7\274\361}\312\237"..., 240) = 240
+123475 write(12, "\345\201z\2605\10\5\274*6\355\37\310o)ON4\254\315\351T\327NU-\271\242\366\216+k"..., 240) = 240
+123475 write(12, "\345n\351\353\311\214;\313\352$\210\241@\340\33jfB5\303\35=\361V\3535\316*\252\345WR"..., 240) = 240
+123475 write(12, "E\254\220\36a\24Q\215\10\336\242\212&UE;\v\25\335M\356\t\345\\\335\32\212\v\v~\243\236"..., 240) = 240
+123475 write(12, "\302\307\0\3\37Q;\23\252\35\2106\17\23\357>\267@\267<\5\37\r\21\274E\25M\250\212`\6"..., 240) = 240
+123475 write(12, "\26\323\303\212\304\252\336\10\340M\231\210\226]f\371\320A\"`\353Cz\5\272\223\252\0$A\264j"..., 240) = 240
+123475 write(12, "[\237\246\277\373\365\367g \311\346\317\236\326}\1\227\\w\352\6\373\205\22|U\337\267\232.\366\16"..., 240) = 240
+123475 write(12, "\262\340q\7yGH\225W4C\"\341\201\247\30H\24\354a \321\30\305@\"\330\210\6QY "..., 240) = 240
+123475 write(12, "\20\3\210|\35\3\210\316(\6\20\301F\320\26y\251\10 \373\354\223\365\252+\275\2421\22\r\21\274"..., 240) = 240
+123475 write(12, "\207\316(\206\17\301F\224q\265C\374F?\304:/\247]\215\204\7\236b Q\260\207\201Dc\24"..., 240) = 240
+123475 write(12, "Q\6W\26^\3343\250\2111 B\0065\35 \370\212\241D\276\216\241Dg\24C\211`#\312\345"..., 240) = 240
+123475 write(12, "\30\305\220\"\330\210r\303\262\220\262\213\334\342S\373\345\245'a0\340\27\206\r\371:\206\r\235Q\f"..., 240) = 240
+123475 write(12, "\f\30\202\215\350@,\0260v\222\2679Vv\345\376\226\20\20\360\tC\206\202'\f\31\32\243\0302"..., 240) = 240
+123475 write(12, "^\26N\334\223\31\252\353~\204d\206u\300\340;\206\26\5\237\30Z4F1\264\0106\2423{\243"..., 240) = 240
+123475 write(12, "1\230\350\214b0\21lD\31MX0y\210\334\33\243\352+\332(\221q\301s\f,\n61\260"..., 240) = 240
+123475 write(12, "|haEIC$<\360\364\2259#\335\341\315\v\345\315d+\31\r9\327\327\5\301\344\215\265w"..., 240) = 240
+123475 write(12, "\377~B\326\365\r\31c\23\345\10T\274\325\205\36\337,\311\376V\326\370\251\362\356\344(\27\7ZZ"..., 240) = 240
+123475 write(12, "l\10}\301\222\365\360>\243\264L,\34\212\25.\352J\272\260!t\265\247\34\345\362\0305Uw\25"..., 240) = 240
+123475 write(12, "\205I\0276\204\302\366\224\243f\367\222[\275\24!7\306\2qX\261\242\242\244\v\33BQ{gC"..., 240) = 240
+123475 write(12, "\t\217\0253*L\272\2601\24V\34\377\351\263\312\246\356\374\317X\200\254\240Qc\322\205\215\241\261\342"..., 240) = 240
+123475 write(12, "\357\v\246\214\v\255'\354\25l\372f\371\324C\201\177\250\213q\276A\230.^e=\246+\223\31\226"..., 240) = 240
+123475 write(12, "\202\327\250\226q\216\233Fj\237D\30[\267\312R\210\32QY\303#\250L#WZ\347\4\324P\32"..., 240) = 240
+123475 write(12, "\224q\316\3022\245x\314\330\307\314\262f\3\n>\243V\3069\266\25\247]\342\237%\255\6\17<E"..., 240) = 240
+123475 write(12, "\220\366W\27Re\241\6`\200G\323E\251\262\33\310\26\213b=\253\370\27T!r\275\364\240/S"..., 240) = 240
+123475 write(12, "~c\266Db@jC=\26+<T\205\351\v\32|G0Ul\263_!\"3\351\235\326P\v"..., 240) = 240
+123475 write(12, "\232\361X!\242:L_\320\340\330'S\307\325\366{\24\324l\6\246*\264\0e\305\211:1}A"..., 240) = 240
+123475 write(12, "}A\203\375\10\246\4\217U\27\21\322\17j\241X\321\241&L_\320`t`\233\352=\372\226\261R"..., 240) = 240
+123475 write(12, "\6\374B5\214y\356,\371(\231\261\246\261\377H\272\230\336\271\334\237S\317\243\206\2\201o\27\226\212"..., 240) = 240
+123475 write(12, "uh\376F#\36{0\324\17\231D\375\224\31\374nu\230\366R\362\35\262c\325\f\310\36\r\25D"..., 240) = 240
+123475 write(12, ",\205e^MT\220\306\3065\332\314\24\264\333!O\246\222\360\240\314\2335\210\354\341PCd\0225"..., 240) = 240
+123475 write(12, "\250\371Nk1\331\3\242\216\310$\352\250\314t\351\261\346\"nF\324zP\366\210\250$2\201J\342"..., 240) = 240
+123475 write(12, "\244\373\7\313\v\361\262\304\226\265;\371E\262\333\257\224\25]\335`$\360\16\31\223\215[\177\222|\332"..., 240) = 240
+123475 write(12, "\332\276\203\376\200\2.\221{\362\31\362\26\307\202\257\276V<?\17\236 o\262\231x+\33\340\277a"..., 240) = 240
+123475 write(12, "!\227\262\325\215\1AJ\32\367\236I]\332\3428p\340'\262*[\335h\20c\325y\f\241&\225"..., 240) = 240
+123475 write(12, "_\244\317\212^\3312\r\300\0\217\220?\331\352\332\242\214?\347YM}\352\314P \360\r\231\224\255"..., 240) = 240
+123475 write(12, "\235\374\243\225\16\226z\261\323F,Y7\4\367\365\347z\7\36\350\35N\377\345\275kK\373\273\203\25"..., 240) = 240
+123475 write(12, "\31_{\354'\230\357J{\253\2323'\375!\300\237\242\241y\20\256[54\317\252\224\252\"\257*"..., 240) = 240
+123475 write(12, "\213@\342\300\201\237(\36\3709i\342)\322~\265\336f\275IO\315\266\377Y\2155x\340)\312\7"..., 240) = 240
+123475 write(12, "T\346\223\fn\v\205OB\2302J\242|\340\347\244\311\247H\\\331\272\305z\325\274\232n\305\240r"..., 240) = 240
+123475 write(12, "Q\320\300K\224\16\374\2344\351\24\271s=F|-\222\347\306\203\4\177QD\360s\322DT\244q"..., 240) = 240
+123475 write(12, "fAL\272\330k*\375\361\277w\210\324\254\\\203\326\254T!\300\37$\2073\376h\335\37wX\347"..., 240) = 240
+123475 write(12, "\1\354\225\242\227cf(\20\370\206D:\30\227M:\371\34\271\325\263\374\253Q4\20\7<C\32\35"..., 240) = 240
+123475 write(12, "\35\304\203\4\177\221\\\7\3432\232\6\276[C\7\370L\331L\221R\7\343\262\214&\377\217\375\276:"..., 240) = 240
+123475 write(12, "\365\234\247\274lr\352EC\4o\221Z\7\3432\335\205\275SeVc\200\201\217H\250\203q\331\347"..., 240) = 240
+123475 write(12, "\262\304IY0\330B\333+\275\376\\\23\24\376k\362f\313\302\277;]V$\337\361\3724x\361\262"..., 240) = 240
+123475 write(12, "V9\271\25\214\4\336!MC\343\323\275x\266\356\244\251\216 \24\360\n\351\31\32\237\306\305\255\323\252"..., 240) = 240
+123475 write(12, "@\25\r\4\277\217\203\37H\310\320\370\364\35\37\266Nw\223\225\250j\261\243\347\347\301\23\244dh\374"..., 240) = 240
+123475 write(12, "T\223\264\301\33\1\274Ab\n\343\207R?b?\247\326=t`!\rJ\307 C\200?E:\206"..., 240) = 240
+123475 write(12, "\2476=\321\365\204\234c\276\343\347t\27\362\324,\365q\245\235=R\264\230\302\265\241~\321~\"9"..., 240) = 240
+123475 write(12, "\235\4\"&D\315\341\177\267j\37\265$\31$\241\340\363\\z\372\30\353o\34\207\177<#\335q\231"..., 240) = 240
+123475 write(12, "U$dm\275\307zO\213B\20Ag\16\326\340\201\247(\261\215*\2612\231lX/\322\373\374C"..., 240) = 240
+123475 write(12, " \360\rE\265QEU&\307\367\3327$\353)\0\3<B)mX)\25\211\375[\373\34v\0"..., 240) = 240
+123475 write(12, ":\245e\22\221\360\300S\224\330F\225XyP\221W\366BIU\376\20\340\17\niC\v)\237\201"..., 240) = 240
+123475 write(12, "\356\312\253\307)B?&\225p\376\306\254\236\27'\327\204\316.\366\337\335\332\222\211\360.K.\247\364"..., 240) = 240
+123475 write(12, "c\307\276\366\364\367g\377<}\352=*?\222?\32188S\334\361E\375S<\303\356x.\373\276"..., 240) = 240
+123475 write(12, "\2016L\361qG\313}\336~\223D\267\273\332\355\335\223\36\356\36T\34\36\25\204R-\270\354\226\245"..., 240) = 240
+123475 write(12, "\335\25i\336\363o\264s\25\353\364I\302\6c\372s\261\307\262\276\313A\343\203\345\336\252fIG\10"..., 240) = 240
+123475 write(12, "Og\267\263\2621\312@\277\22D\376\272R\6\233\316&7\330\23\270\254\30\302\367\3738\370\301U\312"..., 240) = 240
+123475 write(12, "E\275\316\364q\370\304\33\212\247\332\242\321\331G\371\373y~\n\373\230\266\244\310\226S4{\342O\260"..., 240) = 240
+123475 write(12, "\302\200_\30\35\253Dat\314\r\243#FG\301\32\356S\263\350x\265}\332v!\254\251WjG"..., 240) = 240
+123475 write(12, "4\3656\232@\34\360\f\343c\225*\214\217\271a|\304\370(X\303{i \327\217\353*\0371\256"..., 240) = 240
+123475 write(12, "'.m\313\211\200\5\36b\234\254R\206q27\214\223\30'\5kxo\16\213\223\27\222\267:\307"..., 240) = 240
+123475 write(12, "\23\30\304\330\26t\2\203\22\n\374\303(Y%\f\243dn\30%1J\n\326pn\37\26%\35\367"..., 240) = 240
+123475 write(12, "\326\211\201z\223\266\347\347\301\223\227\25\361p\260LZ\4\302a\21.8\207\213\177<\222\377\213\5\313"..., 240) = 240
+123475 write(12, "^\4\360X\255i\373\261\246*\205\362\33!\34\n\374CI\230.6\370j`\2228\227\354\366\346\261"..., 240) = 240
+123475 write(12, "\205\314\320!,5\34\370\211\3220]lpt\223I\343\n\362\316 .\325-\214\210\230\3401\212\304"..., 240) = 240
+123475 write(12, "\24\372\243\276\202\221\300;\24\204\351b\203q\0016\341{t#kN7\212\3\7~\2424L\27\33"..., 240) = 240
+123475 write(12, "\7O\212\254\213\375\203\3139\361\306$\202\233?\224\223\243{\330jn\321\3022z\276\226Q\324Q'"..., 240) = 240
+123475 write(12, "\254))\361F\0o\316-8\311.\263\300Y\23a\226k\36\260\225\374\22\377k\236\253\231\267\344\227"..., 240) = 240
+123475 write(12, "Nm\241\264\235}c\23m@\373\36\347}\213s\373V\323\305\336\201\240\256\223\22\5\274:\237+\337"..., 240) = 240
+123475 write(12, "\303\213\2042\\\v\210\301\252\26[k\245\201\30\354\324\6xpmp0<\6\313(\340\25\37\203W"..., 240) = 240
+123475 write(12, "x\33\362e\207\2\201oHu\3\357i\30\350J\276a\275x]\305\220\374\262\216\202\6^\"\351\r"..., 240) = 240
+123475 write(12, "\177^Yh\2018\340\331\313\363\202;\0047-d7Y\2516\306~\217\203\371d\365IJf\236\245"..., 240) = 240
+123475 write(12, "}T\275\3$\34\n\374\333^\224 \273\357\20\273\317j\253\353f\345_y\213\361\222}Y\365\357\257"..., 240) = 240
+123475 write(12, "5\205\25\30\340Q\321\24^a7Xmo)\7\341tU\3402]\t\274\351\310\20+\306\v\375\374"..., 240) = 240
+123475 write(12, ";{n+j\267\3258S\331[\362\307\326s\245\0051\276\223\255U\0\360\5\211\215J,?\321j"..., 240) = 240
+123475 write(12, "\340\221\360\300S\244=\372\270Z\276\371\337ut\244f'x\348\360\23I\217>\302\306H?i}"..., 240) = 240
+123475 write(12, "\35\275.C*\21\217\316\223@\220<)\26\7\16\374D\322\243\317\2111\322\335\27.\211,\205.\\"..., 240) = 240
+123475 write(12, "\365\220\375\344\323\362 }`y\351P\267?/\7\330\20\20\360\251\314Y\266<HW\330\35e\222\326"..., 240) = 240
+123475 write(12, "\316\251P\300+\244\321\321\304|\306\326\255\316\202\0\345\353?\f\6\374B\"\35\215oh\374\236}\3"..., 240) = 240
+123475 write(12, "\"J/\371\247\362\356\37<\252\304\370fm\347\346E\341\331\25'\3\265\27\323\325\2760\2544\225q"..., 240) = 240
+123475 write(12, "7)\337\376! \340\323\266\212X\337D.\317\3255u\26\31N\203P6\317&\253U\367\250\347\210"..., 240) = 240
+123475 write(12, "\326y\226\220\335; \232f\202\243'\262\177\35:B\217\377\300\203\344\271N\222\374\343\21\266\264{7"..., 240) = 240
+123475 write(12, "\232\272\16v\10\2010\266[\273\334>\302\236\0r\215\360\307j\200%VS\336\231FV\16\17\16X"..., 240) = 240
+123475 write(12, "\233\222\300\217Z7\270\37L{\17.\244K\376+\273\252\0\340\v\27={\253\v\351\222U\335\204-"..., 240) = 240
+123475 write(12, "eK\275\305|XEJ\311r\2162%\vkL\313\354\274\254\372\207?\271\345\v\177\3779\372\205\213"..., 240) = 240
+123475 write(12, "8%\363D!\2317Z\237\30VaZ1\257\23\214\4\336\241h\f6N\321\274T\210\346\6\262\307"..., 240) = 240
+123475 write(12, "\257(!\203\215{<9F/L\32T\216\1\6>\242t\f6\356\221e&\235k\0356\322\24l"..., 240) = 240
+123475 write(12, "\334\303zL:\256\213#\4\266\25c|Q\320\300K\24\217\301\306=\340\307\304s\vy\207?\335\312"..., 240) = 240
+123475 write(12, "\356\342\232]\336\342:o\230q\371M\223\23\366\213\304\206\344U_&\236\237\7O\220{\2035\304}"..., 240) = 240
+123475 write(12, "\362k\6#\201w\250\7\20358V\311\262'8\367:\353\222g\306\201\3?Q\31\6kp\324\222"..., 240) = 240
+123475 write(12, "\301\32\234\355`\263_\16\33\260\30}\312\36C\0\6x\204\0320X\203}\4\246\1\347U\21\372\254"..., 240) = 240
+123475 write(12, "\2540P\7\246\2177=\333\225|\331~\261\302B\232\366\323\220<t\25\0\360\245|\17\300U\262\205"..., 240) = 240
+123475 write(12, "\220\335\6\330\345\306@\377\300\376\350\233\205\264\247\30\367\360\3738\370q\16\307m/gVq\362I\371"..., 240) = 240
+123475 write(12, "\220rP3\34\n\374C\266\343\276\261\267\7\267\303\245\301\3150\30\360\vY\216\312r\231\311\335u\314"..., 240) = 240
+123475 write(12, "Vg\367T\373p<?\17\236 \257\361[]\214\327?q\331\0\327S\356\276\361\5\0_\220\331\370"..., 240) = 240
+123475 write(12, "\361\3310\276\354\264-C\223\267\331\37\2\374A~\233\233\345\370\212}:\326\336{{\375t~!,"..., 240) = 240
+123475 write(12, "\3125\235\335\210\324\223x\324?g\237\355f\310\302\235\v\351\252\222\367P \360\355\302*\351\363\v)"..., 240) = 240
+123475 write(12, "\225\223\2746\274\203UR3\313I\365l\20\362te\246\254\225\301\305.\263\236\365l\361wi\266\\"..., 240) = 240
+123475 write(12, "\25B\326\31\271\25\367o\345\177\201\30v\270\247\214a\246\346\242\25\343\363\326\203\232\377\377\264\237\356O"..., 240) = 240
+123475 write(12, "N\321g\t!\237`7\32\372\247\237$\\\357S\331\372;Y\304N\235\235ae\253~\16\250\221\306"..., 240) = 240
+123475 write(12, "\255\335l\251X\305\345\261\312\20\20\360\t\203\205\300\20\6\v\215Q\f\26\202\215h\320\222\5\213\33\354"..., 240) = 240
+123475 write(12, "\336\356^\345\25\201#\10\5\274\302p\301\33\206\v\235Q\f\27\202\215 \\\4.\363\222\373(! "..., 240) = 240
+123475 write(12, "\30\305\260!X\363-\f.l\270d\353R\357\\\363\374<x\202!\2027\f\21:\243\30\"\4\33"..., 240) = 240
+123475 write(12, "$\357\f\255\360\212FHDL\360\30C\211\300\37\206\22\215Q\f%\202\215h\2326\264+\243I%"..., 240) = 240
+123475 write(12, "\225\224\5\217;\310\276\300\372\256h\203\304\203\4\1771\220\10\354a \321\30\305@\"\330\210\362\223\206"..., 240) = 240
+123475 write(12, "\33\6\7\235Q\f\16\202\215hI8\v\16\257&7;\326oE#\302\37\2\374\301@!\260\203\201"..., 240) = 240
+123475 write(12, "d\350\214b\310\20lD'\270\262\220\341r\0\243T\325\25M\216(h\340%\206\17\2013\f\37\32"..., 240) = 240
+123475 write(12, "\303\260\301\33\206\r\235Q\f\33\202\215(9\17\v\33.g\305+*{\320Y\361F<\360\24C\210"..., 240) = 240
+123475 write(12, "\252Ri\345\357\265\222L.\372\32\20\257\240//\203\354\313\262\00251ac\\Z\370\344/\355\223"..., 240) = 240
+123475 write(12, "$\220\4\10\3344\217\6\37\241\33\351\232\253{\311\325\225\2610\345B\223\226\264+\253\253\253+\213\244"..., 240) = 240
+123475 write(12, "v\331N\f\221\330\302\0c\252\335i\3\304\224qF\344J/\343\360\200\304\25\362\217\251\212G\362w"..., 240) = 240
+123475 write(12, ":\277\351\231\364\250[\260\362{\233\255\5:)@\342\n\371\307\264>\247\345\217\331v\305\276\357?a"..., 240) = 240
+123475 write(12, "\213\324\2607\334\317\364=\376\261\234\372t\207\206\244\377_\3271\246:.\312\177\267\206~\335\232}\375"..., 240) = 240
+123475 write(12, "\234\377\354\23\231\377\330\6\22\300\322\3\10\3578\217o\322;y\33\253\356u\376\35*,\275\231U4"..., 240) = 240
+123475 write(12, "\363\370\246\353\323\332G\373\374\237\351\340UO{N\244\36S\17(\274\344<\276\351J\265\320\275[\374"..., 240) = 240
+123475 write(12, "=\244p\223\363\370\246\253\2012\363#\333HBxz \341!\347\361M\327\t\265\207\"\366h\324u"..., 240) = 240
+123475 write(12, "\302@m5\220\321\301\360z\2657I\361\321\253\225\10\32\261\204}Zk\237\242\215\341M\3765\27N"..., 240) = 240
+123475 write(12, "\253\251\214\26\210\22s'\231\205\20W#DX\251\265V*\372 \356\367\177\314\253Rv\246\230-\t"..., 240) = 240
+123475 write(12, "\336\305m\375\360i\243(\214K\314a\251\266Z\312h\244(0g\262\335$\7I|a\244\326\32\251"..., 240) = 240
+123475 write(12, "U\36\7f\3446Wc\f\216xo\316am\305\310\377\270\371\3712\343A\374D\345H\251\265\257d"..., 240) = 240
+123475 write(12, "\367\36\234\361\374\266\2744\30\342\205\274\201\274Q\16\344\215<Z\2207\214\326\376\253nP\273\243Ox"..., 240) = 240
+123475 write(12, "\245\34\310+y\264 \257t\215\274\262K\355\211N\0L6\221\0#\216\310!\310!\345@\16\311\243"..., 240) = 240
+123475 write(12, "Z\220K\272F.\211\350\223\306?\312\227\6C\274\2207\2207\312\201\274\221G\v\362\206~\202O\367"..., 240) = 240
+123475 write(12, "\v\362K9\220_\362hA~\351\32\371%\371N\250\242\335\253(*\261FVAV)\7\262J\36"..., 240) = 240
+123475 write(12, "r \273\344\321\202\354\3225\262K\362S\205V#Y!<b\212L\202LR\16d\222<Z\220I"..., 240) = 240
+123475 write(12, "\36\345@\366\310\243\5\331\243kd\217\255\352\372\320s\376\360\354\261S\363\275\245R\342H\1!N\310"..., 240) = 240
+123475 write(12, "\321\5\261t\372\363\257\2\26\304$\306\310(\310(\345@F\311\243\5\31E\277\tXg\224\210.\210"..., 240) = 240
+123475 write(12, "\260MO\344 \211/\362\t\362I9\220O\362hA>\321\35Pt>\371\233\352v\221\223\237\231\251"..., 240) = 240
+123475 write(12, "\315\4\fb\364\206\\\231\331\301\7\324\305j \316t\2658SJ\335\350\376\252o\34\236\232;Wv"..., 240) = 240
+123475 write(12, "6\2516\333\263Of\16f;L\2\2148\302\\\23k\256\307ss}\227\332\33\357\7\346\2015\21"..., 240) = 240
+123475 write(12, "\317\303V\270\202-\367K\202\22g\230mR\315F5\177\251;P\253\360/\5H\\a\262I5\331"..., 240) = 240
+123475 write(12, "\304\25&\233X\223\345\357\357\213\332\222S\367\2?1Db\v\233M\254\315\362W0u\217\251[\323"..., 240) = 240
+123475 write(12, "\215E\fa\215F/%\332\32o\367/\370\332r&v\4\255\1$\2560Ic&)Z-\276\303"..., 240) = 240
+123475 write(12, "\306\\_\3256\371V\377\366\203\25\242\246t4\254\205$\2760J\243\225Vm\224w\373?\272X\241"..., 240) = 240
+123475 write(12, "\222\320\221\255\6\220\270\302$\215\26\304\264Ib\226\364\305:\252\325!\22[\330\244\321R\231\266\311\225"..., 240) = 240
+123475 write(12, "\27\237=\237\251\316\365O\\\230\312\236R\323\333.\333\256F\317\317\322\331s\271\331\232\217\215\372\6\203"..., 240) = 240
+123475 write(12, "\335\23\347\263\357\351^\373\230Z\311\316X\237xulpE\351O\\\310\30e\351T\265Q\334\377>"..., 240) = 240
+123475 write(12, "{\356i\245\324=+Y\246T\366\5\366\203\365\342\365\277T\245x\225\16\334U\tj\224\307:\377Q"..., 240) = 240
+123475 write(12, "\221\211\272\371\255\256\v\205O\203\34o\34L\207\"~\220\223\211\272\n\21\355\220\215\270]\251{G\240"..., 240) = 240
+123475 write(12, "b\4\1\231\250\253\360j\1\237\360\177Rk0\370\354\\5\5\2048AB&\352f\247Z\302\360U"..., 240) = 240
+123475 write(12, "g\273>\274\363\254Z\223=U\375~\244U}w\274\377U\353\320A\3757\324\214\3\243\336%\367-"..., 240) = 240
+123475 write(12, "\254\224\376\220z\3611\223\362:\365\256\242R\372fk\10\0071\223e\331T6\225\251\313\\_\237*"..., 240) = 240
+123475 write(12, "~Z\233\2B\234\240`H\230]J\203\347=\216&\245\311H\304\16Z\206\204\331\2424\370\316\244\256"..., 240) = 240
+123475 write(12, "L\3003U4\364\354\3144\1\203\30A\277\2200{\217\6\257jV\267\36M\5\"nP2$\314"..., 240) = 240
+123475 write(12, "\251\"V\35;\365\221\245\376\340\f-P\367o\326\205\331\22\262\23R\262%\365\222^\33fc\20#"..., 240) = 240
+123475 write(12, ";v\374k\377-/\245\261e\326\rR\201\210\33T\32\206\331\211\343\307\375\233\241\224\6\227]\7H"..., 240) = 240
+123475 write(12, "\354\300\20\270\243\310\226%\356p\342\1E\206avV\370G\376\373k\373C\312\314\27\"\217'&\320"..., 240) = 240
+123475 write(12, "o\276w\2727\337;\301<S\233\2B\234\336\230\253sb\370\t\375\314t\315s\325S\203\377\257\253"..., 240) = 240
+123475 write(12, "=\260*\204\t\30\304\10^\232X/\31u\315\200\7\276\17\236\356-\234\350-1U\315x\10=T"..., 240) = 240
+123475 write(12, "y\237\320\356[\3747\7[R\246\3555v\302\21Ox\243\211\231\306F\221{\223\370]\315\225P\304"..., 240) = 240
+123475 write(12, "L\300 FpASsK\355\202U\1\217\\\17\24\344\236\213L\1!N\360A\263\331`M\300\263"..., 240) = 240
+123475 write(12, "\222\201#\236\33so\34\357\377pap\200n}\346~\323C\347\317\372j\314d\2332\245\236dG"..., 240) = 240
+123475 write(12, "5\226\376\22\320[<ck\275\377\217\377V\r[\243\350>\200\225P\372+@m\361\34\256\325\376+"..., 240) = 240
+123475 write(12, "\254\204\376q>\250\372\213\301\3\34259\241\353\276@5\326\2573\34\224\227\252\316i\345_\362\337U"..., 240) = 240
+123475 write(12, "W\316\206]\30\202\2279E{\205y\200\352\257\5\7\210WXd\256\367\t]\300\334x\372\313@w"..., 240) = 240
+123475 write(12, "\223\16\311;\321t\337\345\277\314\246\25\346\353\373) \304\t^qE\203^)\372\331t\337\247vE"..., 240) = 240
+123475 write(12, "\332?\301\325\277\232~N\"h\304\22\356qE\323\265c\355\236\275\376\233\3228\275\371\331\216\34$\361"..., 240) = 240
+123475 write(12, "T \342\6\317\270\242\351\354BOb\207\337;\327tW\23A#\226p\217+\232^\21\327\356\t\336"..., 240) = 240
+123475 write(12, "\24\2555\220\321\24\360\226\300; Kt\373\312%\5H\\a%\212\326Z\311\350\24xS\340s\t"..., 240) = 240
+123475 write(12, "\352\16\1\365\371\31\22482\261\207\271(\332k\256\242\267\335w\251;\245,`\0273\345\241\211?\354"..., 240) = 240
+123475 write(12, "\204\224\4%\316\260\24Ek-et\210\214\335\262\353n\24)\210I\214a(\212\366\32\252h\33\31"..., 240) = 240
+123475 write(12, "~\342o\327~\342\341\332O\254\324~\342\221\332O<Z\373\211\277S\373\211\357\257\375\304\17\324~\342"..., 240) = 240
+123475 write(12, "\271\223\5\274\20\\\313\307\224\377\343!\210\17,\340:|L\26(6\"w\2J\23Z\277\264\362\206"..., 240) = 240
+123475 write(12, "\205~>\240\305DI \276\34/\1F\34!\271\260\344\371\353Q:\177\31\360v\177[%\273\344*"..., 240) = 240
+123475 write(12, "\f\34\361\204\354c\250\272i\331\377:\340\355\224\266Nl\351M\n\220\270B\3721\324\337$f\365V"..., 240) = 240
+123475 write(12, "\355\"h\304\22\242\217\241\320\242E\377j\300\v\325,\231\330\33s!<b\n\341\307p\227.0\223"..., 240) = 240
+123475 write(12, "\17\0274\f\ns\213\306\257\0054\337\37\f?[\fJB\321\3\6\25\203\302\334\211\21qoa\335"..., 240) = 240
+123475 write(12, "\374c\226i\265K/\252\373y\327\213\352\372\323\201U\307{\vs\363\275\345\205\205\223\307O\345\236X"..., 240) = 240
+123475 write(12, "\277\3634}\205\247\363\243u\342pL\352\6\3\363\23\306_\235a?\370\264\3657\37\36\371\363\237e"..., 240) = 240
+123475 write(12, "m\232\231\321\237\377T63\374-\325\20\236\177*;\273\362\305,S\323\331\312\232\355\277\260^e\213"..., 240) = 240
+123475 write(12, "f\325\347\252u\356v\207\277\273\370\17\263L\275\363\373/R\2536]\264\201\246w\335\341\271\272\346_"..., 240) = 240
+123475 write(12, "\35_\376[%\237\247\301\20/\370\36\276oa>?\20\227\317\17\300\327\360\3650\3328\3?\209"..., 240) = 240
+123475 write(12, "\231\364c\356\375\241\237\371\370\356+\267\17\316\244[/\f\316\244\33b\316\244}\352}A\247Cy\6"..., 240) = 240
+123475 write(12, "jy\374\325\232\27u\177\307\325\333\214u&c\356x\10\342\303\272zz\242\\=\t\231\3735\356j"..., 240) = 240
+123475 write(12, "\351F\2561\263\v(qt5\10;,7\250\367\373\242P\301\305\36\225\275\334\344\250\6\201\373>\1"..., 210) = 210
+123475 write(12, "\0\0\377\377", 4)     = 4
+123475 write(12, "\341m\253\22\227K\32\0", 8) = 8
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", O_RDONLY|O_CLOEXEC) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 12
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/run/user/1000/.mutter-Xwaylandauth.YADLQ3", O_RDONLY|O_CLOEXEC) = 13
+123475 write(12, "l\0\v\0\0\0\22\0\20\0\0\0MIT-MAGIC-COOKIE-1\0\0"..., 48) = 48
+123488 write(12, "b\0\4\0\10\0\0\0XINERAMA", 16) = 16
+123483 write(12, "\214\5\1\0", 4)       = 4
+123488 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123483 write(12, "+\0\1\0", 4)          = 4
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", O_RDONLY|O_CLOEXEC) = 12
+123475 openat(AT_FDCWD, "/home/paulc", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.QMapShack", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.android", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.cache", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.config", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.dotnet", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.gnupg", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.gphoto", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.grass8", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.local", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.pki", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.ssh", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.thumbnails", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.vscode", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.vscode-shared", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.xtrkcad", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/.zoom", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Applications", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Desktop", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Documents", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Downloads", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Music", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/NAS", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Pictures", O_RDONLY|O_CLOEXEC) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/home/paulc/Public", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Templates", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/Videos", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/backup", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/dev", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/fast", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/go", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/goroot", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/imapsync", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/mnt", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/old", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/prg", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/snap", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/testdata", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/tmp", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/home/paulc/tshirts", O_RDONLY|O_CLOEXEC) = 11
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libGLX_mesa.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgallium-25.2.8-0ubuntu0.24.04.2.so", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdrm.so.2", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-glx.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-shm.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libexpat.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-dri3.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-present.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-xfixes.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libLLVM.so.20.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libzstd.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libsensors.so.5", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-randr.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxcb-sync.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxshmfence.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libelf.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdrm_intel.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/../lib/glibc-hwcaps/x86-64-v3/libffi.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/../lib/glibc-hwcaps/x86-64-v2/libffi.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/../lib/libffi.so.8", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libffi.so.8", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libedit.so.2", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libxml2.so.2", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpciaccess.so.0", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libtinfo.so.6", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.74", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicudata.so.74", O_RDONLY|O_CLOEXEC) = 11
+123475 openat(AT_FDCWD, "/usr/share/drirc.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-mesa-defaults.conf", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-radv-defaults.conf", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/etc/drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/usr/share/drirc.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-mesa-defaults.conf", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-radv-defaults.conf", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/etc/drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/sys/dev/char/226:128/device/vendor", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/sys/dev/char/226:128/device/device", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-mesa-defaults.conf", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-radv-defaults.conf", O_RDONLY) = 13
+123475 openat(AT_FDCWD, "/etc/drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/sys/dev/char/226:128/device/vendor", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/sys/dev/char/226:128/device/device", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/usr/share/drirc.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 14
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-mesa-defaults.conf", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-radv-defaults.conf", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/etc/drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/sys/dev/char/226:128/device/vendor", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/sys/dev/char/226:128/device/device", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/usr/share/drirc.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 14
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-mesa-defaults.conf", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/usr/share/drirc.d/00-radv-defaults.conf", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/etc/drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/home/paulc/.drirc", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/dev/dri", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 14
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/uevent", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/revision", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/vendor", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/device", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/subsystem_vendor", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/subsystem_device", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/uevent", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/revision", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/vendor", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/device", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/subsystem_vendor", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/sys/devices/pci0000:00/0000:00:02.0/subsystem_device", O_RDONLY) = 15
+123475 openat(AT_FDCWD, "/proc/meminfo", O_RDONLY) = 14
+123475 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/index", O_RDWR|O_CREAT|O_CLOEXEC, 0644) = 16
+123489 openat(AT_FDCWD, "/sys/devices/system/cpu/possible", O_RDONLY|O_CLOEXEC) = 16
+123489 openat(AT_FDCWD, "/sys/devices/system/cpu/cpu0/cpu_capacity", O_RDONLY) = -1 ENOENT (No such file or directory)
+123475 openat(AT_FDCWD, "/proc/sys/dev/i915/perf_stream_paranoid", O_RDONLY) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/2a/d8d13e70007fb318fffd0a5cb9becb83f6a50e", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/08/a4fe487ccda5be1a4c4990a9dce2c0b21af4c1", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/85/cd3a6ba07b9409c4581f0eb7783b3e6869ceb8", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/26/84022e3a821b4b04fbde986e3740663512c475", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/68/cf1d058def50ddd7dbf16f1371ea343edd8d15", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/09/1ddf12533d68afe267ce793f4028ff12378d48", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/18/767796450e443dc441feedea910c8e25f316b2", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/4e/f331f75cc2af045e036775c1170f5501bfdac5", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/65/3d4065551d61de5d52138e18f76906ed8b1495", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/ac/6c136c2d21476f2793e5b0da20d0765f607259", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/4e/f331f75cc2af045e036775c1170f5501bfdac5", O_RDONLY|O_CLOEXEC) = 16
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/eb/4fd6fcf14aafe29d330093907cc411b5b89a36", O_RDONLY|O_CLOEXEC) = 16
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/2a/d8d13e70007fb318fffd0a5cb9becb83f6a50e", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/08/a4fe487ccda5be1a4c4990a9dce2c0b21af4c1", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/85/cd3a6ba07b9409c4581f0eb7783b3e6869ceb8", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/26/84022e3a821b4b04fbde986e3740663512c475", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/68/cf1d058def50ddd7dbf16f1371ea343edd8d15", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/09/1ddf12533d68afe267ce793f4028ff12378d48", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/18/767796450e443dc441feedea910c8e25f316b2", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/4e/f331f75cc2af045e036775c1170f5501bfdac5", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/65/3d4065551d61de5d52138e18f76906ed8b1495", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/ac/6c136c2d21476f2793e5b0da20d0765f607259", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/4e/f331f75cc2af045e036775c1170f5501bfdac5", O_RDONLY|O_CLOEXEC) = 12
+123481 openat(AT_FDCWD, "/home/paulc/.cache/mesa_shader_cache/eb/4fd6fcf14aafe29d330093907cc411b5b89a36", O_RDONLY|O_CLOEXEC) = 12
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123487 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123507 +++ exited with 0 +++
+123506 +++ exited with 0 +++
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123482 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123486 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123488 write(5, "\1\0\0\0\0\0\0\0", 8)  = 8
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123481 +++ exited with 0 +++
+123492 +++ exited with 0 +++
+123491 +++ exited with 0 +++
+123496 +++ exited with 0 +++
+123495 +++ exited with 0 +++
+123490 +++ exited with 0 +++
+123489 +++ exited with 0 +++
+123475 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=123475, si_uid=1000} ---
+123497 +++ exited with 0 +++
+123487 +++ exited with 0 +++
+123486 +++ exited with 0 +++
+123484 +++ exited with 0 +++
+123483 +++ exited with 0 +++
+123480 +++ exited with 0 +++
+123479 +++ exited with 0 +++
+123488 +++ exited with 0 +++
+123482 +++ exited with 0 +++
+123475 +++ exited with 0 +++

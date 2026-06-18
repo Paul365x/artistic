@@ -2,11 +2,13 @@
 package preferences
 
 import (
+	"os"
+	"sort"
+
 	"github.com/artistic/internal/color_sets"
 	"github.com/artistic/internal/state"
 
-	"os"
-	"sort"
+	"time"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
@@ -43,21 +45,25 @@ type Pref_single struct {
 
 // Init_prefs sets up the prefs map and other globals
 func Init_prefs() {
-
+log("init_prefs")
 	state.Prefs = make(map[string]interface{})
+log("\tset prefs")
 	color_sets.Build_sets()
-
+log("\tset coloursets")
 	m := &Pref_multi{}
+log("\tcall pop personality")
 	m.Populate = Populate_personality
 	m.Init()
 	state.Prefs["personality"] = m
 
 	m = &Pref_multi{}
+log("\tcall pop color")
 	m.Populate = Populate_color
 	m.Init()
 	state.Prefs["color_set"] = m
 
 	s := &Pref_single{}
+log("\tcall pop root")
 	s.Populate = Populate_root
 	s.Init()
 	state.Prefs["root"] = s
@@ -65,6 +71,7 @@ func Init_prefs() {
 	state.CurrentTreeid = "file://" + state.CWD
 
 	s = &Pref_single{}
+log("\tcall pop scr")
 	s.Populate = Populate_scr
 	s.Init()
 	state.Prefs["scr_size"] = s
@@ -116,7 +123,7 @@ func Init_prefs() {
 
 // This Init creates a single entry element FormItem
 func (p *Pref_single) Init() {
-
+log("\tinit_single")
 	var key string
 	var val string
 	s := p.Populate()
@@ -144,7 +151,7 @@ func (p *Pref_single) Init() {
 
 // This Init creates a select/combo box FormItem
 func (p *Pref_multi) Init() {
-
+log("\tinit_multi")
 	var key string
 	var val string
 	s := p.Populate()
@@ -211,6 +218,7 @@ func save_button() {
 // Populate_personality returns data to create a personality FormItem
 // returns a splice of strings: Label, hint, key to prefs, default value
 func Populate_personality() []string {
+log("\tpop personality")
 	p := my_string_with_fallback("personality", state.Default_personality)
 	c := []string{"Personality",
 		"This indicates what use the app is configured for",
@@ -224,10 +232,12 @@ func Populate_personality() []string {
 // Populate_root returns data to create a root path FormItem
 // returns a splice of strings: Label, hint, key to prefs, default value
 func Populate_root() []string {
+log("\tpop root")
 	hd, err := os.UserHomeDir()
 	if err != nil {
 		hd = "."
 	}
+//hd = "/home/paulc/tshirts"
 	root := my_string_with_fallback("root", hd)
 	c := []string{"Artwork Root",
 		"This is the top of the folder tree that contains your artwork",
@@ -240,6 +250,7 @@ func Populate_root() []string {
 // Populate_color returns data to create a multi line FormItem for color sets
 // returns a splice of strings: Label, hint, key to prefs, list of color_sets
 func Populate_color() []string {
+log("\tpop colour")
 	var c []string
 	var result []string
 	for v := range color_sets.Color_sets {
@@ -257,6 +268,7 @@ func Populate_color() []string {
 // Populate_scr returns data to create a screen size FormItem
 // returns a splice of strings: Label, hint, key to prefs, default value
 func Populate_scr() []string {
+log("\tpop scr")
 	sz := my_string_with_fallback("scr_size", state.Default_size)
 	c := []string{"Window Size (%)",
 		"This is the size of the window on startup in percent of the screen",
@@ -269,6 +281,7 @@ func Populate_scr() []string {
 // Populate_tree returns data to create a tree pane size FormItem
 // returns a splice of strings: Label, hint, key to prefs, default value
 func Populate_tree() []string {
+
 	sz := my_string_with_fallback("tree_size", state.Default_tree)
 	c := []string{"File Pane Size (%)",
 		"This is the size of the File Pane on startup in percent of the screen",
@@ -296,8 +309,10 @@ func Get_value(key string) string {
 
 // my_string_with_fallback is a nasty hack that overcomes the ios limitation on remove value
 func my_string_with_fallback(key string, value string) string {
-	stored := fyne.CurrentApp().Preferences().StringWithFallback(key, value)
+	stored := fyne.CurrentApp().Preferences().String(key)
+	log("got: " + stored + " " + key + " " + value)
 	if stored == "" {
+
 		stored = value
 	}
 	return stored
@@ -328,5 +343,26 @@ func SaveAll() {
 		value = Get_value(key)
 		pref.SetString(key, value)
 	}
+	time.Sleep(time.Millisecond * 200)
 	Init_prefs()
+}
+
+func log( str string) {			
+	//var fi os.FileInfo = nil
+	var f *os.File = nil
+	var err error
+
+	logFile := "/home/paulc/go/src/github.com/artistic/log.txt"
+	f, err = os.OpenFile(logFile,  os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+
+		if err != nil {
+			f, err = os.Create(logFile)
+
+		}
+	_, err = f.WriteString(str + "\n")
+
+	err = f.Sync()
+
+	err = f.Close()
+
 }

@@ -18,6 +18,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/storage"
 
@@ -105,8 +106,12 @@ func file_new() {
 	state.CurrentFile = nil
 	state.CWD = state.Prefs["root"].(*preferences.Pref_single).Value
 	state.CurrentTreeid = "file://" + state.CWD
-	Pod(*state.Data.(*state.Pod_type))
-	state.Window.Content().Refresh()
+	tmp := Pod(*state.Data.(*state.Pod_type))
+	var content *container.Split
+	content = state.Window.Content().(*container.Split)
+	content.Trailing = tmp.Content
+	notify.Notify(string("Loaded: Empty"), "aok", state.Error)
+	content.Refresh()
 } // file_new()
 
 // file_open is the callback for the file open menu item
@@ -125,9 +130,13 @@ func file_open() {
 			state.CurrentFile = file
 			state.CWD, _ = filepath.Split(uc.URI().Path())
 			state.CurrentTreeid = "file://" + state.CWD
-			Pod(*state.Data.(*state.Pod_type))
+			tmp := Pod(*state.Data.(*state.Pod_type))
+			var content *container.Split
+			content = state.Window.Content().(*container.Split)
+			content.Trailing = tmp.Content
 			notify.Notify(string("Loaded: ")+file.Name(), "aok", state.Error)
-			state.Window.Content().Refresh()
+			//state.Window.Content().Refresh()
+			content.Refresh()
 		}
 	},
 		state.Window)
