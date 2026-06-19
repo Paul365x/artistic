@@ -54,7 +54,7 @@ func main() {
 		pod := state.Empty_pod()
 		state.Data = &pod
 		state.Error = notify.NewNotify("Started with Empty Artwork", "aok")
-		tmp := gui.Pod(pod)
+		tmp := gui.Pod(&pod)
 		content := tmp.Content
 		rect := tmp.Rect
 		view := tmp.View

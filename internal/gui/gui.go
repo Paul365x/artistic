@@ -32,8 +32,7 @@ type PodRet struct {
 }
 
 // Pod displays the Pod struct giving an interface to load, edit and save data
-func Pod(pod state.Pod_type) *PodRet {
-
+func Pod(pod *state.Pod_type) *PodRet {
 	// create the lefthand interior
 	left_pane := container.NewVSplit(
 		wrap_about(&pod.Metadata.About),

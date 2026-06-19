@@ -107,7 +107,7 @@ func file_new() {
 	state.CurrentFile = nil
 	state.CWD = state.Prefs["root"].(*preferences.Pref_single).Value
 	state.CurrentTreeid = "file://" + state.CWD
-	tmp := Pod(*state.Data.(*state.Pod_type))
+	tmp := Pod(state.Data.(*state.Pod_type))
 	var content *container.Split
 	content = state.Window.Content().(*container.Split)
 	content.Trailing = tmp.Content
@@ -131,7 +131,7 @@ func file_open() {
 			state.CurrentFile = file
 			state.CWD, _ = filepath.Split(uc.URI().Path())
 			state.CurrentTreeid = "file://" + state.CWD
-			tmp := Pod(*state.Data.(*state.Pod_type))
+			tmp := Pod(state.Data.(*state.Pod_type))
 			var content *container.Split
 			content = state.Window.Content().(*container.Split)
 			content.Trailing = tmp.Content

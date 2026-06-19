@@ -388,7 +388,7 @@ func load_file(u string) {
 	
 	
 	state.CurrentTreeid = "file://" + state.CWD
-	tmp := Pod(*state.Data.(*state.Pod_type))
+	tmp := Pod(state.Data.(*state.Pod_type))
 	var content *container.Split
 	content = state.Window.Content().(*container.Split)
 	content.Trailing = tmp.Content
