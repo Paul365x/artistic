@@ -93,6 +93,7 @@ func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 			}
 			return false
 		})
+		entry.Input.SetText("")
 		entry.Data = append(entry.Data, str...)
 		entry.List.Refresh()
 		on_chg(entry.Data)
