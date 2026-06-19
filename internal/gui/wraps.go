@@ -220,7 +220,7 @@ func file_radio_callback(value string) {
 // wrap_files contains the file selector and other files
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
-	// set up the parent file name
+	// set up the parent file name 
 	parent_chg := func(value string) {
 		artwork.Parent = value
 		state.Dirty = true
@@ -283,7 +283,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 	)
 
 	return file_container
-}
+} // wrap_files()
 
 // need to create our own file filter for file tree since the standard doesn't also do dirs
 type FileDirFilter struct {
