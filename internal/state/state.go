@@ -126,8 +126,8 @@ func Empty_pod() Pod_type {
 
 // Serialise  parses and writes a meta file to disk
 func (p *Pod_type) Serialise(file_name string, root string) error {
-	str, _ := json.MarshalIndent(p, "", "    ")
-	err := os.WriteFile(file_name, str, 0644)
+	str, err := json.MarshalIndent(p, "", "    ")
+	err = os.WriteFile(file_name, str, 0644)
 	if err != nil {
 		notify.Notify(err.Error()+file_name,
 			"error", Error)

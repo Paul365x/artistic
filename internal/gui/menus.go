@@ -5,6 +5,7 @@ package gui
 import (
 	"log"
 	"path/filepath"
+	"strings"
 
 	"github.com/artistic/internal/color_sets"
 	"github.com/artistic/internal/notify"
@@ -173,7 +174,7 @@ func file_save() {
 		return
 	}
 	// serialise
-	err := state.Data.(*state.Pod_type).Serialise(state.CWD+state.CurrentFile.Name(),
+	err := state.Data.(*state.Pod_type).Serialise(state.CurrentFile.Path(),
 		state.Prefs["root"].(*preferences.Pref_single).Value)
 	if err != nil {
 		notify.Notify(err.Error()+state.CurrentFile.Name(), "error", state.Error)
@@ -187,8 +188,19 @@ func file_save_as() {
 	f := dialog.NewFileSave(func(uc fyne.URIWriteCloser, err error) {
 		if uc != nil {
 			file := uc.URI()
+			// add ext if missing
+			if file.Extension() == "" {
+				uc.Close()
+				correctURI, err := AddExtension(file, ".json")
+        		if err != nil {
+           			notify.Notify(string("failed to add JSON extension ")+state.CurrentFile.Name(), "error", state.Error)
+					return       
+				}
+				file = correctURI
+			}
 			state.CurrentFile = file
 			file_save()
+			notify.Notify(string("Saved ")+state.CurrentFile.Name(), "aok", state.Error)
 		}
 
 	}, state.Window)
@@ -206,7 +218,7 @@ func file_save_as() {
 	f.SetLocation(loc)
 	f.SetFilter(storage.NewExtensionFileFilter(state.FileMatch))
 	f.Show()
-	notify.Notify(string("Saved ")+state.CurrentFile.Name(), "aok", state.Error)
+	
 } // save_as()
 
 // about_prefs is the callback for the preferences menu item.
@@ -241,3 +253,22 @@ func about_about() {
 	fyne.CurrentApp().SetIcon(res)
 	x_dialog.ShowAboutWindow("Managing artistic works and their metadata.", links, fyne.CurrentApp())
 } // about_about()
+
+/*
+** Utility/helper
+*/
+func AddExtension(u fyne.URI, ext string) (fyne.URI, error) {
+	// Format extension to ensure it starts with a dot
+	if !strings.HasPrefix(ext, ".") {
+		ext = "." + ext
+	}
+
+	// If the URI already ends with this extension, return it as-is
+	if strings.HasSuffix(strings.ToLower(u.String()), strings.ToLower(ext)) {
+		return u, nil
+	}
+
+	// Append extension to the raw string and re-parse
+	newURIStr := u.String() + ext
+	return storage.ParseURI(newURIStr)
+}
