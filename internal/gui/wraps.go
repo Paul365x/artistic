@@ -220,8 +220,19 @@ func file_radio_callback(value string) {
 // wrap_files contains the file selector and other files
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
+	// need this in the parent_chg call back
+	var images []string
+	radio_cont := gizmo.Pick_Radio(images, "Enter Child File...", file_radio_callback)
+
 	// set up the parent file name widget - call back for changes to that field
 	parent_chg := func(value string) {
+		if len(value) > 0 {
+			radio_cont.Show()
+			radio_cont.Objects[0].Show()
+		} else {
+			radio_cont.Hide()
+			radio_cont.Objects[0].Hide()
+		}
 		artwork.Parent = value
 		state.Dirty = true
 		notify.Notify(string("Copied parent file"), "aok", state.Error)
@@ -245,8 +256,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 
 	// setup globals and locals required for Pick_Radio
 	Img = img
-	Instances = make(map[string]Disp_type)
-	var images []string
+	Instances = make(map[string]Disp_type)	
 
 	// setup the files
 	i := 0
@@ -263,7 +273,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 		i++
 	}
 
-	radio_cont := gizmo.Pick_Radio(images, "Enter Child File...", file_radio_callback)
+
 	file_radio := radio_cont.Objects[0]
 	radio_cont.Hide()
 	if artwork.Instances[0].Image != "" {

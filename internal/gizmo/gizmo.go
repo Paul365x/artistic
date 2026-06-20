@@ -10,13 +10,18 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/data/binding"
+	"fyne.io/fyne/v2/dialog"
+	"fyne.io/fyne/v2/storage"
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 
+	"os"
+	"path/filepath"
 	"slices"
 	"strings"
 
 	"github.com/artistic/internal/notify"
+	"github.com/artistic/internal/preferences"
 	"github.com/artistic/internal/state"
 
 	"golang.design/x/clipboard"
@@ -139,11 +144,28 @@ func Pick_Radio(s []string, placeholder string, f func(value string)) *fyne.Cont
 		notify.Notify(string("Copied files"), "aok", state.Error)
 	})
 
+	file_button := widget.NewButtonWithIcon("", theme.FileIcon(), func() {
+		d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
+		    if uc != nil {
+		    	path := uc.URI().Path()
+		        state.CWD = filepath.Dir(path)
+		    	selector.Text,_ = filepath.Rel(state.Prefs["root"].(*preferences.Pref_single).Value, path)
+		    }
+	    },	state.Window)
+	    df := NewDirFileFilter()
+	    d.SetFilter(df)
+	    pathURI := storage.NewFileURI(state.CWD)
+	    listURI, _ := storage.ListerForURI(pathURI)
+	    d.SetLocation(listURI)
+		d.Show()
+	})
+
 	// setup the layouts
 	buttons := container.NewHBox(
 		add_button,
 		del_button,
 		copy_button,
+		file_button,
 	)
 	select_bar := container.NewBorder(
 		nil, nil,
@@ -173,3 +195,30 @@ func Labeled_input(shadow_var *string, plc_holder string, display string) (bindi
 	)
 
 } // Labeled_input
+
+/*
+** file filters
+*/
+
+// DirFilter represents a file filter based on whether it is a directory,
+type DirFileFilter struct {
+	
+}
+
+// Matches returns true if a file URI has one of the filtered extensions.
+func (d *DirFileFilter) Matches(uri fyne.URI) bool {
+	path := uri.Path()
+	fileInfo, err := os.Stat(path)
+	if err != nil {
+		// this should never happen since it is a file picked from the dialog
+		return false
+	}
+	if fileInfo.IsDir() {
+		return false
+	}
+	return true
+}
+
+func NewDirFileFilter() storage.FileFilter {
+	return &DirFileFilter{}
+}
