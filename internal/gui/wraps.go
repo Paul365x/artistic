@@ -220,7 +220,7 @@ func file_radio_callback(value string) {
 // wrap_files contains the file selector and other files
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
-	// set up the parent file name 
+	// set up the parent file name widget - call back for changes to that field
 	parent_chg := func(value string) {
 		artwork.Parent = value
 		state.Dirty = true

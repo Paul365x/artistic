@@ -82,6 +82,7 @@ func NewPickBox(label string, plc string, on_chg func([]string)) *PickBox {
 		str := strings.Join(entry.Data, ",")
 		clipboard.Write(clipboard.FmtText, []byte(str))
 	}
+
 	// maybe add focus to add_b on change of input to handle typing then enter
 	add_b.OnTapped = func() {
 		str := strings.FieldsFunc(entry.Input.Text, func(r rune) bool {
