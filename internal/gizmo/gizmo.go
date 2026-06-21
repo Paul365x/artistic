@@ -110,6 +110,7 @@ func SliceIndex(limit int, predicate func(i int) bool) int {
 type PickRadio struct {
 	Sign *fyne.Container
 	Window fyne.Window
+	Rg *widget.RadioGroup
 	S []string
 	Root string
 	Cwd *string
@@ -125,26 +126,27 @@ func (p *PickRadio) Create () *fyne.Container {
 	selector := widget.NewEntry()
 	selector.SetPlaceHolder(p.Plc)
 
-	radio_group := widget.NewRadioGroup(p.S, p.F)
-	radio_group.OnChanged = func(s string) {
+	p.Rg = widget.NewRadioGroup(p.S, p.F)
+	p.Rg.OnChanged = func(s string) {
 		selector.SetText(s)
 		selector.Refresh()
 	}
 	// add and delete also need to change the instances slice
 	add_button := widget.NewButton("Add", func() {
-		radio_group.Append(selector.Text)
+		p.Rg.Append(selector.Text)
+		p.Rg.SetSelected(selector.Text)
 		p.S = append(p.S, selector.Text)
 	})
 
 	del_button := widget.NewButton("Del", func() {
 		sel_id := SliceIndex(len(p.S), func(i int) bool { return p.S[i] == selector.Text })
 		p.S = slices.Delete(p.S, sel_id, sel_id+1)
-		radio_group.Options = slices.Delete(radio_group.Options, sel_id, sel_id+1)
+		p.Rg.Options = slices.Delete(p.Rg.Options, sel_id, sel_id+1)
 		selector.SetText("")
 		selector.Refresh()
 		pick_shadow.Reload()
-		radio_group.Selected = ""
-		radio_group.Refresh()
+		p.Rg.Selected = ""
+		p.Rg.Refresh()
 	})
 
 	copy_button := widget.NewButtonWithIcon("", theme.ContentCopyIcon(), func() {
@@ -192,7 +194,7 @@ func (p *PickRadio) Create () *fyne.Container {
 	return container.NewBorder(
 		select_bar,
 		nil, nil, nil,
-		radio_group,
+		p.Rg,
 	)
 }
 

@@ -247,11 +247,11 @@ func file_radio_callback(value string) {
 func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Container {
 
 	// need this in the parent_chg call back
-	var images []string
 	pr := gizmo.PickRadio {
 			Sign :   state.Error,
 			Window : state.Window,
-	        S :      images,
+			Rg :     nil,
+	        S :      []string{},
 	        Root :   state.Prefs["root"].(*preferences.Pref_single).Value,
 			Cwd :    &state.CWD,     
 	        Plc :    "Enter Child File...",
@@ -267,7 +267,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 			radio_cont.Objects[0].Show()
 		} else {
 			radio_cont.Hide()
-			radio_cont.Objects[0].Hide()
+		//	radio_cont.Objects[0].Hide()
 		}
 		artwork.Parent = value
 		state.Dirty = true
@@ -298,7 +298,6 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 	)
 
 	// setup globals and locals required for Pick_Radio
-	Img = img
 	Instances = make(map[string]Disp_type)	
 
 	// setup the files
@@ -308,25 +307,25 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 		if file_name == "." {
 			continue
 		}
-		images = append(images, file_name)
+		pr.S = append(pr.S, file_name)
 		Instances[file_name] = Disp_type{
 			Instance: instance,
 			Index:    i,
 		}
+		pr.Rg.Append(file_name)
 		i++
 	}
 
 
 	file_radio := radio_cont.Objects[0]
+	//radio_cont.
 	radio_cont.Hide()
-	if artwork.Instances[0].Image != "" {
-
+	if artwork.Instances[0].Image != "" {		
 		radio_cont.Show()
 		file_radio.Show()
-		file_radio.(*widget.RadioGroup).SetSelected(filepath.Base(artwork.Instances[0].Image))
+		pr.Rg.SetSelected(filepath.Base(artwork.Instances[0].Image))
 		file_radio.Refresh()
 		radio_cont.Refresh()
-
 	}
 
 	file_container := container.NewBorder(
@@ -432,15 +431,9 @@ func load_file(u string) {
 	p.Unserialise(path)
 	var file_name string
 	state.CWD, file_name = filepath.Split(path)
-	if err != nil {
-				str := file_name
-				notify.Notify(err.Error()+str, "error", state.Error)
-				return
-			}
 	state.Data = &p
 	state.CurrentFile = storage.NewFileURI(path)
-	
-	
+		
 	state.CurrentTreeid = "file://" + state.CWD
 	tmp := Pod(state.Data.(*state.Pod_type))
 	var content *container.Split
