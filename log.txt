@@ -1948,3 +1948,445 @@ got: 100 scr_size 100
 	init_single
 got:  tree_size 12
 got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12
+init_prefs
+	set prefs
+	set coloursets
+	call pop personality
+	init_multi
+	pop personality
+got: POD personality POD
+got: POD personality POD
+	call pop color
+	init_multi
+	pop colour
+got: TEEPUBLIC color_set TEEPUBLIC
+got: TEEPUBLIC color_set TEEPUBLIC
+	call pop root
+	init_single
+	pop root
+got: /home/paulc/tshirts root /home/paulc
+got: /home/paulc/tshirts root /home/paulc/tshirts
+	call pop scr
+	init_single
+	pop scr
+got: 100 scr_size 100
+got: 100 scr_size 100
+	init_single
+got:  tree_size 12
+got:  tree_size 12

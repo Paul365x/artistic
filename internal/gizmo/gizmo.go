@@ -6,6 +6,8 @@
 package gizmo
 
 import (
+	"errors"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
@@ -15,14 +17,9 @@ import (
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 
-	"os"
 	"path/filepath"
 	"slices"
 	"strings"
-
-	"github.com/artistic/internal/notify"
-	"github.com/artistic/internal/preferences"
-	"github.com/artistic/internal/state"
 
 	"golang.design/x/clipboard"
 )
@@ -110,14 +107,25 @@ func SliceIndex(limit int, predicate func(i int) bool) int {
 }
 
 // Pick_Radio creates a selectable, addable, deletable radio_group of items
-func Pick_Radio(s []string, placeholder string, f func(value string)) *fyne.Container {
+type PickRadio struct {
+	Sign *fyne.Container
+	Window fyne.Window
+	S []string
+	Root string
+	Cwd *string
+	Plc string
+	Notify func(string, string, *fyne.Container) *fyne.Container
+	F func(string)
+}
+
+func (p *PickRadio) Create () *fyne.Container {
 
 	// setup the widgets and their bindings
-	pick_shadow := binding.BindStringList(&s)
+	pick_shadow := binding.BindStringList(&p.S)
 	selector := widget.NewEntry()
-	selector.SetPlaceHolder(placeholder)
+	selector.SetPlaceHolder(p.Plc)
 
-	radio_group := widget.NewRadioGroup(s, f)
+	radio_group := widget.NewRadioGroup(p.S, p.F)
 	radio_group.OnChanged = func(s string) {
 		selector.SetText(s)
 		selector.Refresh()
@@ -125,11 +133,12 @@ func Pick_Radio(s []string, placeholder string, f func(value string)) *fyne.Cont
 	// add and delete also need to change the instances slice
 	add_button := widget.NewButton("Add", func() {
 		radio_group.Append(selector.Text)
-		s = append(s, selector.Text)
+		p.S = append(p.S, selector.Text)
 	})
+
 	del_button := widget.NewButton("Del", func() {
-		sel_id := SliceIndex(len(s), func(i int) bool { return s[i] == selector.Text })
-		s = slices.Delete(s, sel_id, sel_id+1)
+		sel_id := SliceIndex(len(p.S), func(i int) bool { return p.S[i] == selector.Text })
+		p.S = slices.Delete(p.S, sel_id, sel_id+1)
 		radio_group.Options = slices.Delete(radio_group.Options, sel_id, sel_id+1)
 		selector.SetText("")
 		selector.Refresh()
@@ -139,22 +148,28 @@ func Pick_Radio(s []string, placeholder string, f func(value string)) *fyne.Cont
 	})
 
 	copy_button := widget.NewButtonWithIcon("", theme.ContentCopyIcon(), func() {
-		str := strings.Join(s, ",")
+		str := strings.Join(p.S, ",")
 		clipboard.Write(clipboard.FmtText, []byte(str))
-		notify.Notify(string("Copied files"), "aok", state.Error)
+		p.Notify(string("Copied files"), "aok", p.Sign)
 	})
 
 	file_button := widget.NewButtonWithIcon("", theme.FileIcon(), func() {
 		d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
 		    if uc != nil {
 		    	path := uc.URI().Path()
-		        state.CWD = filepath.Dir(path)
-		    	selector.Text,_ = filepath.Rel(state.Prefs["root"].(*preferences.Pref_single).Value, path)
+				if *p.Cwd != p.Root && filepath.Dir(path) != *p.Cwd {
+					err = errors.ErrUnsupported
+					p.Notify(string("Different directory to the other files"),
+					"error",
+					p.Sign)
+					return
+				}
+				file,_ := filepath.Rel(p.Root, path)
+		    	selector.SetText(file)	
+				selector.Refresh()	
 		    }
-	    },	state.Window)
-	    df := NewDirFileFilter()
-	    d.SetFilter(df)
-	    pathURI := storage.NewFileURI(state.CWD)
+	    },	p.Window)
+	    pathURI := storage.NewFileURI(*p.Cwd)
 	    listURI, _ := storage.ListerForURI(pathURI)
 	    d.SetLocation(listURI)
 		d.Show()
@@ -195,30 +210,3 @@ func Labeled_input(shadow_var *string, plc_holder string, display string) (bindi
 	)
 
 } // Labeled_input
-
-/*
-** file filters
-*/
-
-// DirFilter represents a file filter based on whether it is a directory,
-type DirFileFilter struct {
-	
-}
-
-// Matches returns true if a file URI has one of the filtered extensions.
-func (d *DirFileFilter) Matches(uri fyne.URI) bool {
-	path := uri.Path()
-	fileInfo, err := os.Stat(path)
-	if err != nil {
-		// this should never happen since it is a file picked from the dialog
-		return false
-	}
-	if fileInfo.IsDir() {
-		return false
-	}
-	return true
-}
-
-func NewDirFileFilter() storage.FileFilter {
-	return &DirFileFilter{}
-}

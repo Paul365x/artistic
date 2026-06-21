@@ -42,10 +42,18 @@ func wrap_about(about *state.About_type) *fyne.Container {
 	}
 
 	// want the strings the same length so that they line up - 13 char
-	title := gizmo.NewEnhancedEntry("Title:\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
+	title := gizmo.NewEnhancedEntry(
+		"Title:\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
+		&state.CWD,
+		state.Prefs["root"].(*preferences.Pref_single).Value,
 		"Enter Title...",
 		false,
-		title_chg)
+		false,
+		title_chg,
+		notify.Notify,
+		state.Window,
+		state.Error,
+	)
 	title.Input.Text = about.Title
 
 	desc_chg := func(value string) {
@@ -53,10 +61,19 @@ func wrap_about(about *state.About_type) *fyne.Container {
 		p.Metadata.About.Description = value
 		state.Dirty = true
 	}
-	desc := gizmo.NewEnhancedEntry("Description:\u2007",
+
+	desc := gizmo.NewEnhancedEntry(
+		"Description:\u2007",
+		&state.CWD,
+		state.Prefs["root"].(*preferences.Pref_single).Value,
 		"Enter Description...",
 		true,
-		desc_chg)
+		false,
+		desc_chg,
+		notify.Notify,
+		state.Window,
+		state.Error,
+	)
 	desc.Input.Text = about.Description
 	desc.Input.Wrapping = fyne.TextWrapWord
 
@@ -83,10 +100,19 @@ func wrap_search(search *state.Search_type) *fyne.Container {
 		search.Maintag = value
 		state.Dirty = true
 	}
-	main := gizmo.NewEnhancedEntry("Main\u2007Tag:\u2007\u2007\u2007",
+
+	main := gizmo.NewEnhancedEntry(
+		"Main\u2007Tag:\u2007\u2007\u2007",
+		&state.CWD,
+		state.Prefs["root"].(*preferences.Pref_single).Value,
 		"Enter tag here...",
 		false,
-		main_chg)
+		false,
+		main_chg,
+		notify.Notify,
+		state.Window,
+		state.Error,
+	)
 	main.Input.SetText(search.Maintag)
 
 	// setup tags
@@ -222,7 +248,17 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 
 	// need this in the parent_chg call back
 	var images []string
-	radio_cont := gizmo.Pick_Radio(images, "Enter Child File...", file_radio_callback)
+	pr := gizmo.PickRadio {
+			Sign :   state.Error,
+			Window : state.Window,
+	        S :      images,
+	        Root :   state.Prefs["root"].(*preferences.Pref_single).Value,
+			Cwd :    &state.CWD,     
+	        Plc :    "Enter Child File...",
+			Notify : notify.Notify,
+	        F :      file_radio_callback,
+	}
+	radio_cont := pr.Create()
 
 	// set up the parent file name widget - call back for changes to that field
 	parent_chg := func(value string) {
@@ -240,9 +276,16 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 
 	// want the strings the same length so that they line up - 13 char
 	parent := gizmo.NewEnhancedEntry("Parent File: ",
+		&state.CWD,
+		state.Prefs["root"].(*preferences.Pref_single).Value,
 		"Enter Parent File...",
 		false,
-		parent_chg)
+		true,
+		parent_chg,
+		notify.Notify,
+		state.Window,
+		state.Error,
+	)
 	parent.Input.Text = artwork.Parent
 
 	title := gizmo.Title("Files:")
@@ -301,6 +344,7 @@ type FileDirFilter struct {
 }
 
 // NewFileDirFilter constructs the file extension struct
+// used for the tree
 func NewFileDirFilter(ext []string) storage.FileFilter {
 	return &FileDirFilter{Exts: ext}
 }
