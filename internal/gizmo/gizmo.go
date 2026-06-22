@@ -7,6 +7,8 @@ package gizmo
 
 import (
 	"errors"
+	"fmt"
+	"os"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/canvas"
@@ -116,7 +118,20 @@ type PickRadio struct {
 	Cwd *string
 	Plc string
 	Notify func(string, string, *fyne.Container) *fyne.Container
-	F func(string)
+	Change func(string)
+	Add func(string) bool
+	Del func(string) bool
+}
+
+func AddTrailingSlash(path string) string {
+	// Clean the path first to fix structural errors (optional)
+	cleaned := filepath.Clean(path)
+	
+	// Check if it already has the correct OS trailing separator
+	if !strings.HasSuffix(cleaned, string(os.PathSeparator)) {
+		return cleaned + string(os.PathSeparator)
+	}
+	return cleaned
 }
 
 func (p *PickRadio) Create () *fyne.Container {
@@ -126,19 +141,28 @@ func (p *PickRadio) Create () *fyne.Container {
 	selector := widget.NewEntry()
 	selector.SetPlaceHolder(p.Plc)
 
-	p.Rg = widget.NewRadioGroup(p.S, p.F)
+	p.Rg = widget.NewRadioGroup(p.S, p.Change)
 	p.Rg.OnChanged = func(s string) {
 		selector.SetText(s)
 		selector.Refresh()
 	}
+
 	// add and delete also need to change the instances slice
 	add_button := widget.NewButton("Add", func() {
-		p.Rg.Append(selector.Text)
-		p.Rg.SetSelected(selector.Text)
+		dispText := filepath.Base(selector.Text)
+		if !p.Add(selector.Text) {
+			return
+		}		
+		
+		p.Rg.Append(dispText)
+		p.Rg.SetSelected(dispText)
 		p.S = append(p.S, selector.Text)
 	})
 
 	del_button := widget.NewButton("Del", func() {
+		if !p.Del(selector.Text) {
+			return
+		}
 		sel_id := SliceIndex(len(p.S), func(i int) bool { return p.S[i] == selector.Text })
 		p.S = slices.Delete(p.S, sel_id, sel_id+1)
 		p.Rg.Options = slices.Delete(p.Rg.Options, sel_id, sel_id+1)
@@ -158,15 +182,19 @@ func (p *PickRadio) Create () *fyne.Container {
 	file_button := widget.NewButtonWithIcon("", theme.FileIcon(), func() {
 		d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
 		    if uc != nil {
-		    	path := uc.URI().Path()
-				if *p.Cwd != p.Root && filepath.Dir(path) != *p.Cwd {
+				filePath := uc.URI().Path()				
+				dirPath := AddTrailingSlash(filepath.Dir(filePath))
+				fmt.Println(dirPath)
+				fmt.Println(*p.Cwd)
+		    	
+				if *p.Cwd != p.Root && dirPath != *p.Cwd {
 					err = errors.ErrUnsupported
 					p.Notify(string("Different directory to the other files"),
 					"error",
 					p.Sign)
 					return
 				}
-				file,_ := filepath.Rel(p.Root, path)
+				file,_ := filepath.Rel(p.Root, filePath)
 		    	selector.SetText(file)	
 				selector.Refresh()	
 		    }

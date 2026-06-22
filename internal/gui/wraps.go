@@ -165,13 +165,13 @@ func wrap_image(rect *canvas.Rectangle, instance *state.Instance_type) (
 func wrap_colors(
 	rect *canvas.Rectangle,
 	selected string,
-	default_colors *map[string]color.Color,
+	Default_colorsets *map[string]color.Color,
 	instances []state.Instance_type,
 ) *fyne.Container {
 
 	// setup our colors
 	var color_state state.Internal_color
-	color_state.Colors = *default_colors
+	color_state.Colors = *Default_colorsets
 	color_state.Selected = selected
 	for k := range color_state.Colors {
 		color_state.Names = append(color_state.Names, k)
@@ -221,15 +221,15 @@ func wrap_colors(
 
 // art object instance store
 type Disp_type struct {
-	Instance state.Instance_type
+	Instance *state.Instance_type
 	Index    int
 }
 
-var Img *fyne.Container
-var Instances map[string]Disp_type
-var Instance_idx int
+var Img *fyne.Container              // container for image display
+var Instances map[string]Disp_type   // map file base name to a disp_type
+var Instance_idx int                 // index into state.Data.Artwork.Instances
 
-// file_radio_callback is the callback for the file radio button selector
+// file_radio_callback is the callback for the file radio button selection
 func file_radio_callback(value string) {
 	file_path := Instances[value].Instance.Image
 	if file_path != "" {
@@ -241,6 +241,57 @@ func file_radio_callback(value string) {
 		Img.Refresh()
 		Instance_idx = Instances[value].Index
 	}
+}
+
+// file_radio_add is the callback for the pickRadio add button
+// string is the relative path of a file
+func file_radio_add(value string ) bool {
+	base_name := filepath.Base(value)
+	if _, exists := Instances[base_name]; exists {
+		notify.Notify(string("This file has already been added"), "error", state.Error)
+		return false
+	}
+
+	// setup the instance
+	instance := state.Empty_instance()
+	instance.Image = value
+	instance.BG.Name = state.Default_color_name
+	instance.BG.BG = state.Default_color
+
+	// add to data and get the index
+	insts := state.Data.(*state.Pod_type).Artwork.Instances
+	idx := len(insts) 
+	insts = append(insts, instance)
+
+	// add to the Instances
+	d := Disp_type {
+		Instance: &instance,
+		Index: idx,
+	}
+	Instances[base_name] = d
+
+	return true
+}
+
+// file_radio_del is the callback for the pickRadio del button
+// string is the relative path of a file
+func file_radio_del(value string ) bool {
+	base_name := filepath.Base(value)
+	if _, exists := Instances[base_name]; !exists {
+		notify.Notify(string("This file hasn't been added"), "error", state.Error)
+		return false
+	}
+
+	// remove from the backing store
+	insts := state.Data.(*state.Pod_type).Artwork.Instances
+	idx := Instances[base_name].Index 
+	insts = append(insts[:idx], insts[idx+1:]...)
+
+	// remove from display store
+	delete(Instances, base_name)
+
+	return true
+
 }
 
 // wrap_files contains the file selector and other files
@@ -256,7 +307,9 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 			Cwd :    &state.CWD,     
 	        Plc :    "Enter Child File...",
 			Notify : notify.Notify,
-	        F :      file_radio_callback,
+	        Change : file_radio_callback,
+			Add :    file_radio_add,
+			Del :    file_radio_del,
 	}
 	radio_cont := pr.Create()
 
@@ -309,7 +362,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 		}
 		pr.S = append(pr.S, file_name)
 		Instances[file_name] = Disp_type{
-			Instance: instance,
+			Instance: &instance,
 			Index:    i,
 		}
 		pr.Rg.Append(file_name)
@@ -431,6 +484,7 @@ func load_file(u string) {
 	p.Unserialise(path)
 	var file_name string
 	state.CWD, file_name = filepath.Split(path)
+	state.CWD = gizmo.AddTrailingSlash(state.CWD)
 	state.Data = &p
 	state.CurrentFile = storage.NewFileURI(path)
 		

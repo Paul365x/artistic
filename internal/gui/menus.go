@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/artistic/internal/color_sets"
+	"github.com/artistic/internal/gizmo"
 	"github.com/artistic/internal/notify"
 	"github.com/artistic/internal/preferences"
 	"github.com/artistic/internal/search"
@@ -105,7 +106,7 @@ func file_new() {
 	pod := state.Empty_pod()
 	state.Data = &pod
 	state.CurrentFile = nil
-	state.CWD = state.Prefs["root"].(*preferences.Pref_single).Value
+	state.CWD = gizmo.AddTrailingSlash(state.Prefs["root"].(*preferences.Pref_single).Value)
 	state.CurrentTreeid = "file://" + state.CWD
 	tmp := Pod(state.Data.(*state.Pod_type))
 	var content *container.Split
@@ -130,6 +131,7 @@ func file_open() {
 			state.Data = &p
 			state.CurrentFile = file
 			state.CWD, _ = filepath.Split(uc.URI().Path())
+			state.CWD = gizmo.AddTrailingSlash(state.CWD)
 			state.CurrentTreeid = "file://" + state.CWD
 			tmp := Pod(state.Data.(*state.Pod_type))
 			var content *container.Split

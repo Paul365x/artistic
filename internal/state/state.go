@@ -22,16 +22,17 @@ var FileMatch []string = []string{".*", ".json", ".JSON"} // file extensions we 
 var CurrentFile fyne.URI = nil                            // file we are currently editing
 var CWD string                                            // current working directory
 var CurrentTreeid string
-var Error *fyne.Container // notification container
-// const AppId = "au.com.chubbpaul.artistic"                 // our app id
-var Data Data_type = nil               // our json data
-var Default_color string = "TEEPUBLIC" // default colorset
-var Default_personality string = "POD" // default personality
-var Default_size string = "100"        // default screen size
-var Default_tree string = "12"         // default tree pane size
-var Prefs_form *widget.Form            // form for preferences menu item
-var Dirty bool = false                 // flag as to whether we have changes
-var IndexName string = "/index.bleve"  // search index file name
+var Error *fyne.Container 								  // notification container
+var Data Data_type = nil                                  // our pod struct
+var Default_colorset string = "TEEPUBLIC" 				  // default colorset
+var Default_color color.Color = nil 		  // default color
+var Default_color_name string = "WhiteT"                  // name of default color
+var Default_personality string = "POD" 					  // default personality
+var Default_size string = "100"     				      // default screen size
+var Default_tree string = "12"    					      // default tree pane size
+var Prefs_form *widget.Form     				          // form for preferences menu item
+var Dirty bool = false       					          // flag as to whether we have changes
+var IndexName string = "/index.bleve"  					  // search index file name
 
 // Prefs map is exposed to the user via the preferences menu item
 var Prefs map[string]interface{}

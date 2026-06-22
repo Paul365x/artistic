@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/artistic/internal/color_sets"
 	"github.com/artistic/internal/gui"
 	"github.com/artistic/internal/notify"
 	"github.com/artistic/internal/preferences"
@@ -54,6 +55,8 @@ func main() {
 		pod := state.Empty_pod()
 		state.Data = &pod
 		state.Error = notify.NewNotify("Started with Empty Artwork", "aok")
+		state.Default_color = color_sets.WhiteT
+		state.Default_color_name = "WhiteT"
 		tmp := gui.Pod(&pod)
 		content := tmp.Content
 		rect := tmp.Rect

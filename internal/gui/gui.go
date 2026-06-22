@@ -47,7 +47,7 @@ func Pod(pod *state.Pod_type) *PodRet {
 	// setup the color picker
 	col := wrap_colors(
 		rect,
-		"White",
+		"WhiteT",
 		color_sets.Load_set(preferences.Get_value("color_set"))(),
 		pod.Artwork.Instances,
 	)

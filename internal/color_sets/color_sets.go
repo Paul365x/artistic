@@ -70,10 +70,10 @@ func Load_set(set_name string) func() *map[string]color.Color {
 		notify.Notify(string("Bad Color_set: ")+
 			set_name+
 			string(" defaulting to ")+
-			state.Default_color,
+			state.Default_colorset,
 			"error",
 			state.Error)
-		return Color_sets[state.Default_color]
+		return Color_sets[state.Default_colorset]
 	}
 }
 

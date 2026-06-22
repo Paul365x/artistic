@@ -6,6 +6,7 @@ import (
 	"sort"
 
 	"github.com/artistic/internal/color_sets"
+	"github.com/artistic/internal/gizmo"
 	"github.com/artistic/internal/state"
 
 	"time"
@@ -45,33 +46,26 @@ type Pref_single struct {
 
 // Init_prefs sets up the prefs map and other globals
 func Init_prefs() {
-log("init_prefs")
 	state.Prefs = make(map[string]interface{})
-log("\tset prefs")
 	color_sets.Build_sets()
-log("\tset coloursets")
 	m := &Pref_multi{}
-log("\tcall pop personality")
 	m.Populate = Populate_personality
 	m.Init()
 	state.Prefs["personality"] = m
 
 	m = &Pref_multi{}
-log("\tcall pop color")
 	m.Populate = Populate_color
 	m.Init()
 	state.Prefs["color_set"] = m
 
 	s := &Pref_single{}
-log("\tcall pop root")
 	s.Populate = Populate_root
 	s.Init()
 	state.Prefs["root"] = s
-	state.CWD = s.Value
+	state.CWD = gizmo.AddTrailingSlash(s.Value)
 	state.CurrentTreeid = "file://" + state.CWD
 
 	s = &Pref_single{}
-log("\tcall pop scr")
 	s.Populate = Populate_scr
 	s.Init()
 	state.Prefs["scr_size"] = s
@@ -256,7 +250,7 @@ log("\tpop colour")
 	for v := range color_sets.Color_sets {
 		c = append(c, v)
 	}
-	cs := my_string_with_fallback("color_set", state.Default_color)
+	cs := my_string_with_fallback("color_set", state.Default_colorset)
 	result = append(result, string("Color Sets: "),
 		string("This is the default color set in use"),
 		string("color_set"),
