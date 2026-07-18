@@ -158,6 +158,7 @@ func wrap_image(rect *canvas.Rectangle, instance *state.Instance_type) (
 	title := gizmo.Title("Artwork")
 	img_stack := container.NewStack(rect, img_border)
 	img_main := container.NewBorder(title, nil, nil, nil, img_stack)
+	Img = img_stack
 	return img_border, img_main
 } // wrap_image()
 
@@ -233,11 +234,12 @@ var Instance_idx int                 // index into state.Data.Artwork.Instances
 func file_radio_callback(value string) {
 	file_path := Instances[value].Instance.Image
 	if file_path != "" {
-		thb := get_thumb(preferences.Get_value("root") + file_path)
+		rt := filepath.Join(preferences.Get_value("root"), file_path)
+		thb := get_thumb(rt)
 		new_img := canvas.NewImageFromFile(thb)
 		new_img.FillMode = canvas.ImageFillOriginal
-		Img.RemoveAll()
-		Img.Add(new_img)
+		//Img.Objects[1].RemoveAll()
+		Img.Objects[1] = new_img
 		Img.Refresh()
 		Instance_idx = Instances[value].Index
 	}
@@ -380,7 +382,9 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 		file_radio.Refresh()
 		radio_cont.Refresh()
 	}
-
+	if parent.Input.Text != "" {
+		radio_cont.Show()
+	}
 	file_container := container.NewBorder(
 		row,
 		nil, nil, nil,

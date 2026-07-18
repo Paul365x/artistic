@@ -117,15 +117,17 @@ func (e *EnhancedEntry) CreateRenderer() fyne.WidgetRenderer {
 func (e *EnhancedEntry) fileHandler() {
 	d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
 		if uc != nil {
-			path := uc.URI().Path()
-			if *e.cwd != e.root && filepath.Dir(path) != *e.cwd {
+			path := filepath.Clean(uc.URI().Path())
+			cwd := filepath.Clean(*e.cwd)
+			rt := filepath.Clean(e.root)
+			if cwd != rt && path != cwd {
 					err = errors.ErrUnsupported
 					e.notify(string("Different directory to the other files"),
 					"error",
 					e.sign)
 					return
 			}
-			e.Input.Text,_ = filepath.Rel(e.root, path)
+			e.Input.Text,_ = filepath.Rel(rt, path)
 			e.Input.OnChanged(uc.URI().Path())
 			e.Input.Refresh()
 			*e.cwd = filepath.Dir(path)

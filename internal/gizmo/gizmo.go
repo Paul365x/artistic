@@ -7,7 +7,6 @@ package gizmo
 
 import (
 	"errors"
-	"fmt"
 	"os"
 
 	"fyne.io/fyne/v2"
@@ -141,10 +140,11 @@ func (p *PickRadio) Create () *fyne.Container {
 	selector := widget.NewEntry()
 	selector.SetPlaceHolder(p.Plc)
 
-	p.Rg = widget.NewRadioGroup(p.S, p.Change)
+	p.Rg = widget.NewRadioGroup(p.S, nil)
 	p.Rg.OnChanged = func(s string) {
 		selector.SetText(s)
 		selector.Refresh()
+		p.Change(s)
 	}
 
 	// add and delete also need to change the instances slice
@@ -182,12 +182,11 @@ func (p *PickRadio) Create () *fyne.Container {
 	file_button := widget.NewButtonWithIcon("", theme.FileIcon(), func() {
 		d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
 		    if uc != nil {
-				filePath := uc.URI().Path()				
-				dirPath := AddTrailingSlash(filepath.Dir(filePath))
-				fmt.Println(dirPath)
-				fmt.Println(*p.Cwd)
-		    	
-				if *p.Cwd != p.Root && dirPath != *p.Cwd {
+				filePath := filepath.Clean(uc.URI().Path())				
+				dirPath := filepath.Clean(filepath.Dir(filePath))
+				cwd := filepath.Clean(*p.Cwd)
+				rt := filepath.Clean(p.Root)				
+				if cwd != rt && dirPath != cwd {
 					err = errors.ErrUnsupported
 					p.Notify(string("Different directory to the other files"),
 					"error",
