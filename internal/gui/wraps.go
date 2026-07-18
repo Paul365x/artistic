@@ -241,7 +241,7 @@ func file_radio_callback(value string) {
 		//Img.Objects[1].RemoveAll()
 		Img.Objects[1] = new_img
 		Img.Refresh()
-		Instance_idx = Instances[value].Index
+		Instance_idx = Instances[value].Index - 1
 	}
 }
 

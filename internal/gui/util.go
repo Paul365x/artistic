@@ -5,6 +5,7 @@ package gui
 import (
 
 	// go imports
+	"image"
 	"os"
 	"path/filepath"
 
@@ -36,14 +37,30 @@ func get_thumb(path string) string {
 
 		i, err := gen.NewImageFromFile(path)
 		if err != nil {
-			notify.Notify("Failed to open image", "error", state.Error)
+			notify.Notify("Failed to configure thumb", "error", state.Error)
 			notify.Progress.Stop()
 			return ""
 		}
 
+		// need to get and set our image dimensions since this is not setting them in the lib
+		file, _ := os.Open(path)
+		defer file.Close()
+
+		img, _, err := image.Decode(file)
+		if err != nil {
+			notify.Notify("Failed to dimension image", "error", state.Error)
+			notify.Progress.Stop()
+			return ""
+		}
+		bounds := img.Bounds()
+		i.Current.Width = bounds.Dx()  // Returns r.Max.X - r.Min.X
+		i.Current.Height = bounds.Dy() // Returns r.Max.Y - r.Min.Y
+		i.Current.X = 0
+		i.Current.Y = 0
+
 		thumbBytes, err := gen.CreateThumbnail(i)
 		if err != nil {
-			//notify.Notify("Failed to create thumbnail", "error", state.Error)
+			notify.Notify("Failed to create thumbnail", "error", state.Error)
 			notify.Progress.Stop()
 			return ""
 		}
