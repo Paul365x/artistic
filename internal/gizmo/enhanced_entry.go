@@ -118,9 +118,10 @@ func (e *EnhancedEntry) fileHandler() {
 	d := dialog.NewFileOpen(func(uc fyne.URIReadCloser, err error) {
 		if uc != nil {
 			path := filepath.Clean(uc.URI().Path())
+			dir := filepath.Dir(path)
 			cwd := filepath.Clean(*e.cwd)
 			rt := filepath.Clean(e.root)
-			if cwd != rt && path != cwd {
+			if cwd != rt && dir != cwd {
 					err = errors.ErrUnsupported
 					e.notify(string("Different directory to the other files"),
 					"error",
