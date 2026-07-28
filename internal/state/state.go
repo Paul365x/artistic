@@ -116,7 +116,7 @@ func Empty_meta() Meta_type {
 // Empty_pod creates and returns an empty pod_type
 func Empty_pod() Pod_type {
 	at := new(Artwork_type)
-	at.Instances = append(at.Instances, Empty_instance())
+	at.Instances = nil // append(at.Instances, Empty_instance())
 	mt := Empty_meta()
 	art := new(Pod_type)
 	art.Personality = "POD"

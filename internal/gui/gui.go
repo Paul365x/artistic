@@ -40,10 +40,19 @@ func Pod(pod *state.Pod_type) *PodRet {
 	)
 	left_pane.SetOffset(0.2)
 
+	var rect *canvas.Rectangle
+	var image *fyne.Container
+	var img_wrap *fyne.Container
 	// create image and background
-	rect := canvas.NewRectangle(pod.Artwork.Instances[0].BG.BG)
-	image, img_wrap := wrap_image(rect, &pod.Artwork.Instances[0])
-
+	if len(pod.Artwork.Instances) > 0 {
+		rect = canvas.NewRectangle(pod.Artwork.Instances[0].BG.BG)
+		image, img_wrap = wrap_image(rect, &pod.Artwork.Instances[0])
+    } else {
+		tmp := state.Empty_instance()
+		rect := canvas.NewRectangle(state.Default_color)
+		image, img_wrap = wrap_image(rect, &tmp)
+    } 
+	
 	// setup the color picker
 	col := wrap_colors(
 		rect,

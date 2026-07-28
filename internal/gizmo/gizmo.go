@@ -149,7 +149,7 @@ func (p *PickRadio) Create () *fyne.Container {
 
 	// add and delete also need to change the instances slice
 	add_button := widget.NewButtonWithIcon("",theme.ContentAddIcon(), func() {
-		dispText := filepath.Base(selector.Text)
+		dispText := selector.Text
 		if !p.Add(selector.Text) {
 			return
 		}		
@@ -160,9 +160,13 @@ func (p *PickRadio) Create () *fyne.Container {
 	})
 
 	del_button := widget.NewButtonWithIcon("",theme.ContentRemoveIcon(), func() {
-		if !p.Del(selector.Text) {
+		//if !
+		p.Del(selector.Text) /*{
+			sel_id := SliceIndex(len(p.S), func(i int) bool { return p.S[i] == selector.Text })
+    	 	p.S = slices.Delete(p.S, sel_id, sel_id+1)
+			p.Rg.Options = slices.Delete(p.Rg.Options, sel_id, sel_id+1)
 			return
-		}
+		}*/
 		sel_id := SliceIndex(len(p.S), func(i int) bool { return p.S[i] == selector.Text })
 		p.S = slices.Delete(p.S, sel_id, sel_id+1)
 		p.Rg.Options = slices.Delete(p.Rg.Options, sel_id, sel_id+1)

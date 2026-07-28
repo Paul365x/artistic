@@ -232,17 +232,22 @@ var Instance_idx int                 // index into state.Data.Artwork.Instances
 
 // file_radio_callback is the callback for the file radio button selection
 func file_radio_callback(value string) {
-	file_path := Instances[value].Instance.Image
-	if file_path != "" {
-		rt := filepath.Join(preferences.Get_value("root"), file_path)
-		thb := get_thumb(rt)
-		new_img := canvas.NewImageFromFile(thb)
-		new_img.FillMode = canvas.ImageFillOriginal
-		//Img.Objects[1].RemoveAll()
-		Img.Objects[1] = new_img
-		Img.Refresh()
-		Instance_idx = Instances[value].Index - 1
+	inst, ok := Instances[value]
+	if ok {
+		file_path := inst.Instance.Image
+		if file_path != "" {
+			rt := filepath.Join(preferences.Get_value("root"), file_path)
+			thb := get_thumb(rt)
+			new_img := canvas.NewImageFromFile(thb)
+			new_img.FillMode = canvas.ImageFillOriginal
+			//Img.Objects[1].RemoveAll()
+			Img.Objects[1] = new_img
+			Img.Refresh()
+			Instance_idx = Instances[value].Index - 1
+			return
+		}
 	}
+	notify.Notify(string("This file hasn't been added"), "error", state.Error)
 }
 
 // file_radio_add is the callback for the pickRadio add button
@@ -261,9 +266,9 @@ func file_radio_add(value string ) bool {
 	instance.BG.BG = state.Default_color
 
 	// add to data and get the index
-	insts := state.Data.(*state.Pod_type).Artwork.Instances
-	idx := len(insts) 
-	insts = append(insts, instance)
+	insts := &state.Data.(*state.Pod_type).Artwork.Instances
+	idx := len(*insts) 
+	*insts = append(*insts, instance)
 
 	// add to the Instances
 	d := Disp_type {
@@ -375,7 +380,7 @@ func wrap_files(artwork *state.Artwork_type, img *fyne.Container) *fyne.Containe
 	file_radio := radio_cont.Objects[0]
 	//radio_cont.
 	radio_cont.Hide()
-	if artwork.Instances[0].Image != "" {		
+	if len(artwork.Instances) > 0 {		
 		radio_cont.Show()
 		file_radio.Show()
 		pr.Rg.SetSelected(filepath.Base(artwork.Instances[0].Image))
