@@ -5,7 +5,7 @@ import (
 	//"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	//"fyne.io/fyne/v2/data/binding"
-	//"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 
 	"slices"
@@ -40,13 +40,13 @@ func NewRadioBox(placeholder string, callback func(value string)) *RadioBox {
 		callback(s)
 	}
 
-	box.Add = widget.NewButton("Add", func() {
+	box.Add = widget.NewButtonWithIcon("", theme.ContentAddIcon(), func() {
 		box.List.Append(box.Input.Text)
 		box.Items = append(box.Items, box.Input.Text)
 		box.Input.SetText("")
 	})
 
-	box.Del = widget.NewButton("Del", func() {
+	box.Del = widget.NewButtonWithIcon("",theme.ContentRemoveIcon(), func() {
 		sel_id := sliceIndex(len(box.Items), func(i int) bool {
 			return box.Items[i] == box.Input.Text
 		})

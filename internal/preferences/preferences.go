@@ -13,6 +13,7 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -98,10 +99,10 @@ func Init_prefs() {
 
 	help := widget.NewLabel("Restart is required to use any changes.")
 	help.TextStyle = fyne.TextStyle{Italic: true}
-	save := widget.NewButton("Save", save_button)
-	cancel := widget.NewButton("Cancel", cancel_button)
-	reset := widget.NewButton("Reset", reset_button)
-	factory := widget.NewButton("Factory", factory_button)
+	save := widget.NewButtonWithIcon("",theme.DocumentSaveIcon(), save_button)
+	cancel := widget.NewButtonWithIcon("",theme.CancelIcon(), cancel_button)
+	reset := widget.NewButtonWithIcon("",theme.ContentUndoIcon(), reset_button)
+	factory := widget.NewButtonWithIcon("", theme.MediaReplayIcon(), factory_button)
 	buttons := widget.FormItem{
 		HintText: "Restart is required for any changes to take effect.",
 		Widget:   container.NewHBox(save, cancel, reset, factory),

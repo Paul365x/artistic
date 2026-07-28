@@ -63,10 +63,10 @@ func Pick_box(s []string, placeholder string) *fyne.Container {
 		selector.Refresh()
 	}
 
-	add_button := widget.NewButton("Add", func() {
+	add_button := widget.NewButtonWithIcon("",theme.ContentAddIcon(), func() {
 		pick_shadow.Append(selector.Text)
 	})
-	del_button := widget.NewButton("Del", func() {
+	del_button := widget.NewButtonWithIcon("",theme.ContentRemoveIcon(), func() {
 		if sel_id >= 0 {
 			s = slices.Delete(s, sel_id, sel_id+1)
 			sel_id = -1
@@ -148,7 +148,7 @@ func (p *PickRadio) Create () *fyne.Container {
 	}
 
 	// add and delete also need to change the instances slice
-	add_button := widget.NewButton("Add", func() {
+	add_button := widget.NewButtonWithIcon("",theme.ContentAddIcon(), func() {
 		dispText := filepath.Base(selector.Text)
 		if !p.Add(selector.Text) {
 			return
@@ -159,7 +159,7 @@ func (p *PickRadio) Create () *fyne.Container {
 		p.S = append(p.S, selector.Text)
 	})
 
-	del_button := widget.NewButton("Del", func() {
+	del_button := widget.NewButtonWithIcon("",theme.ContentRemoveIcon(), func() {
 		if !p.Del(selector.Text) {
 			return
 		}
