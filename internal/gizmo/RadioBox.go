@@ -23,7 +23,7 @@ type RadioBox struct {
 	Del   *widget.Button
 }
 
-// Pick_box creates a selectable, addable, deletable list of items
+// Radio_box creates a selectable, addable, deletable radio group of items
 func NewRadioBox(placeholder string, callback func(value string)) *RadioBox {
 	box := &RadioBox{
 		Input: widget.NewEntry(),

@@ -67,7 +67,7 @@ func main() {
 		var menu fyne.MainMenu
 		menu.Items = append(menu.Items,
 			gui.Menu_file(),
-			gui.Menu_palette(rect, view, &menu, pod.Artwork.Instances),
+			gui.Menu_palette(rect, view, &menu, file, pod.Artwork.Instances),
 			gui.Menu_about(),
 		)
 

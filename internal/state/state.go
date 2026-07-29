@@ -65,7 +65,7 @@ type Instance_type struct {
 // artwork_type links a parent file to a series of children
 type Artwork_type struct {
 	Parent    string
-	Instances []Instance_type
+	Instances map[string]Instance_type
 }
 
 // search_type contains tags used on the various platforms to search
@@ -116,7 +116,7 @@ func Empty_meta() Meta_type {
 // Empty_pod creates and returns an empty pod_type
 func Empty_pod() Pod_type {
 	at := new(Artwork_type)
-	at.Instances = nil // append(at.Instances, Empty_instance())
+	at.Instances = make(map[string]Instance_type) 
 	mt := Empty_meta()
 	art := new(Pod_type)
 	art.Personality = "POD"

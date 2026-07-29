@@ -41,16 +41,21 @@ func Pod(pod *state.Pod_type) *PodRet {
 	left_pane.SetOffset(0.2)
 
 	var rect *canvas.Rectangle
-	var image *fyne.Container
 	var img_wrap *fyne.Container
+	var file string
+
 	// create image and background
-	if len(pod.Artwork.Instances) > 0 {
-		rect = canvas.NewRectangle(pod.Artwork.Instances[0].BG.BG)
-		image, img_wrap = wrap_image(rect, &pod.Artwork.Instances[0])
+	if len(pod.Artwork.Instances) > 0 {					
+		for _,i := range pod.Artwork.Instances {
+			// don't really care which just need one to load.
+			file = i.Image
+			break
+		}
+		rect = canvas.NewRectangle(pod.Artwork.Instances[file].BG.BG)
+		_, img_wrap = wrap_image(rect, file)
     } else {
-		tmp := state.Empty_instance()
 		rect := canvas.NewRectangle(state.Default_color)
-		image, img_wrap = wrap_image(rect, &tmp)
+		_, img_wrap = wrap_image(rect, "")
     } 
 	
 	// setup the color picker
@@ -58,11 +63,12 @@ func Pod(pod *state.Pod_type) *PodRet {
 		rect,
 		"WhiteT",
 		color_sets.Load_set(preferences.Get_value("color_set"))(),
+		file,
 		pod.Artwork.Instances,
 	)
 
 	// setup the parent and child files selector
-	files := wrap_files(&pod.Artwork, image)
+	files := wrap_files(&pod.Artwork)
 	files.Refresh()
 	view := container.New(
 		layout.NewGridLayout(1),

@@ -34,7 +34,8 @@ func Menu_palette(
 	rect *canvas.Rectangle,
 	view *fyne.Container,
 	main *fyne.MainMenu,
-	instances []state.Instance_type) *fyne.Menu {
+	file string,
+	instances map[string]state.Instance_type) *fyne.Menu {
 
 	var palette fyne.Menu
 
@@ -44,7 +45,7 @@ func Menu_palette(
 		menu_item := fyne.NewMenuItem(k, nil)
 		palette.Items = append(palette.Items, menu_item)
 		menu_item.Action = func() {
-			view.Objects[1] = wrap_colors(rect, "White", colors, instances)
+			view.Objects[1] = wrap_colors(rect, "White", colors, file, instances)
 			view.Refresh()
 			for _, item := range palette.Items {
 				item.Checked = false

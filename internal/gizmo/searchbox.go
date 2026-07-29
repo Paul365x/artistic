@@ -143,7 +143,7 @@ func (s *SearchState) SearchTap() {
 			title := "N: " + result.Fields["Metadata.About.Title"].(string)
 			description := "D: " + result.Fields["Metadata.About.Description"].(string)
 			maintag := "M: " + result.Fields["Metadata.Search_data.Maintag"].(string)
-			tags := result.Fields["Metadata.Search_data.Tags"].(interface{})
+			tags := result.Fields["Metadata.Search_data.Tags"] 
 			s.Results = append(s.Results, []string{
 				title,
 				description,
